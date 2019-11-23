@@ -6,44 +6,123 @@
   <meta name="viewport" content="width=1100, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CHOCCO</title>
-  <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="container welcome__container">
-      <article class="header">
-            <a href="./" class="logo">
-              <img src="./img/" alt="CHOCCO LOGO" class="logo-pic">
-            </a>
-            <nav class="navigation">
-              <ul class="navigation__list">
-                <li class="navigation__item">О нас</li>
-                <li class="navigation__item">Батончики</li>
-                <li class="navigation__item">Команда</li>
-                <li class="navigation__item">Меню</li>
-                <li class="navigation__item">Отзывы</li>
-                <li class="navigation__item">Как мы работаем</li>
-                <li class="navigation__item">Контакты</li>
-              </ul>
-            </nav>
-            <address class="contact-phone">8 800 903 90 90</address>
-      </article>
-      <article class="order">
-          <h2 class="order__title">НАТУРАЛЬНЫЕ ШОКОЛАДНЫЕ БАТОНЧИКИ</h2>
-          <h3 class="order__desc">Наши батончики идеально подходят для тех, кто следит за своим здоровьем</h3>
-          <a href="#" class="order__link">Заказать</a>
-      </article>
-      <article class="advantages">
-          <ul class="advantages__list">
-            <li class="advantages__list-item">100% натуральный продукт</li>
-            <li class="advantages__list-item">3-5 дней доставка по РФ</li>
-            <li class="advantages__list-item">Не портит фигуру</li>
-          </ul>
-      </article>
+  <header class="header">
+    <div class="container header__container">
+      <div class="chocco__logo">CHO CCO</div>
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">О нас</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Батончики</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Команда</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Меню</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Отзывы</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Как мы работаем</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <address class="contact-phone">8 800 903 90 90</address>
     </div>
-  </div>
+  </header>
+  <section class="welcome">
+    <div class="container welcome__container">
+      <div class="welcome__info">
+        <div class="order">
+          <h1 class="order__title">НАТУРАЛЬНЫЕ ШОКОЛАДНЫЕ БАТОНЧИКИ</h1>
+          <p class="order__desc">Наши батончики идеально подходят для тех, кто следит за своим здоровьем</p>
+          <a href="#" class="order__link btn">Заказать</a>
+        </div>
+        <div class="advantages">
+          <ul class="advantages__list">
+            <li class="advantages__list-item">
+              <div class="advantages__list-item-img">
+                <img src="./img/natural_icon.png" alt="Натуральный продукт" class="advantages__list-item-pic">
+              </div>
+              <span class="advantages__list-item-text">100% натуральный продукт</span>
+            </li>
+            <li class="advantages__list-item">
+              <div class="advantages__list-item-img">
+                <img src="./img/delivery_icon.png" alt="Доставка" class="advantages__list-item-pic">
+              </div>
+              <span class="advantages__list-item-text">3-5 дней доставка по РФ</span>
+            </li>
+            <li class="advantages__list-item">
+              <div class="advantages__list-item-img">
+                <img src="./img/figure_icon.png" alt="Фигура" class="advantages__list-item-pic">
+              </div>
+              <span class="advantages__list-item-text">Не портит фигуру</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="bars-img">
+        <img src="./img/bars.png" alt="Батончики CHOCCO" class="bars-pic">
+      </div>
+    </div>
+  </section>
+  <section class="about">
+    <div class="container about__container">
+      <div class="about__wrapper">
+        <div class="about__chocco">
+          <h2 class="about__chocco-title">ПОЧЕМУ CHOCCO?</h2>
+          <p class="about__chocco-text">В нашем мире все происходит очень быстро, поэтому мы
+            делаем батончики, которые удобно взять с собой.</p>
+        </div>
+        <ul class="about__qualities">
+          <li class="about__qualities-item">
+            <div class="about__qualities-item-img">
+              <img src="./icons/1.svg" alt="" class="about__qualities-item-pic">
+            </div>
+            <div class="about__qualities-item-desc">
+              <h3 class="about__qualities-item-title">Полезно</h3>
+              <p class="about__qualities-item-text">Натуральность - ключевое качество
+                нашей продукции. Мы используем
+                только природные ингредиенты.</p>
+            </div>
+          </li>
+          <li class="about__qualities-item">
+            <div class="about__qualities-item-img">
+              <img src="./icons/3.svg" alt="" class="about__qualities-item-pic">
+            </div>
+            <div class="about__qualities-item-desc">
+              <h3 class="about__qualities-item-title">Вкусно</h3>
+              <p class="about__qualities-item-text">Нежный, ненавязчивый, изысканный –
+                так клиенты описывают вкусовые
+                качества наших батончиков.</p>
+            </div>
+          </li>
+          <li class="about__qualities-item">
+            <div class="about__qualities-item-img">
+              <img src="./icons/2.svg" alt="" class="about__qualities-item-pic">
+            </div>
+            <div class="about__qualities-item-desc">
+              <h3 class="about__qualities-item-title">Питательно</h3>
+              <p class="about__qualities-item-text">Высокое содержание качественного
+                белка, а также всех необходимых
+                витаминов и минералов.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>

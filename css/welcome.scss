@@ -1,3 +1,84 @@
-.welcome__container {
-  background: #61c4d9;
+.welcome {
+  &__container {
+    display: flex;
+    background: $lightblue;
+    background: url(../img/pattern.png) no-repeat;
+    min-height: 650px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    justify-content: flex-end;
+    margin-bottom: 47px;
+  }
+}
+
+.order {
+  margin-bottom: 66px;
+
+  &__title {
+    font-family: 'alegreya';
+    font-size: 60px;
+    color: $white;
+    line-height: 1;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  &__desc {
+    font-family: 'alegreya';
+    font-size: 21px;
+    color: $white;
+    font-style: normal;
+    font-weight: 400;
+    width: 70%;
+    margin: 0 0 27px;
+    line-height: 1.15;
+  }
+  &__link {
+  font-family: 'alegreya';
+  font-size: 19px;
+  color: $green;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  }
+
+}
+
+.advantages {
+  &__list {
+    display: flex;
+
+    &-item {
+      display: flex;
+      font-family: 'alegreya';
+      font-size: 16px;
+      color: $white;
+      font-style: normal;
+      font-weight: 400;
+      width: 26%;
+      margin-right: 50px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &-img {
+        margin-right: 9px;
+      }
+
+      &-text {
+        line-height: 1.15;
+      }
+    }
+  }
+}
+
+.bars-img {
+  align-self: center;
+  margin-right: 28px;
 }

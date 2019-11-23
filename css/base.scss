@@ -1,3 +1,11 @@
+$white: #fff;
+$lightblue: #61c4d9;
+$green: #0f5a47;
+$black: #0d0d0d;
+$gray: #666;
+$darkblack: #000;
+$cream: #f2f5f4;
+
 body {
   margin: 0px;
   box-sizing: border-box;
@@ -29,4 +37,11 @@ h6 {
 
 a {
   text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 24px 34px 22px 35px;
+  background: $white;
+  border-radius: 32.6px;
 }
