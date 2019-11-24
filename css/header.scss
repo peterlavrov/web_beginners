@@ -1,13 +1,8 @@
 .header {
-  position: relative;
-
+  padding-top: 23px;
   &__container {
     display: flex;
-    position: absolute;
     width: 100%;
-    left: 0;
-    right: 0;
-    top: 23px;
     justify-content: space-between;
     align-items: center;
   }
@@ -47,14 +42,6 @@
 }
 
 .contact-phone {
-  display: flex;
-  align-items: center;
-  font-family: 'alegreya';
-  font-size: 24px;
-  color: $white;
-  line-height: 1.25;
-  font-style: normal;
-  margin-right: 80px;
   &:before {
     content: "";
     display: inline-block;
@@ -62,5 +49,14 @@
     height: 11px;
     background: url(../img/phone.png);
     margin-right: 4px;
+  }
+
+  .contact-number {
+    font-family: 'alegreya';
+    font-size: 24px;
+    color: $white;
+    line-height: 1.25;
+    font-style: normal;
+    margin-right: 80px;
   }
 }

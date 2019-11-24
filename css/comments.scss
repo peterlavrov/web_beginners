@@ -1,0 +1,110 @@
+.comments {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 650px;
+    height: 100vh;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: 'alegreya';
+    font-size: 48px;
+    color: $black;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 34px;
+    margin-top: 61px;
+  }
+
+  &__post {
+    display: flex;
+    align-self: center;
+    width: 81%;
+    background-color: $creamy;
+    padding: 51.1px 0 34.6px 45.7px;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-img {
+      margin-right: 20px;
+    }
+
+    &-subject {
+      font-family: 'alegreya';
+      font-size: 30px;
+      color: $darkgray;
+      font-style: normal;
+      font-weight: 500;
+      margin-top: 15px;
+      margin-bottom: 26px;
+    }
+
+    &-msg {
+      font-family: 'alegreya';
+      font-size: 18px;
+      color: $gray;
+      font-style: normal;
+      font-weight: 400;
+      width: 72%;
+      margin: 0;
+      line-height: 1.2;
+      margin-bottom: 31px;
+    }
+
+    &-author {
+      font-family: 'alegreya';
+      font-size: 18px;
+      color: $gray;
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+
+  &__authors {
+    &-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &--active {
+      border: $green 6px solid;
+    }
+
+    @each $pic in (alena, girl, boy) {
+      &-#{$pic} {
+        width: 66.7px;
+        height: 66.7px;
+        overflow: hidden;
+        border-radius: 50%;
+        background-image: url(../img/comments__authors-#{$pic}.png);
+        background-repeat: no-repeat;
+
+        @if $pic==alena {
+          background-position: 0 -10px;
+        }
+
+        @if $pic==girl {
+          background-position: -84px -17px;
+        }
+
+        @if $pic==boy {
+          background-position: -105px -48px;
+        }
+      }
+    }
+  }
+}

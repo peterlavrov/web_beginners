@@ -1,9 +1,22 @@
 .about {
   &__container {
     display: flex;
+    position: relative;
     min-height: 650px;
+    height: 100vh;
     justify-content: center;
     align-items: center;
+    background: url(../img/leaf_pattern.png) left center no-repeat;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background: url(../img/malina.png) no-repeat;
+      width: 161px;
+      height: 315px;
+      left: 0px;
+      bottom: -108px;
+    }
   }
 
   &__wrapper {
@@ -17,7 +30,7 @@
     flex-direction: column;
     align-items: center;
     width: 42%;
-    margin-bottom: 57px;
+    margin-bottom: 55px;
 
     &-title {
       font-family: 'alegreya';
@@ -45,11 +58,26 @@
     display: flex;
     justify-content: space-evenly;
 
+
     &-item {
       display: flex;
+      position: relative;
       flex-basis: 25%;
       flex-direction: column;
       align-items: center;
+
+      &:after {
+        content: "";
+        position: absolute;
+        background: url(../img/points.png) no-repeat;
+        width: 67px;
+        height: 21px;
+        left: 285px;
+        top: 50px;
+      }
+      &:last-child:after {
+        display: none;
+      }
 
       &-desc {
         text-align: center;

@@ -1,22 +1,63 @@
+@import "./header.scss";
+
 .welcome {
   &__container {
     display: flex;
-    background: $lightblue;
-    background: url(../img/pattern.png) no-repeat;
+    flex-direction: column;
+    background-color: $lightblue;
+    background-image: url(../img/pattern.png);
+    background-position: center right;
+    background-repeat: no-repeat;
     min-height: 650px;
+    height: 100vh;
+    justify-content: space-between;
   }
 
   &__info {
     display: flex;
-    flex-direction: column;
-    margin-left: 80px;
-    justify-content: flex-end;
-    margin-bottom: 47px;
+    position: relative;
+    justify-content: center;
+    height: 77%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background: url(../img/leaf3.png) no-repeat;
+      width: 59px;
+      height: 112px;
+      left: 29px;
+      bottom: -50px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: url(../img/leaf2.png) no-repeat;
+      width: 141px;
+      height: 105px;
+      right: 291px;
+      bottom: -29px;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      align-items: center;
+    }
   }
 }
 
 .order {
-  margin-bottom: 66px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 82%;
+  height: 65.56%;
+  padding-top: 0px;
+  padding-left: 47px;
 
   &__title {
     font-family: 'alegreya';
@@ -25,7 +66,6 @@
     line-height: 1;
     font-style: normal;
     font-weight: bold;
-    margin-bottom: 8px;
   }
 
   &__desc {
@@ -35,23 +75,51 @@
     font-style: normal;
     font-weight: 400;
     width: 70%;
-    margin: 0 0 27px;
+    margin: 0;
     line-height: 1.15;
+    padding-bottom: 2px;
   }
+
   &__link {
-  font-family: 'alegreya';
-  font-size: 19px;
-  color: $green;
-  font-style: normal;
-  font-weight: 600;
-  text-transform: uppercase;
+    font-family: 'alegreya';
+    font-size: 19px;
+    color: $green;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 
 }
 
 .advantages {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 49px;
+  padding-left: 17px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: url(../img/berry2.png) no-repeat;
+    width: 111px;
+    height: 108px;
+    right: 89px;
+    bottom: -46px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    background: url(../img/berry1.png) no-repeat;
+    width: 220px;
+    height: 208px;
+    right: 257px;
+    bottom: 38px;
+  }
+
   &__list {
     display: flex;
+    width: 78.22%;
 
     &-item {
       display: flex;
@@ -61,7 +129,7 @@
       font-style: normal;
       font-weight: 400;
       width: 26%;
-      margin-right: 50px;
+      margin-right: 58px;
 
       &:last-child {
         margin-right: 0;
@@ -78,7 +146,24 @@
   }
 }
 
-.bars-img {
-  align-self: center;
-  margin-right: 28px;
+.welcome__bars-img {
+  position: relative;
+  width: 45.72%;
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: url(../img/leaf1.png) no-repeat;
+    width: 236px;
+    height: 203px;
+    right: 18px;
+    bottom: 92px;
+    z-index: 1;
+  }
+}
+
+.bars-pic {
+  position: relative;
+  top: -95px;
+  right: 28px;
 }
