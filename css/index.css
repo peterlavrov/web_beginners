@@ -883,31 +883,53 @@ a {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   min-height: 650px;
   height: 100vh;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center; }
 
 .comments__title {
+  position: relative;
   font-family: 'alegreya';
   font-size: 48px;
   color: #0d0d0d;
   font-style: normal;
   font-weight: 600;
-  margin-bottom: 34px;
-  margin-top: 61px; }
+  padding-top: 48px; }
+  .comments__title:after {
+    content: "";
+    position: absolute;
+    background: url(../img/berry3.png);
+    width: 150px;
+    height: 86px;
+    top: 13px;
+    right: -443px; }
 
-.comments__post {
+.comments__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.comments__post {
+  display: none;
+  position: relative;
   -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
   width: 81%;
-  background-color: #f8f2f9;
+  background: url(../img/comment_pattern.png);
   padding: 51.1px 0 34.6px 45.7px; }
+  .comments__post--active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .comments__post-item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -943,47 +965,54 @@ a {
     font-style: normal;
     font-weight: 500; }
 
-.comments__authors-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-  .comments__authors-list li {
-    margin-right: 10px; }
-    .comments__authors-list li:last-child {
-      margin-right: 0; }
-
-.comments__authors--active {
-  border: #0f5a47 6px solid; }
-
-.comments__authors-alena {
-  width: 66.7px;
-  height: 66.7px;
-  overflow: hidden;
-  border-radius: 50%;
-  background-image: url(../img/comments__authors-alena.png);
-  background-repeat: no-repeat;
-  background-position: 0 -10px; }
-
-.comments__authors-girl {
-  width: 66.7px;
-  height: 66.7px;
-  overflow: hidden;
-  border-radius: 50%;
-  background-image: url(../img/comments__authors-girl.png);
-  background-repeat: no-repeat;
-  background-position: -84px -17px; }
-
-.comments__authors-boy {
-  width: 66.7px;
-  height: 66.7px;
-  overflow: hidden;
-  border-radius: 50%;
-  background-image: url(../img/comments__authors-boy.png);
-  background-repeat: no-repeat;
-  background-position: -105px -48px; }
+.comments__authors {
+  position: relative;
+  padding-bottom: 33px; }
+  .comments__authors:before {
+    position: absolute;
+    content: "";
+    background: url(../img/comments_berries.png);
+    width: 139px;
+    height: 321px;
+    left: -433px;
+    top: -27px; }
+  .comments__authors-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .comments__authors-list li {
+      margin-right: 10px; }
+      .comments__authors-list li:last-child {
+        margin-right: 0; }
+  .comments__authors--active {
+    border: #0f5a47 6px solid; }
+  .comments__authors-alena {
+    width: 66.7px;
+    height: 66.7px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-image: url(../img/comments__authors-alena.png);
+    background-repeat: no-repeat;
+    background-position: 0 -10px; }
+  .comments__authors-girl {
+    width: 66.7px;
+    height: 66.7px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-image: url(../img/comments__authors-girl.png);
+    background-repeat: no-repeat;
+    background-position: -84px -17px; }
+  .comments__authors-boy {
+    width: 66.7px;
+    height: 66.7px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-image: url(../img/comments__authors-boy.png);
+    background-repeat: no-repeat;
+    background-position: -105px -48px; }

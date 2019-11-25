@@ -2,29 +2,47 @@
   &__container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
     min-height: 650px;
     height: 100vh;
     align-items: center;
   }
 
   &__title {
+    position: relative;
     font-family: 'alegreya';
     font-size: 48px;
     color: $black;
     font-style: normal;
     font-weight: 600;
-    margin-bottom: 34px;
-    margin-top: 61px;
+    padding-top: 48px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: url(../img/berry3.png);
+      width: 150px;
+      height: 86px;
+      top: 13px;
+      right: -443px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
   }
 
   &__post {
-    display: flex;
+    display: none;
+    position: relative;
     align-self: center;
     width: 81%;
-    background-color: $creamy;
+    background: url(../img/comment_pattern.png);
     padding: 51.1px 0 34.6px 45.7px;
-
+    &--active {
+      display: flex;
+    }
     &-item {
       display: flex;
       flex-direction: column;
@@ -66,6 +84,17 @@
   }
 
   &__authors {
+    position: relative;
+    padding-bottom: 33px;
+    &:before {
+      position: absolute;
+      content: "";
+      background: url(../img/comments_berries.png);
+      width: 139px;
+      height: 321px;
+      left: -433px;
+      top: -27px;
+    }
     &-list {
       display: flex;
       justify-content: center;
