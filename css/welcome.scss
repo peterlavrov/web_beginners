@@ -1,16 +1,27 @@
 @import "./header.scss";
 
 .welcome {
+
+  background-color: $lightblue;
+
   &__container {
     display: flex;
     flex-direction: column;
-    background-color: $lightblue;
     background-image: url(../img/pattern.png);
     background-position: center right;
     background-repeat: no-repeat;
-    min-height: 650px;
     height: 100vh;
+    min-height: 650px;
     justify-content: space-between;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 23px;
+    padding-bottom: 49px;
   }
 
   &__info {
@@ -25,8 +36,8 @@
       background: url(../img/leaf3.png) no-repeat;
       width: 59px;
       height: 112px;
-      left: 29px;
-      bottom: -50px;
+      left: 31px;
+      bottom: -101px;
     }
 
     &:after {
@@ -35,8 +46,8 @@
       background: url(../img/leaf2.png) no-repeat;
       width: 141px;
       height: 105px;
-      right: 291px;
-      bottom: -29px;
+      right: 288px;
+      bottom: -79px;
     }
 
     &-wrapper {
@@ -45,6 +56,7 @@
       justify-content: space-between;
       height: 100%;
       align-items: center;
+      padding-left: 28px;
     }
   }
 }
@@ -55,9 +67,9 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 82%;
-  height: 65.56%;
+  height: 72.5%;
   padding-top: 0px;
-  padding-left: 47px;
+  // padding-left: 47px;
 
   &__title {
     font-family: 'alegreya';
@@ -66,6 +78,8 @@
     line-height: 1;
     font-style: normal;
     font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   &__desc {
@@ -78,6 +92,8 @@
     margin: 0;
     line-height: 1.15;
     padding-bottom: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   &__link {
@@ -87,6 +103,8 @@
     font-style: normal;
     font-weight: 600;
     text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
 }
@@ -94,8 +112,7 @@
 .advantages {
   display: flex;
   justify-content: center;
-  padding-bottom: 49px;
-  padding-left: 17px;
+  // padding-left: 17px;
 
   &:before {
     content: "";
@@ -103,8 +120,8 @@
     background: url(../img/berry2.png) no-repeat;
     width: 111px;
     height: 108px;
-    right: 89px;
-    bottom: -46px;
+    right: 87px;
+    bottom: -95px;
   }
 
   &:after {
@@ -113,8 +130,8 @@
     background: url(../img/berry1.png) no-repeat;
     width: 220px;
     height: 208px;
-    right: 257px;
-    bottom: 38px;
+    right: 255px;
+    bottom: -12px;
   }
 
   &__list {
@@ -130,6 +147,8 @@
       font-weight: 400;
       width: 26%;
       margin-right: 58px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
 
       &:last-child {
         margin-right: 0;
@@ -156,14 +175,14 @@
     background: url(../img/leaf1.png) no-repeat;
     width: 236px;
     height: 203px;
-    right: 18px;
-    bottom: 92px;
+    right: 15px;
+    bottom: 42px;
     z-index: 1;
   }
 }
 
 .bars-pic {
   position: relative;
-  top: -95px;
-  right: 28px;
+  top: -100px;
+  right: 27px;
 }

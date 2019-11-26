@@ -1,6 +1,7 @@
 .comments {
   &__container {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-evenly;
     min-height: 650px;
@@ -8,14 +9,24 @@
     align-items: center;
   }
 
-  &__title {
-    position: relative;
-    font-family: 'alegreya';
-    font-size: 48px;
-    color: $black;
-    font-style: normal;
-    font-weight: 600;
-    padding-top: 48px;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 63px;
+    padding-bottom: 60px;
+    height: 100%;
+
+    &:before {
+      position: absolute;
+      content: "";
+      background: url(../img/comments_berries.png);
+      width: 139px;
+      height: 321px;
+      left: 0px;
+      bottom: -159px;
+    }
 
     &:after {
       content: "";
@@ -23,9 +34,20 @@
       background: url(../img/berry3.png);
       width: 150px;
       height: 86px;
-      top: 13px;
-      right: -443px;
+      top: 36px;
+      right: 15px;
     }
+  }
+
+  &__title {
+    font-family: 'alegreya';
+    font-size: 48px;
+    color: $black;
+    font-style: normal;
+    font-weight: 600;
+    // padding-top: 48px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   &__list {
@@ -40,9 +62,11 @@
     width: 81%;
     background: url(../img/comment_pattern.png);
     padding: 51.1px 0 34.6px 45.7px;
+
     &--active {
       display: flex;
     }
+
     &-item {
       display: flex;
       flex-direction: column;
@@ -60,6 +84,8 @@
       font-weight: 500;
       margin-top: 15px;
       margin-bottom: 26px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     &-msg {
@@ -72,6 +98,8 @@
       margin: 0;
       line-height: 1.2;
       margin-bottom: 31px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     &-author {
@@ -80,21 +108,14 @@
       color: $gray;
       font-style: normal;
       font-weight: 500;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
   }
 
   &__authors {
-    position: relative;
-    padding-bottom: 33px;
-    &:before {
-      position: absolute;
-      content: "";
-      background: url(../img/comments_berries.png);
-      width: 139px;
-      height: 321px;
-      left: -433px;
-      top: -27px;
-    }
+    // padding-bottom: 33px;
+
     &-list {
       display: flex;
       justify-content: center;
@@ -119,20 +140,18 @@
         height: 66.7px;
         overflow: hidden;
         border-radius: 50%;
-        background-image: url(../img/comments__authors-#{$pic}.png);
-        background-repeat: no-repeat;
+        // background-image: url(../img/comments__authors-#{$pic}.png);
+        // background-repeat: no-repeat;
 
-        @if $pic==alena {
-          background-position: 0 -10px;
-        }
+        // @if $pic==alena {
+          
+        // }
 
-        @if $pic==girl {
-          background-position: -84px -17px;
-        }
+        // @if $pic==girl {
+        // }
 
-        @if $pic==boy {
-          background-position: -105px -48px;
-        }
+        // @if $pic==boy {
+        // }
       }
     }
   }

@@ -7,9 +7,18 @@ $darkblack: #000;
 $cream: #f2f5f4;
 $darkgray: #323232;
 
+html {
+height: 100%;
+}
+
 body {
+  height: 100%;
   margin: 0px;
   box-sizing: border-box;
+}
+
+.wrapper {
+  overflow: hidden;
 }
 
 .container {

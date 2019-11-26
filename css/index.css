@@ -485,10 +485,17 @@ td,
 th {
   padding: 0; }
 
+html {
+  height: 100%; }
+
 body {
+  height: 100%;
   margin: 0px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+
+.wrapper {
+  overflow: hidden; }
 
 .container {
   margin: 0 auto;
@@ -518,19 +525,17 @@ a {
   background: #fff;
   border-radius: 32.6px; }
 
-.header {
-  padding-top: 23px; }
-  .header__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .chocco__logo {
   max-width: 55px;
@@ -575,50 +580,25 @@ a {
   font-style: normal;
   margin-right: 80px; }
 
-.welcome__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  background-color: #61c4d9;
-  background-image: url(../img/pattern.png);
-  background-position: center right;
-  background-repeat: no-repeat;
-  min-height: 650px;
-  height: 100vh;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-
-.welcome__info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 77%; }
-  .welcome__info:before {
-    content: "";
-    position: absolute;
-    background: url(../img/leaf3.png) no-repeat;
-    width: 59px;
-    height: 112px;
-    left: 29px;
-    bottom: -50px; }
-  .welcome__info:after {
-    content: "";
-    position: absolute;
-    background: url(../img/leaf2.png) no-repeat;
-    width: 141px;
-    height: 105px;
-    right: 291px;
-    bottom: -29px; }
-  .welcome__info-wrapper {
+.welcome {
+  background-color: #61c4d9; }
+  .welcome__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-image: url(../img/pattern.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 650px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .welcome__content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -630,9 +610,49 @@ a {
     -ms-flex-pack: justify;
     justify-content: space-between;
     height: 100%;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
+    padding-top: 23px;
+    padding-bottom: 49px; }
+  .welcome__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 77%; }
+    .welcome__info:before {
+      content: "";
+      position: absolute;
+      background: url(../img/leaf3.png) no-repeat;
+      width: 59px;
+      height: 112px;
+      left: 31px;
+      bottom: -101px; }
+    .welcome__info:after {
+      content: "";
+      position: absolute;
+      background: url(../img/leaf2.png) no-repeat;
+      width: 141px;
+      height: 105px;
+      right: 288px;
+      bottom: -79px; }
+    .welcome__info-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      height: 100%;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding-left: 28px; }
 
 .order {
   display: -webkit-box;
@@ -649,16 +669,17 @@ a {
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 82%;
-  height: 65.56%;
-  padding-top: 0px;
-  padding-left: 47px; }
+  height: 72.5%;
+  padding-top: 0px; }
   .order__title {
     font-family: 'alegreya';
     font-size: 60px;
     color: #fff;
     line-height: 1;
     font-style: normal;
-    font-weight: bold; }
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
   .order__desc {
     font-family: 'alegreya';
     font-size: 21px;
@@ -668,14 +689,18 @@ a {
     width: 70%;
     margin: 0;
     line-height: 1.15;
-    padding-bottom: 2px; }
+    padding-bottom: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
   .order__link {
     font-family: 'alegreya';
     font-size: 19px;
     color: #0f5a47;
     font-style: normal;
     font-weight: 600;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
 
 .advantages {
   display: -webkit-box;
@@ -683,25 +708,23 @@ a {
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
-  padding-bottom: 49px;
-  padding-left: 17px; }
+  justify-content: center; }
   .advantages:before {
     content: "";
     position: absolute;
     background: url(../img/berry2.png) no-repeat;
     width: 111px;
     height: 108px;
-    right: 89px;
-    bottom: -46px; }
+    right: 87px;
+    bottom: -95px; }
   .advantages:after {
     content: "";
     position: absolute;
     background: url(../img/berry1.png) no-repeat;
     width: 220px;
     height: 208px;
-    right: 257px;
-    bottom: 38px; }
+    right: 255px;
+    bottom: -12px; }
   .advantages__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -717,7 +740,9 @@ a {
       font-style: normal;
       font-weight: 400;
       width: 26%;
-      margin-right: 58px; }
+      margin-right: 58px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
       .advantages__list-item:last-child {
         margin-right: 0; }
       .advantages__list-item-img {
@@ -734,14 +759,14 @@ a {
     background: url(../img/leaf1.png) no-repeat;
     width: 236px;
     height: 203px;
-    right: 18px;
-    bottom: 92px;
+    right: 15px;
+    bottom: 42px;
     z-index: 1; }
 
 .bars-pic {
   position: relative;
-  top: -95px;
-  right: 28px; }
+  top: -100px;
+  right: 27px; }
 
 .about__container {
   display: -webkit-box;
@@ -841,21 +866,25 @@ a {
       display: none; }
     .about__qualities-item-desc {
       text-align: center; }
-    .about__qualities-item-title {
-      font-family: 'alegreya';
-      font-size: 27px;
-      color: #000;
-      font-style: normal;
-      font-weight: 400;
-      margin-bottom: 21px; }
-    .about__qualities-item-text {
-      font-family: 'alegreya';
-      font-size: 18px;
-      color: #666;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 1.25;
-      margin: 0; }
+      .about__qualities-item-desc h3 {
+        font-family: 'alegreya';
+        font-size: 27px;
+        color: #000;
+        font-style: normal;
+        font-weight: 400;
+        margin-bottom: 21px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+      .about__qualities-item-desc p {
+        font-family: 'alegreya';
+        font-size: 18px;
+        color: #666;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.25;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
     .about__qualities-item-img {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -879,6 +908,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -892,22 +922,48 @@ a {
   -ms-flex-align: center;
   align-items: center; }
 
-.comments__title {
-  position: relative;
-  font-family: 'alegreya';
-  font-size: 48px;
-  color: #0d0d0d;
-  font-style: normal;
-  font-weight: 600;
-  padding-top: 48px; }
-  .comments__title:after {
+.comments__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 63px;
+  padding-bottom: 60px;
+  height: 100%; }
+  .comments__content:before {
+    position: absolute;
+    content: "";
+    background: url(../img/comments_berries.png);
+    width: 139px;
+    height: 321px;
+    left: 0px;
+    bottom: -159px; }
+  .comments__content:after {
     content: "";
     position: absolute;
     background: url(../img/berry3.png);
     width: 150px;
     height: 86px;
-    top: 13px;
-    right: -443px; }
+    top: 36px;
+    right: 15px; }
+
+.comments__title {
+  font-family: 'alegreya';
+  font-size: 48px;
+  color: #0d0d0d;
+  font-style: normal;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .comments__list {
   display: -webkit-box;
@@ -947,7 +1003,9 @@ a {
     font-style: normal;
     font-weight: 500;
     margin-top: 15px;
-    margin-bottom: 26px; }
+    margin-bottom: 26px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
   .comments__post-msg {
     font-family: 'alegreya';
     font-size: 18px;
@@ -957,62 +1015,50 @@ a {
     width: 72%;
     margin: 0;
     line-height: 1.2;
-    margin-bottom: 31px; }
+    margin-bottom: 31px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
   .comments__post-author {
     font-family: 'alegreya';
     font-size: 18px;
     color: #666;
     font-style: normal;
-    font-weight: 500; }
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
 
-.comments__authors {
-  position: relative;
-  padding-bottom: 33px; }
-  .comments__authors:before {
-    position: absolute;
-    content: "";
-    background: url(../img/comments_berries.png);
-    width: 139px;
-    height: 321px;
-    left: -433px;
-    top: -27px; }
-  .comments__authors-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
-    .comments__authors-list li {
-      margin-right: 10px; }
-      .comments__authors-list li:last-child {
-        margin-right: 0; }
-  .comments__authors--active {
-    border: #0f5a47 6px solid; }
-  .comments__authors-alena {
-    width: 66.7px;
-    height: 66.7px;
-    overflow: hidden;
-    border-radius: 50%;
-    background-image: url(../img/comments__authors-alena.png);
-    background-repeat: no-repeat;
-    background-position: 0 -10px; }
-  .comments__authors-girl {
-    width: 66.7px;
-    height: 66.7px;
-    overflow: hidden;
-    border-radius: 50%;
-    background-image: url(../img/comments__authors-girl.png);
-    background-repeat: no-repeat;
-    background-position: -84px -17px; }
-  .comments__authors-boy {
-    width: 66.7px;
-    height: 66.7px;
-    overflow: hidden;
-    border-radius: 50%;
-    background-image: url(../img/comments__authors-boy.png);
-    background-repeat: no-repeat;
-    background-position: -105px -48px; }
+.comments__authors-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .comments__authors-list li {
+    margin-right: 10px; }
+    .comments__authors-list li:last-child {
+      margin-right: 0; }
+
+.comments__authors--active {
+  border: #0f5a47 6px solid; }
+
+.comments__authors-alena {
+  width: 66.7px;
+  height: 66.7px;
+  overflow: hidden;
+  border-radius: 50%; }
+
+.comments__authors-girl {
+  width: 66.7px;
+  height: 66.7px;
+  overflow: hidden;
+  border-radius: 50%; }
+
+.comments__authors-boy {
+  width: 66.7px;
+  height: 66.7px;
+  overflow: hidden;
+  border-radius: 50%; }
