@@ -492,7 +492,9 @@ body {
   height: 100%;
   margin: 0px;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .wrapper {
   overflow: hidden; }
@@ -677,9 +679,7 @@ a {
     color: #fff;
     line-height: 1;
     font-style: normal;
-    font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    font-weight: bold; }
   .order__desc {
     font-family: 'alegreya';
     font-size: 21px;
@@ -689,18 +689,14 @@ a {
     width: 70%;
     margin: 0;
     line-height: 1.15;
-    padding-bottom: 2px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    padding-bottom: 2px; }
   .order__link {
     font-family: 'alegreya';
     font-size: 19px;
     color: #0f5a47;
     font-style: normal;
     font-weight: 600;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    text-transform: uppercase; }
 
 .advantages {
   display: -webkit-box;
@@ -740,9 +736,7 @@ a {
       font-style: normal;
       font-weight: 400;
       width: 26%;
-      margin-right: 58px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; }
+      margin-right: 58px; }
       .advantages__list-item:last-child {
         margin-right: 0; }
       .advantages__list-item-img {
@@ -822,7 +816,8 @@ a {
     color: #0d0d0d;
     font-style: normal;
     font-weight: 600;
-    margin-bottom: 12px; }
+    margin-bottom: 12px;
+    text-align: center; }
   .about__chocco-text {
     font-family: 'alegreya';
     font-size: 18px;
@@ -872,9 +867,7 @@ a {
         color: #000;
         font-style: normal;
         font-weight: 400;
-        margin-bottom: 21px;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale; }
+        margin-bottom: 21px; }
       .about__qualities-item-desc p {
         font-family: 'alegreya';
         font-size: 18px;
@@ -882,9 +875,7 @@ a {
         font-style: normal;
         font-weight: 300;
         line-height: 1.25;
-        margin: 0;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale; }
+        margin: 0; }
     .about__qualities-item-img {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1003,9 +994,7 @@ a {
     font-style: normal;
     font-weight: 500;
     margin-top: 15px;
-    margin-bottom: 26px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    margin-bottom: 26px; }
   .comments__post-msg {
     font-family: 'alegreya';
     font-size: 18px;
@@ -1015,17 +1004,13 @@ a {
     width: 72%;
     margin: 0;
     line-height: 1.2;
-    margin-bottom: 31px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    margin-bottom: 31px; }
   .comments__post-author {
     font-family: 'alegreya';
     font-size: 18px;
     color: #666;
     font-style: normal;
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
+    font-weight: 500; }
 
 .comments__authors-list {
   display: -webkit-box;

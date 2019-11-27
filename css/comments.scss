@@ -84,8 +84,6 @@
       font-weight: 500;
       margin-top: 15px;
       margin-bottom: 26px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     &-msg {
@@ -98,8 +96,6 @@
       margin: 0;
       line-height: 1.2;
       margin-bottom: 31px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     &-author {
@@ -108,8 +104,6 @@
       color: $gray;
       font-style: normal;
       font-weight: 500;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
   }
 
