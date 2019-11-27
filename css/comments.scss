@@ -1,0 +1,158 @@
+.comments {
+  &__container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 650px;
+    height: 100vh;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 63px;
+    padding-bottom: 60px;
+    height: 100%;
+
+    &:before {
+      position: absolute;
+      content: "";
+      background: url(../img/comments_berries.png);
+      width: 139px;
+      height: 321px;
+      left: 0px;
+      bottom: -159px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: url(../img/berry3.png);
+      width: 150px;
+      height: 86px;
+      top: 36px;
+      right: 15px;
+    }
+  }
+
+  &__title {
+    font-family: 'alegreya';
+    font-size: 48px;
+    color: $black;
+    font-style: normal;
+    font-weight: 600;
+    // padding-top: 48px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__post {
+    display: none;
+    position: relative;
+    align-self: center;
+    width: 81%;
+    background: url(../img/comment_pattern.png);
+    padding: 51.1px 0 34.6px 45.7px;
+
+    &--active {
+      display: flex;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-img {
+      margin-right: 20px;
+    }
+
+    &-subject {
+      font-family: 'alegreya';
+      font-size: 30px;
+      color: $darkgray;
+      font-style: normal;
+      font-weight: 500;
+      margin-top: 15px;
+      margin-bottom: 26px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    &-msg {
+      font-family: 'alegreya';
+      font-size: 18px;
+      color: $gray;
+      font-style: normal;
+      font-weight: 400;
+      width: 72%;
+      margin: 0;
+      line-height: 1.2;
+      margin-bottom: 31px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    &-author {
+      font-family: 'alegreya';
+      font-size: 18px;
+      color: $gray;
+      font-style: normal;
+      font-weight: 500;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+  &__authors {
+    // padding-bottom: 33px;
+
+    &-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &--active {
+      border: $green 6px solid;
+    }
+
+    @each $pic in (alena, girl, boy) {
+      &-#{$pic} {
+        width: 66.7px;
+        height: 66.7px;
+        overflow: hidden;
+        border-radius: 50%;
+        // background-image: url(../img/comments__authors-#{$pic}.png);
+        // background-repeat: no-repeat;
+
+        // @if $pic==alena {
+          
+        // }
+
+        // @if $pic==girl {
+        // }
+
+        // @if $pic==boy {
+        // }
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.about {
+  &__container {
+    display: flex;
+    position: relative;
+    min-height: 650px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/leaf_pattern.png) left center no-repeat;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background: url(../img/malina.png) no-repeat;
+      width: 161px;
+      height: 315px;
+      left: 0px;
+      bottom: -108px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__chocco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 42%;
+    margin-bottom: 55px;
+
+    &-title {
+      font-family: 'alegreya';
+      font-size: 48px;
+      color: $black;
+      font-style: normal;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    &-text {
+      font-family: 'alegreya';
+      font-size: 18px;
+      color: $gray;
+      font-style: normal;
+      font-weight: 400;
+      text-align: center;
+      margin: 0;
+      line-height: 1.15;
+    }
+
+  }
+
+  &__qualities {
+    display: flex;
+    justify-content: space-evenly;
+
+
+    &-item {
+      display: flex;
+      position: relative;
+      flex-basis: 25%;
+      flex-direction: column;
+      align-items: center;
+
+      &:after {
+        content: "";
+        position: absolute;
+        background: url(../img/points.png) no-repeat;
+        width: 67px;
+        height: 21px;
+        left: 285px;
+        top: 50px;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+
+      &-desc {
+        text-align: center;
+
+        h3 {
+          font-family: 'alegreya';
+          font-size: 27px;
+          color: $darkblack;
+          font-style: normal;
+          font-weight: 400;
+          margin-bottom: 21px;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        p {
+          font-family: 'alegreya';
+          font-size: 18px;
+          color: $gray;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 1.25;
+          margin: 0;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+
+      &-img {
+        display: flex;
+        width: 125px;
+        height: 125px;
+        justify-content: center;
+        align-items: center;
+        background: $cream;
+        border-radius: 50%;
+        margin-bottom: 30px;
+      }
+
+      &-pic {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+}

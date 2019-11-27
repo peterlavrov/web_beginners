@@ -1,0 +1,57 @@
+$white: #fff;
+$lightblue: #61c4d9;
+$green: #0f5a47;
+$black: #0d0d0d;
+$gray: #666;
+$darkblack: #000;
+$cream: #f2f5f4;
+$darkgray: #323232;
+
+html {
+height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 24px 34px 22px 35px;
+  background: $white;
+  border-radius: 32.6px;
+}

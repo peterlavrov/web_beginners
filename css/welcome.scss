@@ -1,0 +1,188 @@
+@import "./header.scss";
+
+.welcome {
+
+  background-color: $lightblue;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/pattern.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 650px;
+    justify-content: space-between;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 23px;
+    padding-bottom: 49px;
+  }
+
+  &__info {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 77%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background: url(../img/leaf3.png) no-repeat;
+      width: 59px;
+      height: 112px;
+      left: 31px;
+      bottom: -101px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: url(../img/leaf2.png) no-repeat;
+      width: 141px;
+      height: 105px;
+      right: 288px;
+      bottom: -79px;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      align-items: center;
+      padding-left: 28px;
+    }
+  }
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 82%;
+  height: 72.5%;
+  padding-top: 0px;
+  // padding-left: 47px;
+
+  &__title {
+    font-family: 'alegreya';
+    font-size: 60px;
+    color: $white;
+    line-height: 1;
+    font-style: normal;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &__desc {
+    font-family: 'alegreya';
+    font-size: 21px;
+    color: $white;
+    font-style: normal;
+    font-weight: 400;
+    width: 70%;
+    margin: 0;
+    line-height: 1.15;
+    padding-bottom: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &__link {
+    font-family: 'alegreya';
+    font-size: 19px;
+    color: $green;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+}
+
+.advantages {
+  display: flex;
+  justify-content: center;
+  // padding-left: 17px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: url(../img/berry2.png) no-repeat;
+    width: 111px;
+    height: 108px;
+    right: 87px;
+    bottom: -95px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    background: url(../img/berry1.png) no-repeat;
+    width: 220px;
+    height: 208px;
+    right: 255px;
+    bottom: -12px;
+  }
+
+  &__list {
+    display: flex;
+    width: 78.22%;
+
+    &-item {
+      display: flex;
+      font-family: 'alegreya';
+      font-size: 16px;
+      color: $white;
+      font-style: normal;
+      font-weight: 400;
+      width: 26%;
+      margin-right: 58px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &-img {
+        margin-right: 9px;
+      }
+
+      &-text {
+        line-height: 1.15;
+      }
+    }
+  }
+}
+
+.welcome__bars-img {
+  position: relative;
+  width: 45.72%;
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: url(../img/leaf1.png) no-repeat;
+    width: 236px;
+    height: 203px;
+    right: 15px;
+    bottom: 42px;
+    z-index: 1;
+  }
+}
+
+.bars-pic {
+  position: relative;
+  top: -100px;
+  right: 27px;
+}

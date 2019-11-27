@@ -1,0 +1,61 @@
+.header {
+  &__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.chocco__logo {
+  max-width: 55px;
+  font-family: 'museosans';
+  font-size: 24px;
+  color: $white;
+  line-height: 21px;
+  font-style: normal;
+  font-weight: 500;
+  margin-left: 80px;
+}
+
+.navigation {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 27px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    font-family: 'alegreya';
+    font-size: 18px;
+    color: $white;
+    line-height: 1.67;
+    font-style: normal;
+  }
+}
+
+.contact-phone {
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 11px;
+    background: url(../img/phone.png);
+    margin-right: 4px;
+  }
+
+  .contact-number {
+    font-family: 'alegreya';
+    font-size: 24px;
+    color: $white;
+    line-height: 1.25;
+    font-style: normal;
+    margin-right: 80px;
+  }
+}
