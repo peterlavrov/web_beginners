@@ -1,0 +1,104 @@
+.team {
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    min-height: 650px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    // height: 100%;
+    width: 85.45%;
+    margin: 0 auto;
+  }
+
+  &__list {
+    display: flex;
+    flex: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: 54px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 25%;
+
+    &-img {
+      max-width: 220px;
+      max-height: 288px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__member {
+    &-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'alegreya';
+      font-size: 21px;
+      font-weight: 400;
+      color: $darkgray;
+      margin-bottom: 13px;
+
+      &:after {
+        content: "";
+        position: relative;
+        border: 6px solid transparent;
+        width: 0;
+        height: 0;
+        border-top-color: $green;
+        border-bottom-width: 0px;
+        border-left-width: 5px;
+        border-right-width: 5px;
+        right: -6px;
+        top: 2px;
+      }
+    }
+
+
+
+    &-position {
+      display: none;
+      font-family: 'alegreya';
+      font-size: 18px;
+      font-weight: 400;
+      color: $lightgray;
+      margin-bottom: 6px;
+    }
+
+    &-desc {
+      display: none;
+      font-family: 'alegreya';
+      font-size: 18px;
+      font-weight: 300;
+      color: $gray;
+      margin: 0;
+    }
+
+    &--active {
+      .team__member-name:after {
+        border-bottom-color: $green;
+        border-bottom-width: 6px;
+        border-top-width: 0px;
+      }
+
+      .team__member-position,
+      .team__member-desc {
+        display: block;
+      }
+    }
+  }
+}

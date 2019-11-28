@@ -816,8 +816,8 @@ a {
     color: #0d0d0d;
     font-style: normal;
     font-weight: 600;
-    margin-bottom: 12px;
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 12px; }
   .about__chocco-text {
     font-family: 'alegreya';
     font-size: 18px;
@@ -953,8 +953,7 @@ a {
   color: #0d0d0d;
   font-style: normal;
   font-weight: 600;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  text-align: center; }
 
 .comments__list {
   display: -webkit-box;
@@ -1047,3 +1046,124 @@ a {
   height: 66.7px;
   overflow: hidden;
   border-radius: 50%; }
+
+.team__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 650px; }
+
+.team__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: 85.45%;
+  margin: 0 auto; }
+
+.team__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+  -ms-flex: row wrap;
+  flex: row wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.team__title {
+  font-family: 'alegreya';
+  font-size: 48px;
+  color: #0d0d0d;
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 54px; }
+
+.team__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  width: 25%; }
+  .team__item-img {
+    max-width: 220px;
+    max-height: 288px;
+    margin-bottom: 20px; }
+
+.team__member-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: 'alegreya';
+  font-size: 21px;
+  font-weight: 400;
+  color: #323232;
+  margin-bottom: 13px; }
+  .team__member-name:after {
+    content: "";
+    position: relative;
+    border: 6px solid transparent;
+    width: 0;
+    height: 0;
+    border-top-color: #0f5a47;
+    border-bottom-width: 0px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    right: -6px;
+    top: 2px; }
+
+.team__member-position {
+  display: none;
+  font-family: 'alegreya';
+  font-size: 18px;
+  font-weight: 400;
+  color: #281e1e;
+  margin-bottom: 6px; }
+
+.team__member-desc {
+  display: none;
+  font-family: 'alegreya';
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+  margin: 0; }
+
+.team__member--active .team__member-name:after {
+  border-bottom-color: #0f5a47;
+  border-bottom-width: 6px;
+  border-top-width: 0px; }
+
+.team__member--active .team__member-position,
+.team__member--active .team__member-desc {
+  display: block; }

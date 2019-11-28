@@ -33,13 +33,8 @@
     margin-bottom: 55px;
 
     &-title {
-      font-family: 'alegreya';
-      font-size: 48px;
-      color: $black;
-      font-style: normal;
-      font-weight: 600;
+      @include title;
       margin-bottom: 12px;
-      text-align: center;
     }
 
     &-text {

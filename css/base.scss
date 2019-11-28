@@ -6,6 +6,7 @@ $gray: #666;
 $darkblack: #000;
 $cream: #f2f5f4;
 $darkgray: #323232;
+$lightgray: #281e1e;
 
 html {
 height: 100%;
@@ -56,4 +57,13 @@ a {
   padding: 24px 34px 22px 35px;
   background: $white;
   border-radius: 32.6px;
+}
+
+@mixin title {
+  font-family: 'alegreya';
+      font-size: 48px;
+      color: $black;
+      font-style: normal;
+      font-weight: 600;
+      text-align: center;
 }

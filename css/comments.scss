@@ -40,14 +40,7 @@
   }
 
   &__title {
-    font-family: 'alegreya';
-    font-size: 48px;
-    color: $black;
-    font-style: normal;
-    font-weight: 600;
-    // padding-top: 48px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @include title;
   }
 
   &__list {
@@ -108,7 +101,6 @@
   }
 
   &__authors {
-    // padding-bottom: 33px;
 
     &-list {
       display: flex;
