@@ -1051,6 +1051,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1068,11 +1069,27 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  width: 85.45%;
-  margin: 0 auto; }
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 7% 7%;
+  width: 100%; }
+  .team__content:before {
+    content: "";
+    position: absolute;
+    background: url(../img/raspberry.png);
+    width: 104px;
+    height: 114px;
+    bottom: -43px;
+    left: 35px; }
+  .team__content:after {
+    content: "";
+    position: absolute;
+    background: url(../img/blueberries.png);
+    width: 135px;
+    height: 112px;
+    top: -40px;
+    right: 13px; }
 
 .team__list {
   display: -webkit-box;
@@ -1086,7 +1103,8 @@ a {
   align-items: flex-start;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  width: 100%; }
 
 .team__title {
   font-family: 'alegreya';
@@ -1095,7 +1113,7 @@ a {
   font-style: normal;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 54px; }
+  margin-bottom: 64px; }
 
 .team__item {
   display: -webkit-box;
@@ -1115,55 +1133,56 @@ a {
     max-height: 288px;
     margin-bottom: 20px; }
 
-.team__member-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-family: 'alegreya';
-  font-size: 21px;
-  font-weight: 400;
-  color: #323232;
-  margin-bottom: 13px; }
-  .team__member-name:after {
-    content: "";
-    position: relative;
-    border: 6px solid transparent;
-    width: 0;
-    height: 0;
-    border-top-color: #0f5a47;
-    border-bottom-width: 0px;
-    border-left-width: 5px;
-    border-right-width: 5px;
-    right: -6px;
-    top: 2px; }
-
-.team__member-position {
-  display: none;
-  font-family: 'alegreya';
-  font-size: 18px;
-  font-weight: 400;
-  color: #281e1e;
-  margin-bottom: 6px; }
-
-.team__member-desc {
-  display: none;
-  font-family: 'alegreya';
-  font-size: 18px;
-  font-weight: 300;
-  color: #666;
-  margin: 0; }
-
-.team__member--active .team__member-name:after {
-  border-bottom-color: #0f5a47;
-  border-bottom-width: 6px;
-  border-top-width: 0px; }
-
-.team__member--active .team__member-position,
-.team__member--active .team__member-desc {
-  display: block; }
+.team__member {
+  position: relative;
+  width: 100%; }
+  .team__member-name {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: 'alegreya';
+    font-size: 21px;
+    font-weight: 400;
+    color: #323232;
+    margin-bottom: 13px; }
+    .team__member-name:after {
+      content: "";
+      position: relative;
+      border: 6px solid transparent;
+      width: 0;
+      height: 0;
+      border-top-color: #0f5a47;
+      border-bottom-width: 0px;
+      border-left-width: 5px;
+      border-right-width: 5px;
+      right: -6px;
+      top: 2px; }
+  .team__member-about {
+    display: none;
+    position: absolute;
+    top: 31px; }
+  .team__member--active .team__member-about {
+    display: block; }
+  .team__member-position {
+    font-family: 'alegreya';
+    font-size: 18px;
+    font-weight: 400;
+    color: #281e1e;
+    margin-bottom: 6px; }
+  .team__member-desc {
+    font-family: 'alegreya';
+    font-size: 18px;
+    font-weight: 300;
+    color: #666;
+    margin: 0;
+    line-height: 1.15; }
+  .team__member--active .team__member-name:after {
+    border-bottom-color: #0f5a47;
+    border-bottom-width: 6px;
+    border-top-width: 0px; }

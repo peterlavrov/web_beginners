@@ -1,6 +1,7 @@
 .team {
   &__container {
     display: flex;
+    position: relative;
     align-items: center;
     height: 100vh;
     min-height: 650px;
@@ -10,22 +11,42 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    // height: 100%;
-    width: 85.45%;
-    margin: 0 auto;
-  }
+    justify-content: space-between;
+    padding: 0 7% 7%;
+    width: 100%;
 
+    &:before {
+      content: "";
+      position: absolute;
+      background: url(../img/raspberry.png);
+      width: 104px;
+      height: 114px;
+      bottom: -43px;
+      left: 35px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: url(../img/blueberries.png);
+      width: 135px;
+      height: 112px;
+      top: -40px;
+      right: 13px;
+    }
+  }
+  
   &__list {
     display: flex;
     flex: row wrap;
     align-items: flex-start;
     justify-content: space-between;
+    width: 100%;
   }
 
   &__title {
     @include title;
-    margin-bottom: 54px;
+    margin-bottom: 64px;
   }
 
   &__item {
@@ -43,6 +64,9 @@
   }
 
   &__member {
+    position: relative;
+    width: 100%;
+
     &-name {
       display: flex;
       align-items: center;
@@ -68,10 +92,20 @@
       }
     }
 
+    &-about {
+      display: none;
+      position: absolute;
+      top: 31px;
+    }
 
+    &--active {
+      .team__member-about {
+        display: block;
+      }
+    }
 
     &-position {
-      display: none;
+      // display: none;
       font-family: 'alegreya';
       font-size: 18px;
       font-weight: 400;
@@ -80,12 +114,13 @@
     }
 
     &-desc {
-      display: none;
+      // display: none;
       font-family: 'alegreya';
       font-size: 18px;
       font-weight: 300;
       color: $gray;
       margin: 0;
+      line-height: 1.15;
     }
 
     &--active {
@@ -93,11 +128,6 @@
         border-bottom-color: $green;
         border-bottom-width: 6px;
         border-top-width: 0px;
-      }
-
-      .team__member-position,
-      .team__member-desc {
-        display: block;
       }
     }
   }
