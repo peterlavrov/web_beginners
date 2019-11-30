@@ -657,7 +657,7 @@ a {
       align-items: center;
       padding-left: 28px; }
 
-.order {
+.booking {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -674,14 +674,14 @@ a {
   width: 82%;
   height: 72.5%;
   padding-top: 0px; }
-  .order__title {
+  .booking__title {
     font-family: 'alegreya';
     font-size: 60px;
     color: #fff;
     line-height: 1;
     font-style: normal;
     font-weight: bold; }
-  .order__desc {
+  .booking__desc {
     font-family: 'alegreya';
     font-size: 21px;
     color: #fff;
@@ -691,7 +691,7 @@ a {
     margin: 0;
     line-height: 1.15;
     padding-bottom: 2px; }
-  .order__link {
+  .booking__link {
     font-family: 'alegreya';
     font-size: 19px;
     color: #0f5a47;
@@ -1304,3 +1304,127 @@ a {
   background-image: url(../img/wildberries_bg.png);
   background-size: cover;
   background-repeat: no-repeat; }
+
+.contacts__container {
+  position: relative;
+  min-height: 650px;
+  height: 100vh;
+  background-image: url(../img/map.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%; }
+
+.contacts__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff; }
+
+.contacts__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 85.5%; }
+
+.contacts__address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  width: 50%; }
+  .contacts__address-location {
+    font-family: 'alegreya';
+    font-style: normal;
+    color: #010101;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.14; }
+  .contacts__address-phone {
+    font-family: 'alegreya';
+    font-style: normal;
+    color: #0f5a47;
+    font-size: 21px;
+    font-weight: 400; }
+
+.contacts__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+  .contacts__socials-item {
+    margin-left: 17px; }
+    .contacts__socials-item:first-child {
+      margin-left: 0; }
+  .contacts__socials-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 5.8125rem; }
+  .contacts__socials-link {
+    display: block;
+    width: 23px;
+    height: 20px; }
+
+.order__container {
+  height: 100vh;
+  min-height: 650px;
+  width: 100%;
+  background: gray; }
+
+.order__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .order__form-req {
+    width: 50%; }
+  .order__form-feedback {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 50%; }
+  .order__form-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-negative: 1;
+    flex-shrink: 1; }
+  .order__form-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 25%; }
+  .order__form-flag {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }

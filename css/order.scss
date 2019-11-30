@@ -1,0 +1,39 @@
+.order {
+  &__container {
+    height: 100vh;
+    min-height: 650px;
+    width: 100%;
+    background: gray;
+  }
+
+  &__form {
+    display: flex;
+
+    &-req {
+      width: 50%;
+    }
+
+    &-feedback {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 50%;
+    }
+
+    &-row {
+      display: flex;
+      flex-shrink: 1;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 25%;
+    }
+    &-flag {
+      display: flex;
+    }
+  }
+
+}
