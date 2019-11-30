@@ -1164,11 +1164,12 @@ a {
       right: -6px;
       top: 2px; }
   .team__member-about {
-    display: none;
     position: absolute;
+    height: 0;
+    overflow: hidden;
     top: 31px; }
   .team__member--active .team__member-about {
-    display: block; }
+    overflow: visible; }
   .team__member-position {
     font-family: 'alegreya';
     font-size: 18px;

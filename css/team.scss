@@ -93,14 +93,15 @@
     }
 
     &-about {
-      display: none;
       position: absolute;
+      height: 0;
+      overflow: hidden;
       top: 31px;
     }
 
     &--active {
       .team__member-about {
-        display: block;
+        overflow: visible;
       }
     }
 
