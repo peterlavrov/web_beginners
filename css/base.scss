@@ -7,9 +7,15 @@ $darkblack: #000;
 $cream: #f2f5f4;
 $darkgray: #323232;
 $lightgray: #281e1e;
+$graybg: #2f3234;
+
+@function rem($px) {
+  @return $px / 16px + 0rem;
+}
 
 html {
 height: 100%;
+font-size: 16px;
 }
 
 body {

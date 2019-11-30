@@ -1,0 +1,106 @@
+.menu {
+  &__container {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    background-image: url(../img/menu_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    display: inline-block;
+    position: absolute;
+    @include title;
+    color: $white;
+    text-align: left;
+    top: 14.25%;
+    left: 7.2%;
+  }
+
+  &__list {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  &__item {
+    display: flex;
+
+    &-title {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: rem(100px);
+    }
+
+    &-title-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: 'alegreya';
+      font-size: 48px;
+      font-weight: 300;
+      color: $white;
+      margin-bottom: 42px;
+    }
+
+    &-desc {
+      position: relative;
+      width: 0;
+      overflow: hidden;
+      background: rgba($color: $graybg, $alpha: 0.93);
+    }
+
+    &-desc-text {
+      font-family: 'alegreya';
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: $white;
+      margin: 0;
+      padding: 8.5% 22% 0 6%;
+    }
+
+    &-desc-close {
+      display: block;
+      position: absolute;
+      width: 2.5px;
+      height: 25px;
+      border-radius: 2.5px;
+      top: 21px;
+      right: 37px;
+      background: rgba($color: $white, $alpha: 0.7);
+      transform: rotate(45deg);
+    }
+
+    &-desc-close:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 2.55px;
+      height: 25.5px;
+      border-radius: 2.5px;
+      top: 0px;
+      right: 0px;
+      background: rgba($color: $white, $alpha: 0.7);
+      transform: rotate(-90deg);
+    }
+
+    &--active {
+      .menu__item-desc {
+        overflow: visible;
+        width: rem(530px);
+      }
+    }
+  }
+}
+
+@each $bg in (milk, honeyfruits, wildberries) {
+  .title-#{$bg} {
+    background-image: url(../img/#{$bg}_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

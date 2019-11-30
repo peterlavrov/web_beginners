@@ -486,7 +486,8 @@ th {
   padding: 0; }
 
 html {
-  height: 100%; }
+  height: 100%;
+  font-size: 16px; }
 
 body {
   height: 100%;
@@ -1081,7 +1082,8 @@ a {
     width: 104px;
     height: 114px;
     bottom: -43px;
-    left: 35px; }
+    left: 35px;
+    z-index: 5; }
   .team__content:after {
     content: "";
     position: absolute;
@@ -1187,3 +1189,118 @@ a {
     border-bottom-color: #0f5a47;
     border-bottom-width: 6px;
     border-top-width: 0px; }
+
+.menu__container {
+  position: relative;
+  height: 100vh;
+  min-height: 650px;
+  background-image: url(../img/menu_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.menu__title {
+  display: inline-block;
+  position: absolute;
+  font-family: 'alegreya';
+  font-size: 48px;
+  color: #0d0d0d;
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  text-align: left;
+  top: 14.25%;
+  left: 7.2%; }
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%; }
+
+.menu__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .menu__item-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 6.25rem; }
+  .menu__item-title-text {
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    font-family: 'alegreya';
+    font-size: 48px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 42px; }
+  .menu__item-desc {
+    position: relative;
+    width: 0;
+    overflow: hidden;
+    background: rgba(47, 50, 52, 0.93); }
+  .menu__item-desc-text {
+    font-family: 'alegreya';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    margin: 0;
+    padding: 8.5% 22% 0 6%; }
+  .menu__item-desc-close {
+    display: block;
+    position: absolute;
+    width: 2.5px;
+    height: 25px;
+    border-radius: 2.5px;
+    top: 21px;
+    right: 37px;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .menu__item-desc-close:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 2.55px;
+    height: 25.5px;
+    border-radius: 2.5px;
+    top: 0px;
+    right: 0px;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  .menu__item--active .menu__item-desc {
+    overflow: visible;
+    width: 33.125rem; }
+
+.title-milk {
+  background-image: url(../img/milk_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.title-honeyfruits {
+  background-image: url(../img/honeyfruits_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.title-wildberries {
+  background-image: url(../img/wildberries_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat; }
