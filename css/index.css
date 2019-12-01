@@ -566,22 +566,44 @@ a {
   color: #fff;
   line-height: 1.67;
   font-style: normal; }
+  .navigation__link:hover {
+    text-decoration: underline; }
+  .navigation__link:focus {
+    text-decoration: underline; }
 
-.contact-phone:before {
-  content: "";
-  display: inline-block;
-  width: 12px;
-  height: 11px;
-  background: url(../img/phone.png);
-  margin-right: 4px; }
+.contact-phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .contact-phone:hover .contact-icon {
+    fill: #0f5a47;
+    -webkit-transition: fill .4s;
+    -o-transition: fill .4s;
+    transition: fill .4s; }
+  .contact-phone:focus .contact-icon {
+    fill: #0f5a47;
+    -webkit-transition: fill .4s;
+    -o-transition: fill .4s;
+    transition: fill .4s; }
 
-.contact-phone .contact-number {
+.contact-number {
   font-family: 'alegreya';
   font-size: 24px;
   color: #fff;
   line-height: 1.25;
   font-style: normal;
   margin-right: 80px; }
+
+.contact-icon {
+  width: 12px;
+  height: 12px;
+  fill: #fff;
+  -webkit-transition: fill .4s;
+  -o-transition: fill .4s;
+  transition: fill .4s; }
 
 .welcome {
   background-color: #61c4d9; }
@@ -697,7 +719,20 @@ a {
     color: #0f5a47;
     font-style: normal;
     font-weight: 600;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    -webkit-transition: background-color .4s;
+    -o-transition: background-color .4s;
+    transition: background-color .4s; }
+    .booking__link:hover {
+      background-color: #dde3bd;
+      -webkit-transition: background-color .4s;
+      -o-transition: background-color .4s;
+      transition: background-color .4s; }
+    .booking__link:focus {
+      background-color: #dde3bd;
+      -webkit-transition: background-color .4s;
+      -o-transition: background-color .4s;
+      transition: background-color .4s; }
 
 .advantages {
   display: -webkit-box;
@@ -742,6 +777,11 @@ a {
         margin-right: 0; }
       .advantages__list-item-img {
         margin-right: 9px; }
+      .advantages__list-item-svg {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 0.5;
+        stroke-miterlimit: 10; }
       .advantages__list-item-text {
         line-height: 1.15; }
 
@@ -894,7 +934,11 @@ a {
       margin-bottom: 30px; }
     .about__qualities-item-pic {
       width: 75px;
-      height: 75px; }
+      height: 75px;
+      fill: none;
+      stroke: #000;
+      stroke-width: 0.75;
+      stroke-miterlimit: 10; }
 
 .comments__container {
   display: -webkit-box;

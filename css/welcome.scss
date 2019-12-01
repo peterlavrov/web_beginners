@@ -69,7 +69,6 @@
   width: 82%;
   height: 72.5%;
   padding-top: 0px;
-  // padding-left: 47px;
 
   &__title {
     font-family: 'alegreya';
@@ -99,6 +98,15 @@
     font-style: normal;
     font-weight: 600;
     text-transform: uppercase;
+    transition: background-color .4s;
+    &:hover {
+      background-color: $yellow;
+      transition: background-color .4s;
+    }
+    &:focus {
+      background-color: $yellow;
+      transition: background-color .4s;
+    }
   }
 
 }
@@ -106,8 +114,6 @@
 .advantages {
   display: flex;
   justify-content: center;
-  // padding-left: 17px;
-
   &:before {
     content: "";
     position: absolute;
@@ -148,6 +154,13 @@
 
       &-img {
         margin-right: 9px;
+      }
+
+      &-svg {
+        fill:none;
+        stroke: $white;
+        stroke-width:0.5;
+        stroke-miterlimit:10;
       }
 
       &-text {

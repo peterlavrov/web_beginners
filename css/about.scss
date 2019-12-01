@@ -113,6 +113,10 @@
       &-pic {
         width: 75px;
         height: 75px;
+        fill:none;
+        stroke:$darkblack;
+        stroke-width:0.75;
+        stroke-miterlimit:10;
       }
     }
   }
