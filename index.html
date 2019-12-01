@@ -333,71 +333,79 @@
     </section>
     <section class="order">
       <div class="container order__container">
-        <h2 class="order__title">ЗАКАЖИТЕ ДОСТАВКУ</h2>
+        <div class="order__wrapper">
+          <h2 class="order__title">ЗАКАЖИТЕ ДОСТАВКУ</h2>
           <form action="" method="GET" class="order__form">
             <div class="order__form-req">
               <div class="order__form-row">
-                <label for="" class="order__form-item">
+                <label for="name" class="order__form-item">
                   <div class="order__form-title">Имя</div>
-                  <input type="text" class="order__form-input">
+                  <input type="text" class="order__form-input" id="name" name="name">
                 </label>
-                <label for="" class="order__form-item">
+                <label for="phone" class="order__form-item">
                   <div class="order__form-title">Телефон</div>
-                  <input type="text" class="order__form-input">
+                  <input type="text" class="order__form-input" id="phone" name="phone" placeholder="89022348912">
                 </label>
               </div>
               <div class="order__form-row">
-                <label for="" class="order__form-item">
+                <label for="street" class="order__form-item">
                   <div class="order__form-title">Улица</div>
-                  <input type="text" class="order__form-input">
+                  <input type="text" class="order__form-input" id="street" name="street">
                 </label>
               </div>
               <div class="order__form-row">
-                <label for="" class="order__form-item">
+                <label for="house" class="order__form-item">
                   <div class="order__form-title">Дом</div>
-                  <input type="text" class="order__form-input">
+                  <input type="text" class="order__form-input" id="house" name="house">
                 </label>
-                <label for="" class="order__form-item">
+                <label for="building" class="order__form-item">
                   <div class="order__form-title">Корпус</div>
-                  <input type="text" class="order__form-input">
+                  <input type="text" class="order__form-input" id="building" name="builing">
                 </label>
-                <label for="" class="order__form-item">
+                <label for="apart" class="order__form-item">
                   <div class="order__form-title">Квартира</div>
-                  <input type="text" class="order__form-input">
+                  <input type="text" class="order__form-input" id="apart" name="apart">
                 </label>
-                <label for="" class="order__form-item">
+                <label for="floor" class="order__form-item">
                   <div class="order__form-title">Этаж</div>
-                  <input type="text" class="order__form-input">
+                  <input type="text" class="order__form-input" id="floor" name="floor">
                 </label>
               </div>
             </div>
             <div class="order__form-feedback">
               <div class="order__form-row">
-                <label for="" class="order__form-item">
+                <label for="comment" class="order__form-item">
                   <div class="order__form-title">Коментарий</div>
-                  <input type="text" class="order__form-input">
+                  <textarea type="text" class="order__form-input" id="comment" name="comment"></textarea>
                 </label>
               </div>
               <div class="order__form-row">
-                <label for="" class="order__form-flag">
-                  <input type="radio" class="order__form-input">
+                <label for="cash" class="order__form-flag">
+                  <input type="radio" class="order__form-radio" id="cash" name="payment" value="cash">
                   <div class="order__form-title">Потребуется сдача</div>
                 </label>
-                <label for="" class="order__form-flag">
-                  <input type="radio" class="order__form-input">
+                <label for="card" class="order__form-flag">
+                  <input type="radio" class="order__form-radio" id="card" name="payment" value="card">
                   <div class="order__form-title">Оплата по карте</div>
                 </label>
+                <label for="callback" class="order__form-flag">
+                  <input type="checkbox" class="order__form-checkbox" id="callback" name="callback">
+                  <div class="order__form-title">Не перезванивать</div>
+                </label>
               </div>
+              <!-- <div class="order__form-row">
+              </div> -->
               <div class="order__form-row">
                 <label for="" class="order__form-flag">
-                  <input type="checkbox" class="order__form-input">
-                  <div class="order__form-title">Не перезванивать</div>
+                  <button type="submit" class="order__form-submit btn" id="submit">ЗАКАЗАТЬ</button>
+                  <button type="reset" class="order__form-reset" id="reset">Очистить</button>
                 </label>
               </div>
             </div>
           </form>
-        
+        </div>
       </div>
+
     </section>
     <section class="contacts">
       <div class="container contacts__container">
@@ -435,6 +443,7 @@
         </footer>
       </div>
     </section>
+  </div>
   </div>
 </body>
 

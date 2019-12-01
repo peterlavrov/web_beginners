@@ -1,38 +1,228 @@
 .order {
+  background-color: $lightgreen;
+
   &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     min-height: 650px;
     width: 100%;
-    background: gray;
+    background-image: url(../img/order_bg.png);
+    background-repeat: repeat-y;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 85.5%;
+  }
+  
+  &__title {
+    @include title;
+    color: $green;
+    margin-bottom: 44px;
   }
 
   &__form {
     display: flex;
+    justify-content: space-between;
 
     &-req {
-      width: 50%;
+      width: 49%;
     }
 
     &-feedback {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 50%;
+      width: 49%;
+
+      .order__form-row {
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+
+        &:nth-last-child(2){
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    &-title {
+      font-family: 'alegreya';
+      font-size: 18px;
+      font-weight: 300;
+      color: $green;
+      margin-bottom: 10px;
     }
 
     &-row {
       display: flex;
-      flex-shrink: 1;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     &-item {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
-      width: 25%;
+      width: calc(100% / 4 - 20px * 4);
+      margin-left: 20px;
+
+      textarea {
+        min-height: calc(180px - 2 * 18.5px);
+        resize: none;
+      }
+
+      &:first-child {
+        margin-left: 0px;
+      }
     }
+
     &-flag {
       display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 41.5%;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+
+      .order__form-title {
+        margin-bottom: 0;
+      }
+    }
+
+    &-input {
+      padding: 18.5px 11px;
+      font-family: 'alegreya';
+      font-size: 18px;
+      font-weight: 300;
+      color: $darkblack;
+      outline: transparent solid 3px;
+      
+      &:focus {
+        outline: $yellow solid 3px;
+      }
+
+      &:focus::placeholder {
+        color: $darkblack;
+      }
+    }
+
+    &-submit {
+      color: $white;
+      background-color: $green;
+      border-width: 0px;
+      margin-right: 30px;
+
+      &:focus {
+        outline: 1px solid $green;
+      }
+      &:active {
+        outline: 1px solid $green;
+      }
+    }
+
+    &-reset {
+      font-family: 'alegreya';
+      font-size: 18px;
+      font-weight: 300;
+      color: $green;
+      background-color: transparent;
+      border-width: 0px;
+
+      &:focus {
+        outline: 1px solid $green;
+      }
+      &:active {
+        outline: 1px solid $green;
+      }
+    }
+
+    &-radio {
+      display: block;
+      position: relative;
+      width: 26px;
+      height: 26px;
+      margin-right: 8px;
+
+      &:focus:before {
+        outline: 1px solid $green;
+      }
+      &:active:before {
+        outline: 1px solid $green;
+      }
+      
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 26px;
+        height: 26px;
+        background-color: $white;
+        border-radius: 50%;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        width: 14px;
+        height: 14px;
+        background-color: $green;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      
+      &:checked:after {
+        display: block;
+      }
+    }
+
+    &-checkbox {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      margin-right: 8px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 26px;
+        height: 26px;
+        background-color: $white;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        width: 11px;
+        height: 9px;
+        background: url(../img/cb_v.png) no-repeat;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+
+      &:focus:before {
+        outline: 1px solid $green;
+      }
+      &:active:before {
+        outline: 1px solid $green;
+      }
+      
+      &:checked:after {
+        display: block;
+      }
     }
   }
 
