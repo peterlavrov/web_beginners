@@ -933,8 +933,6 @@ a {
       border-radius: 50%;
       margin-bottom: 30px; }
     .about__qualities-item-pic {
-      width: 75px;
-      height: 75px;
       fill: none;
       stroke: #000;
       stroke-width: 0.75;
