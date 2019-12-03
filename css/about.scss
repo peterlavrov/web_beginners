@@ -2,7 +2,7 @@
   &__container {
     display: flex;
     position: relative;
-    min-height: 650px;
+    min-height: rem(650px);
     height: 100vh;
     justify-content: center;
     align-items: center;
@@ -12,10 +12,10 @@
       content: "";
       position: absolute;
       background: url(../img/malina.png) no-repeat;
-      width: 161px;
-      height: 315px;
-      left: 0px;
-      bottom: -108px;
+      width: rem(161px);
+      height: rem(315px);
+      left: 0;
+      bottom: rem(-108px);
     }
   }
 
@@ -30,16 +30,16 @@
     flex-direction: column;
     align-items: center;
     width: 42%;
-    margin-bottom: 55px;
+    margin-bottom: rem(55px);
 
     &-title {
       @include title;
-      margin-bottom: 12px;
+      margin-bottom: rem(12px);
     }
 
     &-text {
       font-family: 'alegreya';
-      font-size: 18px;
+      font-size: rem(18px);
       color: $gray;
       font-style: normal;
       font-weight: 400;
@@ -66,10 +66,10 @@
         content: "";
         position: absolute;
         background: url(../img/points.png) no-repeat;
-        width: 67px;
-        height: 21px;
-        left: 285px;
-        top: 50px;
+        width: rem(67px);
+        height: rem(21px);
+        left: rem(285px);
+        top: rem(50px);
       }
 
       &:last-child:after {
@@ -81,16 +81,16 @@
 
         h3 {
           font-family: 'alegreya';
-          font-size: 27px;
+          font-size: rem(27px);
           color: $darkblack;
           font-style: normal;
           font-weight: 400;
-          margin-bottom: 21px;
+          margin-bottom: rem(21px);
         }
 
         p {
           font-family: 'alegreya';
-          font-size: 18px;
+          font-size: rem(18px);
           color: $gray;
           font-style: normal;
           font-weight: 300;
@@ -101,8 +101,8 @@
 
       &-img {
         display: flex;
-        width: 125px;
-        height: 125px;
+        width: rem(125px);
+        height: rem(125px);
         justify-content: center;
         align-items: center;
         background: $cream;
@@ -111,12 +111,12 @@
       }
 
       &-pic {
-        // width: 75px;
-        // height: 75px;
-        fill:none;
-        stroke:$darkblack;
-        stroke-width:0.75;
-        stroke-miterlimit:10;
+        width: rem(75px);
+        height: rem(75px);
+          fill:none;
+          stroke:$darkblack;
+          stroke-width:0.75;
+          stroke-miterlimit:10;
       }
     }
   }

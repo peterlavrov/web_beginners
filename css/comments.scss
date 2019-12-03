@@ -4,7 +4,7 @@
     position: relative;
     flex-direction: column;
     justify-content: space-evenly;
-    min-height: 650px;
+    min-height: rem(650px);
     height: 100vh;
     align-items: center;
   }
@@ -14,28 +14,28 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 63px;
-    padding-bottom: 60px;
+    padding-top: rem(63px);
+    padding-bottom: rem(60px);
     height: 100%;
 
     &:before {
       position: absolute;
       content: "";
       background: url(../img/comments_berries.png);
-      width: 139px;
-      height: 321px;
-      left: 0px;
-      bottom: -159px;
+      width: rem(139px);
+      height: rem(321px);
+      left: 0;
+      bottom: rem(-159px);
     }
 
     &:after {
       content: "";
       position: absolute;
       background: url(../img/berry3.png);
-      width: 150px;
-      height: 86px;
-      top: 36px;
-      right: 15px;
+      width: rem(150px);
+      height: rem(86px);
+      top: rem(36px);
+      right: rem(15px);
     }
   }
 
@@ -54,7 +54,7 @@
     align-self: center;
     width: 81%;
     background: url(../img/comment_pattern.png);
-    padding: 51.1px 0 34.6px 45.7px;
+    padding: rem(51.1px) 0 rem(34.6px) rem(45.7px);
 
     &--active {
       display: flex;
@@ -66,34 +66,34 @@
     }
 
     &-img {
-      margin-right: 20px;
+      margin-right: rem(20px);
     }
 
     &-subject {
       font-family: 'alegreya';
-      font-size: 30px;
+      font-size: rem(30px);
       color: $darkgray;
       font-style: normal;
       font-weight: 500;
-      margin-top: 15px;
-      margin-bottom: 26px;
+      margin-top: rem(15px);
+      margin-bottom: rem(26px);
     }
 
     &-msg {
       font-family: 'alegreya';
-      font-size: 18px;
+      font-size: rem(18px);
       color: $gray;
       font-style: normal;
       font-weight: 400;
       width: 72%;
       margin: 0;
       line-height: 1.2;
-      margin-bottom: 31px;
+      margin-bottom: rem(31px);
     }
 
     &-author {
       font-family: 'alegreya';
-      font-size: 18px;
+      font-size: rem(18px);
       color: $gray;
       font-style: normal;
       font-weight: 500;
@@ -108,7 +108,7 @@
       align-items: center;
 
       li {
-        margin-right: 10px;
+        margin-right: rem(10px);
 
         &:last-child {
           margin-right: 0;
@@ -122,22 +122,10 @@
 
     @each $pic in (alena, girl, boy) {
       &-#{$pic} {
-        width: 66.7px;
-        height: 66.7px;
+        width: rem(66.7px);
+        height: rem(66.7px);
         overflow: hidden;
         border-radius: 50%;
-        // background-image: url(../img/comments__authors-#{$pic}.png);
-        // background-repeat: no-repeat;
-
-        // @if $pic==alena {
-          
-        // }
-
-        // @if $pic==girl {
-        // }
-
-        // @if $pic==boy {
-        // }
       }
     }
   }

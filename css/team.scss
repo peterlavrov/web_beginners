@@ -4,7 +4,7 @@
     position: relative;
     align-items: center;
     height: 100vh;
-    min-height: 650px;
+    min-height: rem(650px);
   }
 
   &__content {
@@ -19,10 +19,10 @@
       content: "";
       position: absolute;
       background: url(../img/raspberry.png);
-      width: 104px;
-      height: 114px;
-      bottom: -43px;
-      left: 35px;
+      width: rem(104px);
+      height: rem(114px);
+      bottom: rem(-43px);
+      left: rem(35px);
       z-index: 5;
     }
 
@@ -30,10 +30,10 @@
       content: "";
       position: absolute;
       background: url(../img/blueberries.png);
-      width: 135px;
-      height: 112px;
-      top: -40px;
-      right: 13px;
+      width: rem(135px);
+      height: rem(112px);
+      top: rem(-40px);
+      right: rem(13px);
     }
   }
   
@@ -47,7 +47,7 @@
 
   &__title {
     @include title;
-    margin-bottom: 64px;
+    margin-bottom: rem(64px);
   }
 
   &__item {
@@ -58,9 +58,9 @@
     width: 25%;
 
     &-img {
-      max-width: 220px;
-      max-height: 288px;
-      margin-bottom: 20px;
+      max-width: rem(220px);
+      max-height: rem(288px);
+      margin-bottom: rem(20px);
     }
   }
 
@@ -73,23 +73,23 @@
       align-items: center;
       justify-content: center;
       font-family: 'alegreya';
-      font-size: 21px;
+      font-size: rem(21px);
       font-weight: 400;
       color: $darkgray;
-      margin-bottom: 13px;
+      margin-bottom: rem(13px);
 
       &:after {
         content: "";
         position: relative;
-        border: 6px solid transparent;
+        border: rem(6px) solid transparent;
         width: 0;
         height: 0;
         border-top-color: $green;
-        border-bottom-width: 0px;
-        border-left-width: 5px;
-        border-right-width: 5px;
-        right: -6px;
-        top: 2px;
+        border-bottom-width: 0;
+        border-left-width: rem(5px);
+        border-right-width: rem(5px);
+        right: rem(-6px);
+        top: rem(2px);
       }
     }
 
@@ -97,7 +97,7 @@
       position: absolute;
       height: 0;
       overflow: hidden;
-      top: 31px;
+      top: rem(31px);
     }
 
     &--active {
@@ -109,16 +109,16 @@
     &-position {
       // display: none;
       font-family: 'alegreya';
-      font-size: 18px;
+      font-size: rem(18px);
       font-weight: 400;
       color: $lightgray;
-      margin-bottom: 6px;
+      margin-bottom: rem(6px);
     }
 
     &-desc {
       // display: none;
       font-family: 'alegreya';
-      font-size: 18px;
+      font-size: rem(18px);
       font-weight: 300;
       color: $gray;
       margin: 0;
@@ -128,8 +128,8 @@
     &--active {
       .team__member-name:after {
         border-bottom-color: $green;
-        border-bottom-width: 6px;
-        border-top-width: 0px;
+        border-bottom-width: rem(6px);
+        border-top-width: 0;
       }
     }
   }

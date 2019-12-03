@@ -23,7 +23,7 @@ font-size: 16px;
 
 body {
   height: 100%;
-  margin: 0px;
+  margin: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,7 +35,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: rem(1100px);
 }
 
 ul {
@@ -63,16 +63,28 @@ a {
 
 .btn {
   display: inline-block;
-  padding: 24px 34px 22px 35px;
+  padding: rem(24px) rem(34px) rem(22px) rem(35px);
   background: $white;
-  border-radius: 32.6px;
+  border-radius: rem(32.6px);
 }
 
 @mixin title {
   font-family: 'alegreya';
-      font-size: 48px;
+      font-size: rem(48px);
       color: $black;
       font-style: normal;
       font-weight: 600;
       text-align: center;
+}
+
+@mixin tablets {
+  @media screen and (max-width: 768px){
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (max-width: 480px){
+    @content;
+  }
 }

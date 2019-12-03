@@ -2,7 +2,7 @@
   &__container {
     position: relative;
     height: 100vh;
-    min-height: 650px;
+    min-height: rem(650px);
     background-image: url(../img/menu_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -40,10 +40,10 @@
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       font-family: 'alegreya';
-      font-size: 48px;
+      font-size: rem(48px);
       font-weight: 300;
       color: $white;
-      margin-bottom: 42px;
+      margin-bottom: rem(42px);
     }
 
     &-desc {
@@ -55,7 +55,7 @@
 
     &-desc-text {
       font-family: 'alegreya';
-      font-size: 16px;
+      font-size: rem(16px);
       font-weight: 400;
       line-height: 1.5;
       color: $white;
@@ -66,11 +66,11 @@
     &-desc-close {
       display: block;
       position: absolute;
-      width: 2.5px;
-      height: 25px;
-      border-radius: 2.5px;
-      top: 21px;
-      right: 37px;
+      width: rem(2.5px);
+      height: rem(25px);
+      border-radius: rem(2.5px);
+      top: rem(21px);
+      right: rem(37px);
       background: rgba($color: $white, $alpha: 0.7);
       transform: rotate(45deg);
     }
@@ -79,11 +79,11 @@
       content: "";
       display: block;
       position: absolute;
-      width: 2.55px;
-      height: 25.5px;
-      border-radius: 2.5px;
-      top: 0px;
-      right: 0px;
+      width: rem(2.55px);
+      height: rem(25.5px);
+      border-radius: rem(2.5px);
+      top: 0;
+      right: 0;
       background: rgba($color: $white, $alpha: 0.7);
       transform: rotate(-90deg);
     }

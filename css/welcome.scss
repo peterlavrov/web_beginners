@@ -11,7 +11,7 @@
     background-position: center right;
     background-repeat: no-repeat;
     height: 100vh;
-    min-height: 650px;
+    min-height: rem(650px);
     justify-content: space-between;
   }
 
@@ -20,44 +20,48 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding-top: 23px;
-    padding-bottom: 49px;
+    padding-top: rem(23px);
+    padding-bottom: rem(49px);
   }
 
   &__info {
     display: flex;
     position: relative;
     justify-content: center;
+    align-items: center;
     height: 77%;
+
+    @include tablets {
+      flex-direction: column-reverse;
+    }
 
     &:before {
       content: "";
       position: absolute;
       background: url(../img/leaf3.png) no-repeat;
-      width: 59px;
-      height: 112px;
-      left: 31px;
-      bottom: -101px;
+      width: rem(59px);
+      height: rem(112px);
+      left: rem(31px);
+      bottom: rem(-101px);
     }
 
     &:after {
       content: "";
       position: absolute;
       background: url(../img/leaf2.png) no-repeat;
-      width: 141px;
-      height: 105px;
-      right: 288px;
-      bottom: -79px;
+      width: rem(141px);
+      height: rem(105px);
+      right: rem(288px);
+      bottom: rem(-79px);
     }
 
-    &-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      align-items: center;
-      padding-left: 28px;
-    }
+    // &-wrapper {
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: space-between;
+    //   align-items: center;
+    //   padding-left: rem(28px);
+    // }
   }
 }
 
@@ -65,35 +69,38 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  width: 82%;
-  height: 72.5%;
-  padding-top: 0px;
+  justify-content: center;
+  // width: 82%;
+  // height: 72.5%;
+  height: 100%;
+  padding-left: rem(78px);
+  padding-top: rem(11px);
 
   &__title {
     font-family: 'alegreya';
-    font-size: 60px;
+    font-size: rem(60px);
     color: $white;
     line-height: 1;
     font-style: normal;
     font-weight: bold;
+    margin-bottom: rem(11px);
   }
 
   &__desc {
     font-family: 'alegreya';
-    font-size: 21px;
+    font-size: rem(21px);
     color: $white;
     font-style: normal;
     font-weight: 400;
     width: 70%;
     margin: 0;
     line-height: 1.15;
-    padding-bottom: 2px;
+    padding-bottom: rem(17px);
   }
 
   &__link {
     font-family: 'alegreya';
-    font-size: 19px;
+    font-size: rem(19px);
     color: $green;
     font-style: normal;
     font-weight: 600;
@@ -113,47 +120,49 @@
 
 .advantages {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   &:before {
     content: "";
     position: absolute;
     background: url(../img/berry2.png) no-repeat;
-    width: 111px;
-    height: 108px;
-    right: 87px;
-    bottom: -95px;
+    width: rem(111px);
+    height: rem(108px);
+    right: rem(87px);
+    bottom: rem(-95px);
   }
 
   &:after {
     content: "";
     position: absolute;
     background: url(../img/berry1.png) no-repeat;
-    width: 220px;
-    height: 208px;
-    right: 255px;
-    bottom: -12px;
+    width: rem(220px);
+    height: rem(208px);
+    right: rem(255px);
+    bottom: rem(-12px);
   }
 
   &__list {
     display: flex;
-    width: 78.22%;
+    // width: 78.22%;
+    justify-content: flex-start;
+    margin-left: rem(82px);
 
     &-item {
       display: flex;
       font-family: 'alegreya';
-      font-size: 16px;
+      font-size: rem(16px);
       color: $white;
       font-style: normal;
       font-weight: 400;
-      width: 26%;
-      margin-right: 58px;
+      width: 19%;
+      margin-right: rem(43px);
 
       &:last-child {
         margin-right: 0;
       }
 
       &-img {
-        margin-right: 9px;
+        margin-right: rem(9px);
       }
 
       &-svg {
@@ -171,23 +180,25 @@
 }
 
 .welcome__bars-img {
+  // display: flex;
+  // width: 45.72%;
   position: relative;
-  width: 45.72%;
+  flex-grow: 1;
 
   &:before {
     content: "";
     position: absolute;
     background: url(../img/leaf1.png) no-repeat;
-    width: 236px;
-    height: 203px;
-    right: 15px;
-    bottom: 42px;
+    width: rem(236px);
+    height: rem(203px);
+    right: rem(15px);
+    bottom: rem(42px);
     z-index: 1;
   }
 }
 
 .bars-pic {
   position: relative;
-  top: -100px;
-  right: 27px;
+  top: rem(11px);
+  right: rem(27px);
 }

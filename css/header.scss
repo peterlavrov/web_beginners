@@ -8,23 +8,26 @@
 }
 
 .chocco__logo {
-  max-width: 55px;
+  max-width: rem(55px);
   font-family: 'museosans';
-  font-size: 24px;
+  font-size: rem(24px);
   color: $white;
-  line-height: 21px;
+  line-height: rem(21px);
   font-style: normal;
   font-weight: 500;
-  margin-left: 80px;
+  margin-left: rem(80px);
 }
 
 .navigation {
   &__list {
     display: flex;
+    @include tablets {
+      display: none;
+    }
   }
 
   &__item {
-    margin-right: 27px;
+    margin-right: rem(27px);
 
     &:last-child {
       margin-right: 0;
@@ -33,7 +36,7 @@
 
   &__link {
     font-family: 'alegreya';
-    font-size: 18px;
+    font-size: rem(18px);
     color: $white;
     line-height: 1.67;
     font-style: normal;
@@ -66,29 +69,20 @@
     }
   }
 
-  // &:before {
-  //   content: "";
-  //   display: inline-block;
-  //   width: 12px;
-  //   height: 11px;
-  //   background: url(../img/phone.png);
-  //   margin-right: 4px;
-  // }
-
 }
 
 .contact-number {
   font-family: 'alegreya';
-  font-size: 24px;
+  font-size: rem(24px);
   color: $white;
   line-height: 1.25;
   font-style: normal;
-  margin-right: 80px;
+  margin-right: rem(80px);
 }
 
 .contact-icon {
-  width: 12px;
-  height: 12px;
+  width: rem(12px);
+  height: rem(12px);
   fill: $white;
   transition: fill .4s;
 }
