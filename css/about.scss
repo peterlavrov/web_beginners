@@ -7,9 +7,15 @@
     justify-content: center;
     align-items: center;
     background: url(../img/leaf_pattern.png) left center no-repeat;
+
     @include tablets {
-      min-height: rem(1000px);
+      min-height: 0;
     }
+
+    @include phones {
+      background: none;
+    }
+
     &:before {
       content: "";
       position: absolute;
@@ -18,13 +24,25 @@
       height: rem(315px);
       left: 0;
       bottom: rem(-108px);
+      
+      @include tablets {
+        height: 50vh;
+        background-size: contain;
+        bottom: rem(-68px);
+      }
+
+      @include phones {
+        background: none;
+      }
     }
+
   }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     @include tablets {
       height: 100%;
       justify-content: space-evenly;
@@ -37,14 +55,29 @@
     align-items: center;
     width: 42%;
     margin-bottom: rem(55px);
+
     @include tablets {
       width: 60%;
       margin-bottom: 0;
     }
 
+    @include phones {
+      width: 90%;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
     &-title {
       @include title;
       margin-bottom: rem(12px);
+
+      @include tablets {
+        font-size: 7vmin;
+      }
+
+      @include phones {
+        font-size: 7vmin;
+      }
     }
 
     &-text {
@@ -56,6 +89,14 @@
       text-align: center;
       margin: 0;
       line-height: 1.15;
+
+      @include tablets {
+        font-size: 4vmin;
+      }
+
+      @include phones {
+        font-size: 4vmin;
+      }
     }
 
   }
@@ -63,12 +104,15 @@
   &__qualities {
     display: flex;
     justify-content: space-evenly;
+
     @include tablets {
       flex-direction: column;
-      width: 56%;
-      @include tablets {
-        width: 65%;
-      }
+      width: 80%;
+    }
+
+    @include phones {
+      width: 90%;
+      flex-grow: 4;
     }
 
     &-item {
@@ -78,6 +122,10 @@
       flex-direction: column;
       align-items: center;
 
+      @include phones {
+        flex-direction: row;
+      }
+
       &:after {
         content: "";
         position: absolute;
@@ -86,6 +134,7 @@
         height: rem(21px);
         left: rem(285px);
         top: rem(50px);
+
         @include tablets {
           display: none;
         }
@@ -105,6 +154,15 @@
           font-style: normal;
           font-weight: 400;
           margin-bottom: rem(21px);
+
+          @include tablets {
+            font-size: 4vmin;
+            margin-bottom: rem(7px);
+          }
+
+          @include phones {
+            font-size: 4vmin;
+          }
         }
 
         p {
@@ -115,6 +173,15 @@
           font-weight: 300;
           line-height: 1.25;
           margin: 0;
+
+          @include tablets {
+            font-size: 3vmin;
+          }
+
+          @include phones {
+            font-size: 3vmin;
+            text-align: left;
+          }
         }
       }
 
@@ -126,16 +193,42 @@
         align-items: center;
         background: $cream;
         border-radius: 50%;
-        margin-bottom: 30px;
+        margin-bottom: rem(30px);
+
+        @include tablets {
+          max-width: 13vh;
+          max-height: 13vh;
+          margin-bottom: rem(10px);
+        }
+
+        @include phones {
+          margin-bottom: 0;
+          margin-right: rem(15px);
+          min-width: rem(75px);
+          min-height: rem(75px);
+          max-width: rem(75px);
+          max-height: rem(75px);
+        }
       }
+
 
       &-pic {
         width: rem(75px);
         height: rem(75px);
-          fill:none;
-          stroke:$darkblack;
-          stroke-width:0.75;
-          stroke-miterlimit:10;
+        fill: none;
+        stroke: $darkblack;
+        stroke-width: 0.75;
+        stroke-miterlimit: 10;
+
+        @include tablets {
+          width: 50%;
+          height: 50%;
+        }
+
+        @include phones {
+          width: 50%;
+          height: 50%;
+        }
       }
     }
   }
