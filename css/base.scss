@@ -11,6 +11,7 @@ $graybg: #2f3234;
 $graytxt: #010101;
 $lightgreen: #cfdeda;
 $yellow: #dde3bd;
+$graysoc: #b3b3b3;
 
 @function rem($px) {
   @return $px / 16px + 0rem;

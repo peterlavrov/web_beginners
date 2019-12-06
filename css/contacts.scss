@@ -1,7 +1,7 @@
 .contacts {
   &__container {
     position: relative;
-    min-height: 650px;
+    min-height: rem(650px);
     height: 100vh;
     background-image: url(../img/map.png);
     background-repeat: no-repeat;
@@ -32,7 +32,7 @@
     font-family: 'alegreya';
     font-style: normal;
     color: $graytxt;
-    font-size: 21px;
+    font-size: rem(21px);
     font-weight: 400;
     line-height: 1.14;
   }
@@ -41,7 +41,7 @@
     font-family: 'alegreya';
     font-style: normal;
     color: $green;
-    font-size: 21px;
+    font-size: rem(21px);
     font-weight: 400;
   }
 
@@ -53,7 +53,7 @@
     justify-content: flex-end;
 
     &-img {
-      fill: #b3b3b3;
+      fill: $graysoc;
     }
 
     &-item {
@@ -72,8 +72,8 @@
 
     &-link {
       display: block;
-      width: 23px;
-      height: 20px;
+      width: rem(23px);
+      height: rem(20px);
     }
   }
 }

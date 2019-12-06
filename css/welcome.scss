@@ -6,6 +6,7 @@
 
   &__container {
     display: flex;
+    position: relative;
     flex-direction: column;
     background-image: url(../img/pattern.png);
     background-position: center right;
@@ -13,6 +14,42 @@
     height: 100vh;
     min-height: rem(650px);
     justify-content: space-between;
+
+    @include tablets {
+      background-size: contain;
+    }
+
+     &:before {
+    content: "";
+    position: absolute;
+    background: url(../img/leaf3.png);
+    width: rem(59px);
+    height: rem(112px);
+    left: rem(32px);
+    bottom: rem(-50px);
+
+    @include tablets {
+      display: none;
+    }
+  }
+     &:after {
+    content: "";
+    position: absolute;
+    background: url(../img/leafnberries.png);
+    width: rem(460px);
+    height: rem(341px);
+    right: rem(15px);
+    bottom: rem(-46px);
+    z-index: 0;
+
+    @include tablets {
+      display: none;
+    }
+  }
+
+    @include tablets {
+      min-height: 0;
+    }
   }
 
   &__content {
@@ -22,6 +59,10 @@
     height: 100%;
     padding-top: rem(23px);
     padding-bottom: rem(49px);
+
+    @include tablets {
+      
+    }
   }
 
   &__info {
@@ -29,39 +70,33 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 77%;
+    width: 98%;
 
     @include tablets {
       flex-direction: column-reverse;
+      height: 75%;
     }
 
-    &:before {
-      content: "";
-      position: absolute;
-      background: url(../img/leaf3.png) no-repeat;
-      width: rem(59px);
-      height: rem(112px);
-      left: rem(31px);
-      bottom: rem(-101px);
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      background: url(../img/leaf2.png) no-repeat;
-      width: rem(141px);
-      height: rem(105px);
-      right: rem(288px);
-      bottom: rem(-79px);
-    }
-
-    // &-wrapper {
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: space-between;
-    //   align-items: center;
-    //   padding-left: rem(28px);
+    // &:before {
+    //   content: "";
+    //   position: absolute;
+    //   background: url(../img/leaf3.png) no-repeat;
+    //   width: rem(59px);
+    //   height: rem(112px);
+    //   left: rem(31px);
+    //   bottom: rem(-101px);
     // }
+
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   background: url(../img/leaf2.png) no-repeat;
+    //   width: rem(141px);
+    //   height: rem(105px);
+    //   right: rem(288px);
+    //   bottom: rem(-79px);
+    // }
+
   }
 }
 
@@ -70,11 +105,20 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  // width: 82%;
-  // height: 72.5%;
-  height: 100%;
   padding-left: rem(78px);
-  padding-top: rem(11px);
+  padding-bottom: rem(25px);
+  width: 46%;
+  // padding-top: rem(11px);
+  // flex-shrink: 1;
+  
+  
+  @include tablets {
+    width: 90%;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    font-size: 1.9vh;
+  }
 
   &__title {
     font-family: 'alegreya';
@@ -84,18 +128,27 @@
     font-style: normal;
     font-weight: bold;
     margin-bottom: rem(11px);
+    
+    @include tablets {
+      font-size: 9vmin;
+    }
   }
 
   &__desc {
     font-family: 'alegreya';
-    font-size: rem(21px);
+    // font-size: rem(21px);
     color: $white;
     font-style: normal;
     font-weight: 400;
     width: 70%;
     margin: 0;
     line-height: 1.15;
-    padding-bottom: rem(17px);
+    margin-bottom: rem(17px);
+    
+    @include tablets {
+      font-size: 5vmin;
+      width: 100%;
+    }
   }
 
   &__link {
@@ -114,6 +167,12 @@
       background-color: $yellow;
       transition: background-color .4s;
     }
+
+    @include tablets {
+      padding: 2.4vh 3.4vh 2.2vh 3.5vh;
+      border-radius: 3.26vh;
+      font-size: 1.9vh;
+    }
   }
 
 }
@@ -121,32 +180,49 @@
 .advantages {
   display: flex;
   justify-content: flex-start;
-  &:before {
-    content: "";
-    position: absolute;
-    background: url(../img/berry2.png) no-repeat;
-    width: rem(111px);
-    height: rem(108px);
-    right: rem(87px);
-    bottom: rem(-95px);
+  position: relative;
+  top: rem(-42px);
+  z-index: 5;
+  
+  @include tablets {
+    justify-content: space-evenly;
+    top: rem(42px);
   }
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   background: url(../img/berry2.png) no-repeat;
+  //   width: rem(111px);
+  //   height: rem(108px);
+  //   right: rem(87px);
+  //   bottom: rem(-95px);
+  // }
 
-  &:after {
-    content: "";
-    position: absolute;
-    background: url(../img/berry1.png) no-repeat;
-    width: rem(220px);
-    height: rem(208px);
-    right: rem(255px);
-    bottom: rem(-12px);
-  }
+  // &:after {
+  //   content: "";
+  //   position: absolute;
+  //   background: url(../img/berry1.png) no-repeat;
+  //   width: rem(220px);
+  //   height: rem(208px);
+  //   right: rem(255px);
+  //   bottom: rem(-12px);
+  // }
 
   &__list {
     display: flex;
-    // width: 78.22%;
     justify-content: flex-start;
     margin-left: rem(82px);
-
+    
+    @include tablets {
+      width: 85%;
+      justify-content: space-evenly;
+      margin-left: 0;
+    }
+    
+    @include phones {
+      width: 100%;
+    }
+    
     &-item {
       display: flex;
       font-family: 'alegreya';
@@ -156,6 +232,16 @@
       font-weight: 400;
       width: 19%;
       margin-right: rem(43px);
+      
+      @include tablets {
+        margin-right: 0;
+        width: 21%;
+      }
+
+      @include phones {
+        width: 26%;
+        justify-content: space-around;
+      }
 
       &:last-child {
         margin-right: 0;
@@ -170,35 +256,73 @@
         stroke: $white;
         stroke-width:0.5;
         stroke-miterlimit:10;
+        @include tablets {
+          width: 6.51vmin;
+          height: 5.47vmin;
+        }
       }
 
       &-text {
         line-height: 1.15;
+
+        @include tablets {
+          font-size: 2.1vmin;
+        }
       }
     }
   }
 }
 
 .welcome__bars-img {
-  // display: flex;
-  // width: 45.72%;
+  display: flex;
   position: relative;
+  // flex-basis: 52%;
+  // width: 48%;
   flex-grow: 1;
+  flex-shrink: 1;
+  justify-content: center;
+
+  @include tablets {
+    height: 100%;
+  }
 
   &:before {
+    display: none;
     content: "";
     position: absolute;
-    background: url(../img/leaf1.png) no-repeat;
-    width: rem(236px);
-    height: rem(203px);
-    right: rem(15px);
-    bottom: rem(42px);
-    z-index: 1;
+    background-image: url(../img/leafnberriestab.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    // width: 100%;
+    // height: 100%;
+    top: rem(81px);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+
+    @include tablets {
+      display: block;
+    }
   }
+  // width: 100%;
+  // height: auto;
+  // display: flex;
+  // width: 45.72%;
+  // flex-grow: 1;
 }
 
 .bars-pic {
   position: relative;
-  top: rem(11px);
-  right: rem(27px);
+  top: rem(-10px);
+  right: rem(3px);
+  width: 100%;
+  height: auto;
+
+  @include tablets {
+    top: 0;
+    right: 0;
+    height: 40vh;
+    width: auto;
+  }
 }
