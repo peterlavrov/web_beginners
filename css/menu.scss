@@ -1,11 +1,11 @@
 .menu {
+  background-image: url(../img/menu_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   &__container {
     position: relative;
     height: 100vh;
     min-height: rem(650px);
-    background-image: url(../img/menu_bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
   }
 
   &__title {
@@ -15,7 +15,11 @@
     color: $white;
     text-align: left;
     top: 14.25%;
-    left: 7.2%;
+    left: 4%;
+
+    @include phones {
+      font-size: 7vw;
+    }
   }
 
   &__list {
@@ -24,16 +28,36 @@
     right: 0;
     top: 0;
     height: 100%;
+
+    @include phones {
+      width: 100%;
+      justify-content: flex-end;
+    }
   }
 
   &__item {
     display: flex;
+
+    &--active {
+      @include phones {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    }
 
     &-title {
       display: flex;
       align-items: flex-end;
       justify-content: center;
       width: rem(100px);
+
+      @include phones {
+        width: 16vw;
+      }
     }
 
     &-title-text {
@@ -44,6 +68,11 @@
       font-weight: 300;
       color: $white;
       margin-bottom: rem(42px);
+
+      @include phones {
+        font-size: 7vw;
+        margin-bottom: rem(100px);
+      }
     }
 
     &-desc {
@@ -51,6 +80,10 @@
       width: 0;
       overflow: hidden;
       background: rgba($color: $graybg, $alpha: 0.93);
+
+      @include phones {
+        z-index: 5;
+      }
     }
 
     &-desc-text {
@@ -61,6 +94,11 @@
       color: $white;
       margin: 0;
       padding: 8.5% 22% 0 6%;
+
+      @include phones {
+        font-size: 4vw;
+        padding: 19.5% 8% 0 6%;
+      }
     }
 
     &-desc-close {
@@ -92,6 +130,14 @@
       .menu__item-desc {
         overflow: visible;
         width: rem(530px);
+
+        @include tablets {
+          width: 83%;
+        }
+
+        @include phones {
+          width: 84%;
+        }
       }
     }
   }
