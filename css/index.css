@@ -1052,7 +1052,32 @@ a {
   display: flex;
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  position: relative; }
+  .about__qualities:before {
+    display: block;
+    position: absolute;
+    content: "";
+    background: url(../img/points.png) no-repeat;
+    width: 4.1875rem;
+    height: 1.3125rem;
+    top: 3.4375rem;
+    left: 31.3%; }
+    @media screen and (max-width: 768px) {
+      .about__qualities:before {
+        display: none; } }
+  .about__qualities:after {
+    display: block;
+    position: absolute;
+    content: "";
+    background: url(../img/points.png) no-repeat;
+    width: 4.1875rem;
+    height: 1.3125rem;
+    top: 3.4375rem;
+    right: 31.3%; }
+    @media screen and (max-width: 768px) {
+      .about__qualities:after {
+        display: none; } }
   @media screen and (max-width: 768px) {
     .about__qualities {
       -webkit-box-orient: vertical;
@@ -1086,17 +1111,6 @@ a {
         -webkit-box-direction: normal;
         -ms-flex-direction: row;
         flex-direction: row; } }
-    .about__qualities-item:after {
-      content: "";
-      position: absolute;
-      background: url(../img/points.png) no-repeat;
-      width: 4.1875rem;
-      height: 1.3125rem;
-      left: 17.8125rem;
-      top: 3.125rem; }
-      @media screen and (max-width: 768px) {
-        .about__qualities-item:after {
-          display: none; } }
     .about__qualities-item:last-child:after {
       display: none; }
     .about__qualities-item-desc {
@@ -1193,7 +1207,7 @@ a {
   align-items: center; }
   @media screen and (max-width: 768px) {
     .comments__container {
-      min-height: 62.5rem; } }
+      min-height: 0; } }
 
 .comments__content {
   display: -webkit-box;
@@ -1212,22 +1226,36 @@ a {
   padding-top: 3.9375rem;
   padding-bottom: 3.75rem;
   height: 100%; }
+  @media screen and (max-width: 480px) {
+    .comments__content {
+      padding: 12% 0; } }
   .comments__content:before {
     position: absolute;
     content: "";
-    background: url(../img/comments_berries.png);
+    background: url(../img/comments_berries.png) no-repeat;
     width: 8.6875rem;
     height: 20.0625rem;
     left: 0;
     bottom: -9.9375rem; }
+    @media screen and (max-width: 480px) {
+      .comments__content:before {
+        width: 18%;
+        background-size: contain;
+        bottom: -13.75rem; } }
   .comments__content:after {
     content: "";
     position: absolute;
-    background: url(../img/berry3.png);
+    background: url(../img/berry3.png) no-repeat;
     width: 9.375rem;
     height: 5.375rem;
     top: 2.25rem;
     right: 0.9375rem; }
+    @media screen and (max-width: 480px) {
+      .comments__content:after {
+        width: 19%;
+        background-size: contain;
+        top: 0;
+        right: 0; } }
 
 .comments__title {
   font-family: 'alegreya';
@@ -1235,7 +1263,11 @@ a {
   color: #0d0d0d;
   font-style: normal;
   font-weight: 600;
-  text-align: center; }
+  text-align: center;
+  z-index: 5; }
+  @media screen and (max-width: 480px) {
+    .comments__title {
+      font-size: 7vmin; } }
 
 .comments__list {
   display: -webkit-box;
@@ -1252,12 +1284,55 @@ a {
   -ms-grid-row-align: center;
   align-self: center;
   width: 81%;
-  background: url(../img/comment_pattern.png);
+  background: #f8faf9;
   padding: 3.19375rem 0 2.1625rem 2.85625rem; }
+  @media screen and (max-width: 768px) {
+    .comments__post {
+      width: 65%; } }
+  @media screen and (max-width: 480px) {
+    .comments__post {
+      width: 95%; } }
+  .comments__post:before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: -3.8125rem;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    width: 5.3125rem;
+    height: 5.3125rem;
+    border-radius: 2.65625rem;
+    background: #fff; }
+  .comments__post:after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 7.9375rem;
+    height: 10.4375rem;
+    background: url(../img/comment_pattern.png) no-repeat; }
+    @media screen and (max-width: 480px) {
+      .comments__post:after {
+        width: 26vw;
+        background-size: contain; } }
   .comments__post--active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    @media screen and (max-width: 768px) {
+      .comments__post--active {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 0;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center; } }
   .comments__post-item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1266,8 +1341,23 @@ a {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
+    @media screen and (max-width: 768px) {
+      .comments__post-item {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-bottom: 2.1875rem; } }
   .comments__post-img {
-    margin-right: 1.25rem; }
+    margin-right: 1.25rem;
+    z-index: 5; }
+    @media screen and (max-width: 768px) {
+      .comments__post-img {
+        margin-right: 0;
+        margin-top: 3.75rem; } }
+    @media screen and (max-width: 480px) {
+      .comments__post-img {
+        margin-top: 2.5rem;
+        width: 33%; } }
   .comments__post-subject {
     font-family: 'alegreya';
     font-size: 1.875rem;
@@ -1276,22 +1366,32 @@ a {
     font-weight: 500;
     margin-top: 0.9375rem;
     margin-bottom: 1.625rem; }
+    @media screen and (max-width: 480px) {
+      .comments__post-subject {
+        font-size: 4vmin; } }
   .comments__post-msg {
     font-family: 'alegreya';
     font-size: 1.125rem;
     color: #666;
     font-style: normal;
     font-weight: 400;
-    width: 72%;
+    width: 90%;
     margin: 0;
     line-height: 1.2;
-    margin-bottom: 1.9375rem; }
+    margin-bottom: 1.9375rem;
+    z-index: 5; }
+    @media screen and (max-width: 480px) {
+      .comments__post-msg {
+        font-size: 3vmin; } }
   .comments__post-author {
     font-family: 'alegreya';
     font-size: 1.125rem;
     color: #666;
     font-style: normal;
     font-weight: 500; }
+    @media screen and (max-width: 480px) {
+      .comments__post-author {
+        font-size: 3vmin; } }
 
 .comments__authors-list {
   display: -webkit-box;
@@ -1316,18 +1416,35 @@ a {
   height: 4.16875rem;
   overflow: hidden;
   border-radius: 50%; }
+  @media screen and (max-width: 480px) {
+    .comments__authors-alena {
+      width: 14.6vw;
+      height: 14.6vw; } }
 
 .comments__authors-girl {
   width: 4.16875rem;
   height: 4.16875rem;
   overflow: hidden;
   border-radius: 50%; }
+  @media screen and (max-width: 480px) {
+    .comments__authors-girl {
+      width: 14.6vw;
+      height: 14.6vw; } }
 
 .comments__authors-boy {
   width: 4.16875rem;
   height: 4.16875rem;
   overflow: hidden;
   border-radius: 50%; }
+  @media screen and (max-width: 480px) {
+    .comments__authors-boy {
+      width: 14.6vw;
+      height: 14.6vw; } }
+
+@media screen and (max-width: 480px) {
+  .comments__post-pic {
+    width: 100%;
+    height: auto; } }
 
 .team__container {
   display: -webkit-box;
@@ -1341,7 +1458,7 @@ a {
   min-height: 40.625rem; }
   @media screen and (max-width: 768px) {
     .team__container {
-      min-height: 62.5rem; } }
+      min-height: 0; } }
 
 .team__content {
   display: -webkit-box;
@@ -1362,28 +1479,43 @@ a {
   .team__content:before {
     content: "";
     position: absolute;
-    background: url(../img/raspberry.png);
+    background: url(../img/raspberry.png) no-repeat;
     width: 6.5rem;
     height: 7.125rem;
     bottom: -2.6875rem;
     left: 2.1875rem;
     z-index: 5; }
+    @media screen and (max-width: 480px) {
+      .team__content:before {
+        width: 14vw;
+        background-size: contain;
+        bottom: -5rem;
+        left: 0; } }
   .team__content:after {
     content: "";
     position: absolute;
-    background: url(../img/blueberries.png);
+    background: url(../img/blueberries.png) no-repeat;
     width: 8.4375rem;
     height: 7rem;
     top: -2.5rem;
     right: 0.8125rem; }
+    @media screen and (max-width: 768px) {
+      .team__content:after {
+        top: -3.125rem;
+        right: -0.625rem; } }
+    @media screen and (max-width: 480px) {
+      .team__content:after {
+        width: 14vw;
+        background-size: contain;
+        top: -1.0625rem;
+        right: -0.375rem; } }
 
 .team__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row;
-  -ms-flex: row wrap;
-  flex: row wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -1400,6 +1532,10 @@ a {
   font-weight: 600;
   text-align: center;
   margin-bottom: 4rem; }
+  @media screen and (max-width: 480px) {
+    .team__title {
+      margin-bottom: 1.25rem;
+      font-size: 7vmin; } }
 
 .team__item {
   display: -webkit-box;
@@ -1414,10 +1550,18 @@ a {
   align-items: center;
   text-align: center;
   width: 25%; }
+  @media screen and (max-width: 768px) {
+    .team__item {
+      width: 50%; } }
   .team__item-img {
     max-width: 13.75rem;
     max-height: 18rem;
     margin-bottom: 1.25rem; }
+    @media screen and (max-width: 480px) {
+      .team__item-img {
+        width: 29vw; } }
+  .team__item-pic {
+    width: 100%; }
 
 .team__member {
   position: relative;
@@ -1437,6 +1581,9 @@ a {
     font-weight: 400;
     color: #323232;
     margin-bottom: 0.8125rem; }
+    @media screen and (max-width: 480px) {
+      .team__member-name {
+        font-size: 4vw; } }
     .team__member-name:after {
       content: "";
       position: relative;
@@ -1462,6 +1609,13 @@ a {
     font-weight: 400;
     color: #281e1e;
     margin-bottom: 0.375rem; }
+    @media screen and (max-width: 768px) {
+      .team__member-position {
+        width: 60%;
+        margin: 0 auto; } }
+    @media screen and (max-width: 480px) {
+      .team__member-position {
+        font-size: 3vw; } }
   .team__member-desc {
     font-family: 'alegreya';
     font-size: 1.125rem;
@@ -1469,6 +1623,14 @@ a {
     color: #666;
     margin: 0;
     line-height: 1.15; }
+    @media screen and (max-width: 768px) {
+      .team__member-desc {
+        width: 60%;
+        margin: 0 auto; } }
+    @media screen and (max-width: 480px) {
+      .team__member-desc {
+        font-size: 3vw;
+        width: 100%; } }
   .team__member--active .team__member-name:after {
     border-bottom-color: #0f5a47;
     border-bottom-width: 0.375rem;

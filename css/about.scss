@@ -24,7 +24,7 @@
       height: rem(315px);
       left: 0;
       bottom: rem(-108px);
-      
+
       @include tablets {
         height: 50vh;
         background-size: contain;
@@ -104,6 +104,39 @@
   &__qualities {
     display: flex;
     justify-content: space-evenly;
+    position: relative;
+
+    &:before {
+      display: block;
+      position: absolute;
+      content: "";
+      background: url(../img/points.png) no-repeat;
+      width: rem(67px);
+      height: rem(21px);
+      top: rem(55px);
+      // left: rem(343px);
+      left: 31.3%;
+
+      @include tablets {
+        display: none;
+      }
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      content: "";
+      background: url(../img/points.png) no-repeat;
+      width: rem(67px);
+      height: rem(21px);
+      top: rem(55px);
+      // right: rem(343px);
+      right: 31.3%;
+
+      @include tablets {
+        display: none;
+      }
+    }
 
     @include tablets {
       flex-direction: column;
@@ -126,19 +159,19 @@
         flex-direction: row;
       }
 
-      &:after {
-        content: "";
-        position: absolute;
-        background: url(../img/points.png) no-repeat;
-        width: rem(67px);
-        height: rem(21px);
-        left: rem(285px);
-        top: rem(50px);
+      // &:after {
+      //   content: "";
+      //   position: absolute;
+      //   background: url(../img/points.png) no-repeat;
+      //   width: rem(67px);
+      //   height: rem(21px);
+      //   left: rem(285px);
+      //   top: rem(50px);
 
-        @include tablets {
-          display: none;
-        }
-      }
+      //   @include tablets {
+      //     display: none;
+      //   }
+      // }
 
       &:last-child:after {
         display: none;
