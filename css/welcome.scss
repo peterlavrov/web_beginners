@@ -16,6 +16,7 @@
     justify-content: space-between;
 
     @include tablets {
+      min-width: 0;
       background-size: contain;
     }
 

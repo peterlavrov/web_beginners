@@ -1,11 +1,14 @@
 .contacts {
   &__container {
     position: relative;
+    background: url(../img/map.png) no-repeat;
+    background-size: cover;
     min-height: rem(650px);
     height: 100vh;
-    background-image: url(../img/map.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+
+    @include tablets {
+      min-height: 0;
+    }
   }
 
   &__footer {
@@ -15,11 +18,22 @@
     bottom: 0;
     width: 100%;
     background-color: $white;
+    min-height: rem(93px);
   }
 
   &__wrapper {
     display: flex;
     width: 85.5%;
+
+    @include tablets {
+      width: 95%;
+    }
+
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__address {
@@ -27,6 +41,11 @@
     flex-direction: column;
     justify-content: space-evenly;
     width: 50%;
+
+    @include phones {
+      width: 100%;
+      padding: rem(20px) 0 rem(10px);
+    }
 
   &-location {
     font-family: 'alegreya';
@@ -36,13 +55,18 @@
     font-weight: 400;
     line-height: 1.14;
   }
-
-  &-phone {
+  
+  &-link {
     font-family: 'alegreya';
     font-style: normal;
     color: $green;
     font-size: rem(21px);
     font-weight: 400;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+
   }
 
   }
@@ -52,8 +76,17 @@
     width: 50%;
     justify-content: flex-end;
 
+    @include phones {
+      padding: rem(20px) 0 rem(30px);
+    }
+
     &-img {
       fill: $graysoc;
+      transition: fill .4s;
+      &:hover {
+        fill: $darkblack;
+        transition: fill .4s;
+      }
     }
 
     &-item {
@@ -67,7 +100,7 @@
     &-list {
       display: flex;
       align-items: center;
-      min-height: rem(93px);
+      // min-height: rem(93px);
     }
 
     &-link {

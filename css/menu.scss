@@ -6,6 +6,10 @@
     position: relative;
     height: 100vh;
     min-height: rem(650px);
+
+    @include tablets {
+      min-height: 0;
+    }
   }
 
   &__title {
@@ -71,7 +75,7 @@
 
       @include phones {
         font-size: 7vw;
-        margin-bottom: rem(100px);
+        margin-bottom: rem(25px);
       }
     }
 

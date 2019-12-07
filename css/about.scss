@@ -26,9 +26,9 @@
       bottom: rem(-108px);
 
       @include tablets {
-        height: 50vh;
+        height: 37vh;
         background-size: contain;
-        bottom: rem(-68px);
+        bottom: rem(-170px);
       }
 
       @include phones {
