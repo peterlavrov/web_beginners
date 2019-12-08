@@ -1,10 +1,12 @@
 .contacts {
   &__container {
+    display: flex;
     position: relative;
-    background: url(../img/map.png) no-repeat;
+    // background: url(../img/map.png) no-repeat;
     background-size: cover;
     min-height: rem(650px);
     height: 100vh;
+    max-width: 100%;
 
     @include tablets {
       min-height: 0;
@@ -15,17 +17,44 @@
     display: flex;
     position: absolute;
     justify-content: center;
-    bottom: 0;
-    width: 100%;
+    left: 0;
+    height: 100%;
     background-color: $white;
-    min-height: rem(93px);
+    // min-height: rem(93px);
+    
+    @include tablets {
+      left: unset;
+      bottom: 0;
+      min-height: rem(93px);
+      height: unset;
+      width: 100%;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    
+    
+    &-pic {
+      // height: auto;
+      width: 100%;
+      // overflow: hidden;
+      @include tablets {
+        height: 100%;
+        width: auto;
+      }
+    }
   }
 
   &__wrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     width: 85.5%;
 
     @include tablets {
+      flex-direction: row;
       width: 95%;
     }
 
@@ -40,11 +69,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width: 50%;
+    width: 100%;
+    text-align: center;
+    
+    @include tablets {
+      width: 50%;
+      text-align: left;
+    }
 
     @include phones {
       width: 100%;
       padding: rem(20px) 0 rem(10px);
+      text-align: center;
     }
 
   &-location {
@@ -73,8 +109,11 @@
   
   &__socials {
     display: flex;
-    width: 50%;
     justify-content: flex-end;
+    
+    @include tablets {
+      width: 50%;
+    }
 
     @include phones {
       padding: rem(20px) 0 rem(30px);
