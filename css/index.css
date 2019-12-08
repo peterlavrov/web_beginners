@@ -1644,7 +1644,9 @@ a {
   .menu__container {
     position: relative;
     height: 100vh;
-    min-height: 40.625rem; }
+    min-height: 40.625rem;
+    margin: 0 0 0 auto;
+    max-width: 100%; }
     @media screen and (max-width: 768px) {
       .menu__container {
         min-height: 0; } }
@@ -1792,10 +1794,10 @@ a {
 
 .contacts__container {
   position: relative;
-  background: url(../img/map.png) no-repeat;
   background-size: cover;
   min-height: 40.625rem;
-  height: 100vh; }
+  height: 100vh;
+  max-width: 100%; }
   @media screen and (max-width: 768px) {
     .contacts__container {
       min-height: 0; } }
@@ -1812,6 +1814,11 @@ a {
   width: 100%;
   background-color: #fff;
   min-height: 5.8125rem; }
+
+.contacts__map {
+  width: 100%; }
+  .contacts__map-pic {
+    width: 100%; }
 
 .contacts__wrapper {
   display: -webkit-box;
