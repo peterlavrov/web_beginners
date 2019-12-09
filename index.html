@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1100, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CHOCCO</title>
   <link rel="stylesheet" href="./css/index.css">
@@ -42,43 +42,62 @@
                   </li>
                 </ul>
               </nav>
-              <address class="contact-phone"><a href="tel://+78009039090" class="contact-number">8 800 903 90 90</a>
+              <address class="contact-phone">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                  y="0px" viewBox="0 0 477.156 477.156" style="enable-background:new 0 0 477.156 477.156;"
+                  xml:space="preserve" class="contact-icon">
+                  <use xlink:href="./icons/sprite.svg#phone"></use>
+                </svg>
+                <a href="tel://+78009039090" class="contact-number">8 800 903 90 90</a>
               </address>
+              <a href="#" class="hamburger-menu">
+                <div class="hamburger-menu__link"></div>
+              </a>
             </div>
           </header>
           <div class="welcome__info">
-            <div class="welcome__info-wrapper">
-              <div class="order">
-                <h1 class="order__title">НАТУРАЛЬНЫЕ ШОКОЛАДНЫЕ БАТОНЧИКИ</h1>
-                <p class="order__desc">Наши батончики идеально подходят для тех, кто следит за своим здоровьем</p>
-                <a href="#" class="order__link btn">Заказать</a>
+              <div class="booking">
+                <h1 class="booking__title">НАТУРАЛЬНЫЕ ШОКОЛАДНЫЕ БАТОНЧИКИ</h1>
+                <p class="booking__desc">Наши батончики идеально подходят для тех, кто следит за своим здоровьем</p>
+                <a href="#" class="booking__link btn">Заказать</a>
               </div>
-              <div class="advantages">
-                <ul class="advantages__list">
-                  <li class="advantages__list-item">
-                    <div class="advantages__list-item-img">
-                      <img src="./img/natural_icon.png" alt="Натуральный продукт" class="advantages__list-item-pic">
-                    </div>
-                    <span class="advantages__list-item-text">100% натуральный продукт</span>
-                  </li>
-                  <li class="advantages__list-item">
-                    <div class="advantages__list-item-img">
-                      <img src="./img/delivery_icon.png" alt="Доставка" class="advantages__list-item-pic">
-                    </div>
-                    <span class="advantages__list-item-text">3-5 дней доставка по РФ</span>
-                  </li>
-                  <li class="advantages__list-item">
-                    <div class="advantages__list-item-img">
-                      <img src="./img/figure_icon.png" alt="Фигура" class="advantages__list-item-pic">
-                    </div>
-                    <span class="advantages__list-item-text">Не портит фигуру</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div class="welcome__bars-img">
               <img src="./img/bars.png" alt="Батончики CHOCCO" class="bars-pic">
             </div>
+          </div>
+          <div class="advantages">
+            <ul class="advantages__list">
+              <li class="advantages__list-item">
+                <div class="advantages__list-item-img">
+                  <svg class="advantages__list-item-svg" width="44px" height="41px" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 16 15.2" style="enable-background:new 0 0 16 15.2;" xml:space="preserve">
+                    <use xlink:href="./icons/sprite.svg#natural"></use>
+                  </svg>
+                </div>
+                <span class="advantages__list-item-text">100% натуральный продукт</span>
+              </li>
+              <li class="advantages__list-item">
+                <div class="advantages__list-item-img">
+                  <svg class="advantages__list-item-svg" width="50px" height="40px" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 18.2 14.8" style="enable-background:new 0 0 18.2 14.8;" xml:space="preserve">
+                    <use xlink:href="./icons/sprite.svg#delivery"></use>
+                  </svg>
+                </div>
+                <span class="advantages__list-item-text">3-5 дней доставка по РФ</span>
+              </li>
+              <li class="advantages__list-item">
+                <div class="advantages__list-item-img">
+                  <svg class="advantages__list-item-svg" width="42px" height="42px" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 15.2 15.2" style="enable-background:new 0 0 15.2 15.2;" xml:space="preserve">
+                    <use xlink:href="./icons/sprite.svg#figure"></use>
+                  </svg>
+                </div>
+                <span class="advantages__list-item-text">Не портит фигуру</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -94,7 +113,11 @@
           <ul class="about__qualities">
             <li class="about__qualities-item">
               <div class="about__qualities-item-img">
-                <img src="./icons/1.svg" alt="" class="about__qualities-item-pic">
+                <!-- <img src="./icons/1.svg" alt="" class="about__qualities-item-pic"> -->
+                <svg class="about__qualities-item-pic" width="66" height="69" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 18.8 20">
+                  <use xlink:href="./icons/sprite.svg#useful"></use>
+                </svg>
               </div>
               <div class="about__qualities-item-desc">
                 <h3>Полезно</h3>
@@ -105,10 +128,14 @@
             </li>
             <li class="about__qualities-item">
               <div class="about__qualities-item-img">
-                <img src="./icons/3.svg" alt="" class="about__qualities-item-pic">
+                <!-- <img src="./icons/3.svg" alt="" class="about__qualities-item-pic"> -->
+                <svg class="about__qualities-item-pic" width="70" height="69" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 22.3 20.9">
+                  <use xlink:href="./icons/sprite.svg#tasty"></use>
+                </svg>
               </div>
               <div class="about__qualities-item-desc">
-                <h3 >Вкусно</h3>
+                <h3>Вкусно</h3>
                 <p>Нежный, ненавязчивый, изысканный –
                   так клиенты описывают вкусовые
                   качества наших батончиков.</p>
@@ -116,10 +143,15 @@
             </li>
             <li class="about__qualities-item">
               <div class="about__qualities-item-img">
-                <img src="./icons/2.svg" alt="" class="about__qualities-item-pic">
+                <!-- <img src="./icons/2.svg" alt="" class="about__qualities-item-pic"> -->
+                <svg class="about__qualities-item-pic" width="75" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.6 20.8"
+                  style="enable-background:new 0 0 20.6 20.8;" xml:space="preserve">
+                  <use xlink:href="./icons/sprite.svg#nutrition"></use>
+                </svg>
               </div>
               <div class="about__qualities-item-desc">
-                <h3 >Питательно</h3>
+                <h3>Питательно</h3>
                 <p>Высокое содержание качественного
                   белка, а также всех необходимых
                   витаминов и минералов.</p>
@@ -186,19 +218,286 @@
           <div class="comments__authors">
             <ul class="comments__authors-list">
               <li class="comments__authors-alena comments__authors--active">
-                <img src="./img/comments__authors-alena.png" alt="Аватар автора комментария" class="comments__authors-alena-pic">
+                <img src="./img/comments__authors-alena.png" alt="Аватар автора комментария"
+                  class="comments__authors-alena-pic">
               </li>
               <li class="comments__authors-girl">
-                <img src="./img/comments__authors-girl.png" alt="Аватар автора комментария" class="comments__authors-alena-pic">
+                <img src="./img/comments__authors-girl.png" alt="Аватар автора комментария"
+                  class="comments__authors-alena-pic">
               </li>
               <li class="comments__authors-boy">
-                <img src="./img/comments__authors-boy.png" alt="Аватар автора комментария" class="comments__authors-alena-pic">
+                <img src="./img/comments__authors-boy.png" alt="Аватар автора комментария"
+                  class="comments__authors-alena-pic">
               </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+    <section class="team">
+      <div class="container team__container">
+        <div class="team__content">
+          <h2 class="team__title">КОМАНДА</h2>
+          <ul class="team__list">
+            <li class="team__item">
+              <div class="team__item-img"><img src="./img/boris.png" alt="Аватар члена команды" class="team__item-pic">
+              </div>
+              <div class="team__member">
+                <div class="team__member-name">
+                  Борис Федорович
+                </div>
+                <div class="team__member-about">
+                  <h4 class="team__member-position">
+                    Оператор
+                  </h4>
+                  <p class="team__member-desc">
+                    С радостью поможет подобрать батончики и оформить заказ
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="team__item">
+              <div class="team__item-img"><img src="./img/alla.png" alt="Аватар члена команды" class="team__item-pic">
+              </div>
+              <div class="team__member">
+                <div class="team__member-name">
+                  Алла Иванова
+                </div>
+                <div class="team__member-about">
+                  <h4 class="team__member-position">
+                    Оператор
+                  </h4>
+                  <p class="team__member-desc">
+                    С радостью поможет подобрать батончики и оформить заказ
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="team__item">
+              <div class="team__item-img"><img src="./img/kirill.png" alt="Аватар члена команды" class="team__item-pic">
+              </div>
+              <div class="team__member team__member--active">
+                <div class="team__member-name">
+                  Кирилл Матросов
+                </div>
+                <div class="team__member-about">
+                  <h4 class="team__member-position">
+                    Оператор
+                  </h4>
+                  <p class="team__member-desc">
+                    С радостью поможет подобрать батончики и оформить заказ
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="team__item">
+              <div class="team__item-img"><img src="./img/mila.png" alt="Аватар члена команды" class="team__item-pic">
+              </div>
+              <div class="team__member">
+                <div class="team__member-name">
+                  Мила Рыжкова
+                </div>
+                <div class="team__member-about">
+                  <h4 class="team__member-position">
+                    Оператор
+                  </h4>
+                  <p class="team__member-desc">
+                    С радостью поможет подобрать батончики и оформить заказ
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="menu">
+      <div class="container menu__container">
+        <h2 class="menu__title">МЕНЮ</h2>
+        <ul class="menu__list">
+          <li class="menu__item menu__item--active">
+            <div class="menu__item-title title-milk">
+              <h2 class="menu__item-title-text">Батоничики с молоком</h2>
+            </div>
+            <div class="menu__item-desc">
+              <p class="menu__item-desc-text">Рекомендуем употреблять батончики вместе с кокосовым или миндальным
+                молоком. Так
+                и вкуснее, и полезнее.
+                Ну чего ещё хотеть от жизни? Батончик – он твой лучший друг и радует всех вокруг. Как классно, что можно
+                питаться полезно и вкусно, а не как попало. Бабуля, конечно, за такую еду не похвалит, но кто её будет
+                спрашивать – никто. Надо бы, кстати, бабулю поздравить с днём Победы.
+              </p>
+              <div class="menu__item-desc-close"></div>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="menu__item-title title-honeyfruits">
+              <h2 class="menu__item-title-text">С медом и фруктами</h2>
+            </div>
+            <div class="menu__item-desc">
+              <p class="menu__item-desc-text">Рекомендуем употреблять батончики вместе с кокосовым или миндальным
+                молоком. Так
+                и вкуснее, и полезнее.
+                Ну чего ещё хотеть от жизни? Батончик – он твой лучший друг и радует всех вокруг. Как классно, что можно
+                питаться полезно и вкусно, а не как попало. Бабуля, конечно, за такую еду не похвалит, но кто её будет
+                спрашивать – никто. Надо бы, кстати, бабулю поздравить с днём Победы.
+              </p>
+              <div class="menu__item-desc-close"></div>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="menu__item-title title-wildberries">
+              <h2 class="menu__item-title-text">Дикие ягоды</h2>
+            </div>
+            <div class="menu__item-desc">
+              <p class="menu__item-desc-text">Рекомендуем употреблять батончики вместе с кокосовым или миндальным
+                молоком. Так
+                и вкуснее, и полезнее.
+                Ну чего ещё хотеть от жизни? Батончик – он твой лучший друг и радует всех вокруг. Как классно, что можно
+                питаться полезно и вкусно, а не как попало. Бабуля, конечно, за такую еду не похвалит, но кто её будет
+                спрашивать – никто. Надо бы, кстати, бабулю поздравить с днём Победы.
+              </p>
+              <div class="menu__item-desc-close"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="order">
+      <div class="container order__container">
+        <div class="order__wrapper">
+          <h2 class="order__title">ЗАКАЖИТЕ ДОСТАВКУ</h2>
+          <form action="" method="GET" class="order__form">
+            <div class="order__form-req">
+              <div class="order__form-row">
+                <label for="name" class="order__form-item">
+                  <div class="order__form-title">Имя</div>
+                  <input type="text" class="order__form-input" id="name" name="name">
+                </label>
+                <label for="phone" class="order__form-item">
+                  <div class="order__form-title">Телефон</div>
+                  <input type="text" class="order__form-input" id="phone" name="phone" placeholder="89022348912">
+                </label>
+              </div>
+              <div class="order__form-row">
+                <label for="street" class="order__form-item">
+                  <div class="order__form-title">Улица</div>
+                  <input type="text" class="order__form-input" id="street" name="street">
+                </label>
+              </div>
+              <div class="order__form-row">
+                <label for="house" class="order__form-item">
+                  <div class="order__form-title">Дом</div>
+                  <input type="text" class="order__form-input" id="house" name="house">
+                </label>
+                <label for="building" class="order__form-item">
+                  <div class="order__form-title">Корпус</div>
+                  <input type="text" class="order__form-input" id="building" name="builing">
+                </label>
+                <label for="apart" class="order__form-item">
+                  <div class="order__form-title">Квартира</div>
+                  <input type="text" class="order__form-input" id="apart" name="apart">
+                </label>
+                <label for="floor" class="order__form-item">
+                  <div class="order__form-title">Этаж</div>
+                  <input type="text" class="order__form-input" id="floor" name="floor">
+                </label>
+              </div>
+            </div>
+            <div class="order__form-feedback">
+              <div class="order__form-row">
+                <label for="comment" class="order__form-item">
+                  <div class="order__form-title">Коментарий</div>
+                  <textarea type="text" class="order__form-input" id="comment" name="comment"></textarea>
+                </label>
+              </div>
+              <div class="order__form-row">
+                <label for="cash" class="order__form-flag">
+                  <input type="radio" class="order__form-radio" id="cash" name="payment" value="cash">
+                  <div class="order__form-title">Потребуется сдача</div>
+                </label>
+                <label for="card" class="order__form-flag">
+                  <input type="radio" class="order__form-radio" id="card" name="payment" value="card">
+                  <div class="order__form-title">Оплата по карте</div>
+                </label>
+                <label for="callback" class="order__form-flag">
+                  <input type="checkbox" class="order__form-checkbox" id="callback" name="callback">
+                  <div class="order__form-title">Не перезванивать</div>
+                </label>
+              </div>
+              <!-- <div class="order__form-row">
+              </div> -->
+              <div class="order__form-row">
+                <label for="" class="order__form-flag">
+                  <button type="submit" class="order__form-submit btn" id="submit">ЗАКАЗАТЬ</button>
+                  <button type="reset" class="order__form-reset" id="reset">Очистить</button>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </section>
+    <section class="contacts">
+      <div class="container contacts__container">
+        <footer class="contacts__footer">
+          <div class="contacts__wrapper">
+            <address class="contacts__address">
+              <div class="contacts__address-location">Москва, ул.Новый Арбат, д.31/12</div>
+              <div class="contacts__address-phone">
+                <a href="tel://+788009039090" class="contacts__address-link">8 800 903 90 90</a>
+              </div>
+            </address>
+            <div class="contacts__socials">
+              <ul class="contacts__socials-list">
+                <li class="contacts__socials-item">
+                  <a href="#" class="contacts__socials-link">
+                    <!-- <img src="./icons/vk.svg" alt="Вконтакте" class="contacts__socials-img"> -->
+                    <svg class="contacts__socials-img" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.7 36.7"
+                      style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
+                    <use xlink:href="./icons/sprite.svg#vk"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="contacts__socials-item">
+                  <a href="#" class="contacts__socials-link">
+                    <!-- <img src="./icons/f.svg" alt="Facebook" class="contacts__socials-img"> -->
+                    <svg class="contacts__socials-img" width="20" height="20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
+                    <use xlink:href="./icons/sprite.svg#f"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="contacts__socials-item">
+                  <a href="#" class="contacts__socials-link">
+                    <!-- <img src="./icons/in.svg" alt="Instagram" class="contacts__socials-img"> -->
+                    <svg class="contacts__socials-img" version="1.1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
+                    <use xlink:href="./icons/sprite.svg#in"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="contacts__socials-item">
+                  <a href="#" class="contacts__socials-link">
+                    <!-- <img src="./icons/tv.svg" alt="Twitter" class="contacts__socials-img"> -->
+                    <svg class="contacts__socials-img" version="1.1" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
+                      <use xlink:href="./icons/sprite.svg#tw"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+        <div class="contacts__map">
+          <img src="./img/map.png" alt="Карта" class="contacts__map-pic">
+        </div>
+      </div>
+    </section>
+  </div>
   </div>
 </body>
 

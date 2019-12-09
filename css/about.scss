@@ -2,27 +2,51 @@
   &__container {
     display: flex;
     position: relative;
-    min-height: 650px;
+    min-height: rem(650px);
     height: 100vh;
     justify-content: center;
     align-items: center;
     background: url(../img/leaf_pattern.png) left center no-repeat;
 
+    @include tablets {
+      min-height: 0;
+    }
+
+    @include phones {
+      background: none;
+    }
+
     &:before {
       content: "";
       position: absolute;
       background: url(../img/malina.png) no-repeat;
-      width: 161px;
-      height: 315px;
-      left: 0px;
-      bottom: -108px;
+      width: rem(161px);
+      height: rem(315px);
+      left: 0;
+      bottom: rem(-108px);
+
+      @include tablets {
+        height: 37vh;
+        background-size: contain;
+        bottom: rem(-170px);
+      }
+
+      @include phones {
+        background: none;
+      }
     }
+
   }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include tablets {
+      height: 100%;
+      justify-content: space-evenly;
+    }
   }
 
   &__chocco {
@@ -30,27 +54,49 @@
     flex-direction: column;
     align-items: center;
     width: 42%;
-    margin-bottom: 55px;
+    margin-bottom: rem(55px);
+
+    @include tablets {
+      width: 60%;
+      margin-bottom: 0;
+    }
+
+    @include phones {
+      width: 90%;
+      flex-grow: 1;
+      justify-content: center;
+    }
 
     &-title {
-      font-family: 'alegreya';
-      font-size: 48px;
-      color: $black;
-      font-style: normal;
-      font-weight: 600;
-      margin-bottom: 12px;
-      text-align: center;
+      @include title;
+      margin-bottom: rem(12px);
+
+      @include tablets {
+        font-size: 7vmin;
+      }
+
+      @include phones {
+        font-size: 7vmin;
+      }
     }
 
     &-text {
       font-family: 'alegreya';
-      font-size: 18px;
+      font-size: rem(18px);
       color: $gray;
       font-style: normal;
       font-weight: 400;
       text-align: center;
       margin: 0;
       line-height: 1.15;
+
+      @include tablets {
+        font-size: 4vmin;
+      }
+
+      @include phones {
+        font-size: 4vmin;
+      }
     }
 
   }
@@ -58,7 +104,49 @@
   &__qualities {
     display: flex;
     justify-content: space-evenly;
+    position: relative;
 
+    &:before {
+      display: block;
+      position: absolute;
+      content: "";
+      background: url(../img/points.png) no-repeat;
+      width: rem(67px);
+      height: rem(21px);
+      top: rem(55px);
+      // left: rem(343px);
+      left: 31.3%;
+
+      @include tablets {
+        display: none;
+      }
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      content: "";
+      background: url(../img/points.png) no-repeat;
+      width: rem(67px);
+      height: rem(21px);
+      top: rem(55px);
+      // right: rem(343px);
+      right: 31.3%;
+
+      @include tablets {
+        display: none;
+      }
+    }
+
+    @include tablets {
+      flex-direction: column;
+      width: 80%;
+    }
+
+    @include phones {
+      width: 90%;
+      flex-grow: 4;
+    }
 
     &-item {
       display: flex;
@@ -67,15 +155,23 @@
       flex-direction: column;
       align-items: center;
 
-      &:after {
-        content: "";
-        position: absolute;
-        background: url(../img/points.png) no-repeat;
-        width: 67px;
-        height: 21px;
-        left: 285px;
-        top: 50px;
+      @include phones {
+        flex-direction: row;
       }
+
+      // &:after {
+      //   content: "";
+      //   position: absolute;
+      //   background: url(../img/points.png) no-repeat;
+      //   width: rem(67px);
+      //   height: rem(21px);
+      //   left: rem(285px);
+      //   top: rem(50px);
+
+      //   @include tablets {
+      //     display: none;
+      //   }
+      // }
 
       &:last-child:after {
         display: none;
@@ -86,42 +182,86 @@
 
         h3 {
           font-family: 'alegreya';
-          font-size: 27px;
+          font-size: rem(27px);
           color: $darkblack;
           font-style: normal;
           font-weight: 400;
-          margin-bottom: 21px;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
+          margin-bottom: rem(21px);
+
+          @include tablets {
+            font-size: 4vmin;
+            margin-bottom: rem(7px);
+          }
+
+          @include phones {
+            font-size: 4vmin;
+          }
         }
 
         p {
           font-family: 'alegreya';
-          font-size: 18px;
+          font-size: rem(18px);
           color: $gray;
           font-style: normal;
           font-weight: 300;
           line-height: 1.25;
           margin: 0;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
+
+          @include tablets {
+            font-size: 3vmin;
+          }
+
+          @include phones {
+            font-size: 3vmin;
+            text-align: left;
+          }
         }
       }
 
       &-img {
         display: flex;
-        width: 125px;
-        height: 125px;
+        width: rem(125px);
+        height: rem(125px);
         justify-content: center;
         align-items: center;
         background: $cream;
         border-radius: 50%;
-        margin-bottom: 30px;
+        margin-bottom: rem(30px);
+
+        @include tablets {
+          max-width: 13vh;
+          max-height: 13vh;
+          margin-bottom: rem(10px);
+        }
+
+        @include phones {
+          margin-bottom: 0;
+          margin-right: rem(15px);
+          min-width: rem(75px);
+          min-height: rem(75px);
+          max-width: rem(75px);
+          max-height: rem(75px);
+        }
       }
 
+
       &-pic {
-        width: 75px;
-        height: 75px;
+        width: rem(75px);
+        height: rem(75px);
+        fill: none;
+        stroke: $darkblack;
+        stroke-width: 0.75;
+        stroke-miterlimit: 10;
+
+        @include tablets {
+          width: 50%;
+          height: 50%;
+        }
+
+        @include phones {
+          width: 50%;
+          height: 50%;
+        }
       }
     }
   }

@@ -1,0 +1,203 @@
+.team {
+  &__container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+    min-height: rem(650px);
+
+    @include tablets {
+      min-height: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7% 7%;
+    width: 100%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      background: url(../img/raspberry.png) no-repeat;
+      width: rem(104px);
+      height: rem(114px);
+      bottom: rem(-43px);
+      left: rem(35px);
+      z-index: 5;
+      
+      @include phones {
+        width: 14vw;
+        background-size: contain;
+        bottom: rem(-80px);
+        left: 0;
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: url(../img/blueberries.png) no-repeat;
+      width: rem(135px);
+      height: rem(112px);
+      top: rem(-40px);
+      right: rem(13px);
+      
+      @include tablets {
+        top: rem(-50px);
+        right: rem(-10px);
+      }
+      
+      @include phones {
+        width: 14vw;
+        background-size: contain;
+        top: rem(-17px);
+        right: rem(-6px);
+      }
+    }
+  }
+  
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: rem(64px);
+
+    @include phones {
+      margin-bottom: rem(20px);
+      font-size: 7vmin;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 25%;
+
+    @include tablets {
+      width: 50%;
+    }
+
+    &-img {
+      max-width: rem(220px);
+      max-height: rem(288px);
+      margin-bottom: rem(20px);
+
+      @include phones {
+        width: 29vw;
+      }
+    }
+
+    &-pic {
+      width: 100%;
+    }
+  }
+
+  &__member {
+    position: relative;
+    width: 100%;
+
+    &-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'alegreya';
+      font-size: rem(21px);
+      font-weight: 400;
+      color: $darkgray;
+      margin-bottom: rem(13px);
+
+      @include phones {
+        font-size: 4vw;
+      }
+
+      &:after {
+        content: "";
+        position: relative;
+        border: rem(6px) solid transparent;
+        width: 0;
+        height: 0;
+        border-top-color: $green;
+        border-bottom-width: 0;
+        border-left-width: rem(5px);
+        border-right-width: rem(5px);
+        right: rem(-6px);
+        top: rem(2px);
+      }
+    }
+
+    &-about {
+      position: absolute;
+      height: 0;
+      overflow: hidden;
+      top: rem(31px);
+
+      @include tablets {
+        // width: 60%;
+      }
+    }
+
+    &--active {
+      .team__member-about {
+        overflow: visible;
+      }
+    }
+
+    &-position {
+      // display: none;
+      font-family: 'alegreya';
+      font-size: rem(18px);
+      font-weight: 400;
+      color: $lightgray;
+      margin-bottom: rem(6px);
+
+      @include tablets {
+        width: 60%;
+        margin: 0 auto;
+      }
+
+      @include phones {
+        font-size: 3vw;
+      }
+    }
+    
+    &-desc {
+      // display: none;
+      font-family: 'alegreya';
+      font-size: rem(18px);
+      font-weight: 300;
+      color: $gray;
+      margin: 0;
+      line-height: 1.15;
+      
+      @include tablets {
+        width: 60%;
+        margin: 0 auto;
+      }
+      
+      @include phones {
+        font-size: 3vw;
+        width: 100%;
+      }
+    }
+
+    &--active {
+      .team__member-name:after {
+        border-bottom-color: $green;
+        border-bottom-width: rem(6px);
+        border-top-width: 0;
+      }
+    }
+  }
+}

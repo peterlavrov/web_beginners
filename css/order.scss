@@ -1,0 +1,346 @@
+.order {
+  // background-color: $lightgreen;
+  background: url(../img/order_bg.png) no-repeat;
+  background-size: cover;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: rem(650px);
+    width: 100%;
+
+    @include tablets {
+      min-height: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 85.5%;
+
+    @include phones {
+      width: 95%;
+    }
+  }
+
+  &__title {
+    @include title;
+    color: $green;
+    margin-bottom: rem(44px);
+
+    @include phones {
+      margin-bottom: rem (15px);
+      font-size: 7vw;
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+
+    @include phones {}
+
+    @include tablets {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-req {
+      width: 49%;
+
+      @include tablets {
+        width: 66%;
+        margin-bottom: rem(20px);
+      }
+
+      @include phones {
+        width: 100%;
+      }
+    }
+
+    &-feedback {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 49%;
+
+      @include tablets {
+        width: 66%;
+      }
+
+      @include phones {
+        width: 100%;
+      }
+
+      .order__form-row {
+        flex-wrap: wrap;
+        margin-bottom: rem(20px);
+
+        @include tablets {
+          justify-content: center;
+        }
+
+        &:nth-last-child(2) {
+          margin-bottom: rem(40px);
+
+          @include phones {
+            margin-bottom: rem(20px);
+          }
+        }
+      }
+    }
+
+    &-title {
+      font-family: 'alegreya';
+      font-size: rem(18px);
+      font-weight: 300;
+      color: $green;
+      margin-bottom: rem(10px);
+
+      @include phones {
+        font-size: 4vw;
+      }
+    }
+
+    &-row {
+      display: flex;
+      margin-bottom: rem(16px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: calc(100% / 4 - 20px * 4);
+      margin-left: rem(20px);
+
+      textarea {
+        min-height: rem(143px);
+        resize: none;
+
+        @include phones {
+          min-height: rem(60px);
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &-flag {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 41.5%;
+      margin-bottom: rem(8px);
+
+      @include phones {
+        width: 50%;
+        margin-bottom: 12px;
+      }
+
+      @include tablets {
+        justify-content: center;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+
+      .order__form-title {
+        margin-bottom: 0;
+      }
+    }
+
+    &-input {
+      padding: rem(18.5px) rem(11px);
+      font-family: 'alegreya';
+      font-size: rem(18px);
+      font-weight: 300;
+      color: $darkblack;
+      outline: transparent solid 3px;
+
+      @include phones {
+        padding: rem(11px) rem(11px);
+
+      }
+
+      &:focus {
+        outline: $yellow solid 3px;
+      }
+
+      &:focus::placeholder {
+        color: $darkblack;
+      }
+    }
+
+    &-submit {
+      color: $white;
+      background-color: $green;
+      border-width: 0;
+      margin-right: rem(30px);
+
+      @include phones {
+        padding: 2.4vh 3.4vh 2.2vh 3.5vh;
+        border-radius: 3.26vh;
+        font-size: 2vh;
+        margin-right: rem(15px);
+      }
+
+      &:focus {
+        outline: 1px solid $green;
+      }
+
+      &:active {
+        outline: 1px solid $green;
+      }
+    }
+
+    &-reset {
+      font-family: 'alegreya';
+      font-size: rem(18px);
+      font-weight: 300;
+      color: $green;
+      background-color: transparent;
+      border-width: 0;
+
+      @include phones {
+        font-size: 2vh;
+      }
+
+      &:focus {
+        outline: 1px solid $green;
+      }
+
+      &:active {
+        outline: 1px solid $green;
+      }
+    }
+
+    &-radio {
+      display: block;
+      position: relative;
+      width: 0;
+      height: rem(26px);
+      margin-right: rem(34px);
+
+      @include phones {
+        height: 20px;
+      }
+
+      &:focus:before {
+        outline: 1px solid $green;
+      }
+
+      &:active:before {
+        outline: 1px solid $green;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: rem(26px);
+        height: rem(26px);
+        background-color: $white;
+        border-radius: 50%;
+
+        @include phones {
+          width: rem(20px);
+          height: rem(20px);
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        width: rem(14px);
+        height: rem(14px);
+        background-color: $green;
+        border-radius: 50%;
+        top: rem(6px);
+        left: rem(6px);
+
+        @include phones {
+          width: rem(10px);
+          height: rem(10px);
+          top: rem(5px);
+        left: rem(5px);
+        }
+      }
+
+      &:checked:after {
+        display: block;
+      }
+    }
+
+    &-checkbox {
+      position: relative;
+      width: 0;
+      height: rem(26px);
+      margin-right: rem(34px);
+      
+      @include phones {
+        height: rem(20px);
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: rem(26px);
+        height: rem(26px);
+        background-color: $white;
+        
+        @include phones {
+          width: rem(20px);
+          height: rem(20px);
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        width: rem(5px);
+        height: rem(2.5px);
+        border: 2px solid transparent;
+        border-left-color: $green;
+        border-bottom-color: $green;
+        transform: rotate(-45deg);
+        top: rem(7.5px);
+        left: rem(9px);
+        
+        @include phones {
+          width: rem(4px);
+          height: rem(2px);
+          top: rem(5px);
+          left: rem(6px);
+        }
+      }
+
+      &:focus:before {
+        outline: 1px solid $green;
+      }
+
+      &:active:before {
+        outline: 1px solid $green;
+      }
+
+      &:checked:after {
+        display: block;
+      }
+    }
+  }
+
+}

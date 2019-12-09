@@ -1,0 +1,121 @@
+.contacts {
+  &__container {
+    position: relative;
+    // background: url(../img/map.png) no-repeat;
+    // background-size: cover;
+    min-height: rem(650px);
+    height: 100vh;
+    min-width: 100%;
+
+    @include tablets {
+      min-height: 0;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    background-color: $white;
+    min-height: rem(93px);
+  }
+
+  &__map {
+    width: 100%;
+
+    &-pic {
+      width: 100%;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 85.5%;
+
+    @include tablets {
+      width: 95%;
+    }
+
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+
+    @include phones {
+      width: 100%;
+      padding: rem(20px) 0 rem(10px);
+    }
+
+  &-location {
+    font-family: 'alegreya';
+    font-style: normal;
+    color: $graytxt;
+    font-size: rem(21px);
+    font-weight: 400;
+    line-height: 1.14;
+  }
+  
+  &-link {
+    font-family: 'alegreya';
+    font-style: normal;
+    color: $green;
+    font-size: rem(21px);
+    font-weight: 400;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+  }
+  
+  &__socials {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+
+    @include phones {
+      padding: rem(20px) 0 rem(30px);
+    }
+
+    &-img {
+      fill: $graysoc;
+      transition: fill .4s;
+      &:hover {
+        fill: $darkblack;
+        transition: fill .4s;
+      }
+    }
+
+    &-item {
+      margin-left: 17px;
+      
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      // min-height: rem(93px);
+    }
+
+    &-link {
+      display: block;
+      width: rem(23px);
+      height: rem(20px);
+    }
+  }
+}

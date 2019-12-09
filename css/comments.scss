@@ -4,9 +4,13 @@
     position: relative;
     flex-direction: column;
     justify-content: space-evenly;
-    min-height: 650px;
+    min-height: rem(650px);
     height: 100vh;
     align-items: center;
+
+    @include tablets {
+      min-height: 0;
+    }
   }
 
   &__content {
@@ -14,40 +18,55 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 63px;
-    padding-bottom: 60px;
+    padding-top: rem(63px);
+    padding-bottom: rem(60px);
     height: 100%;
+
+    @include phones {
+      padding: 12% 0;
+    }
 
     &:before {
       position: absolute;
       content: "";
-      background: url(../img/comments_berries.png);
-      width: 139px;
-      height: 321px;
-      left: 0px;
-      bottom: -159px;
+      background: url(../img/comments_berries.png) no-repeat;
+      width: rem(139px);
+      height: rem(321px);
+      left: 0;
+      bottom: rem(-159px);
+      
+      @include phones {
+        width: 18%;
+        background-size: contain;
+        bottom: rem(-220px);
+      }
     }
 
     &:after {
       content: "";
       position: absolute;
-      background: url(../img/berry3.png);
-      width: 150px;
-      height: 86px;
-      top: 36px;
-      right: 15px;
+      background: url(../img/berry3.png) no-repeat;
+      width: rem(150px);
+      height: rem(86px);
+      top: rem(36px);
+      right: rem(15px);
+
+      @include phones {
+        width: 19%;
+        background-size: contain;
+        top: 0;
+        right: 0;
+      }
     }
   }
 
   &__title {
-    font-family: 'alegreya';
-    font-size: 48px;
-    color: $black;
-    font-style: normal;
-    font-weight: 600;
-    // padding-top: 48px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @include title;
+    z-index: 5;
+
+    @include phones {
+      font-size: 7vmin;
+    }
   }
 
   &__list {
@@ -60,61 +79,128 @@
     position: relative;
     align-self: center;
     width: 81%;
-    background: url(../img/comment_pattern.png);
-    padding: 51.1px 0 34.6px 45.7px;
+    background: $creamy;
+    padding: rem(51.1px) 0 rem(34.6px) rem(45.7px);
+
+    @include tablets {
+      width: 65%;
+    }
+
+    @include phones {
+      width: 95%;
+    }
+
+    &:before {
+      display: block;
+      position: absolute;
+      content: "";
+      top: rem(-61px);
+      right: 50%;
+      transform: translateX(50%);
+      width: rem(85px);
+      height: rem(85px);
+      border-radius: rem(42.5px);
+      background: $white;
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: rem(127px);
+      height: rem(167px);
+      background: url(../img/comment_pattern.png) no-repeat;
+
+      @include phones {
+        width: 26vw;
+        background-size: contain;
+
+      }
+    }
 
     &--active {
       display: flex;
+
+      @include tablets {
+        flex-direction: column;
+        padding: 0;
+        // justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
     }
 
     &-item {
       display: flex;
       flex-direction: column;
+
+      @include tablets {
+        align-items: center;
+        padding-bottom: rem(35px);
+      }
     }
 
     &-img {
-      margin-right: 20px;
+      margin-right: rem(20px);
+      z-index: 5;
+
+      @include tablets {
+        margin-right: 0;
+        margin-top: rem(60px);
+      }
+
+      @include phones {
+        margin-top: rem(40px);
+        width: 33%;
+      }
     }
 
     &-subject {
       font-family: 'alegreya';
-      font-size: 30px;
+      font-size: rem(30px);
       color: $darkgray;
       font-style: normal;
       font-weight: 500;
-      margin-top: 15px;
-      margin-bottom: 26px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      margin-top: rem(15px);
+      margin-bottom: rem(26px);
+      @include phones {
+        font-size: 4vmin;
+      }
     }
 
     &-msg {
       font-family: 'alegreya';
-      font-size: 18px;
+      font-size: rem(18px);
       color: $gray;
       font-style: normal;
       font-weight: 400;
-      width: 72%;
+      width: 90%;
       margin: 0;
       line-height: 1.2;
-      margin-bottom: 31px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      margin-bottom: rem(31px);
+      z-index: 5;
+
+      @include phones {
+        font-size: 3vmin;
+      }
     }
 
     &-author {
       font-family: 'alegreya';
-      font-size: 18px;
+      font-size: rem(18px);
       color: $gray;
       font-style: normal;
       font-weight: 500;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+
+      @include phones {
+        font-size: 3vmin;
+      }
     }
   }
 
   &__authors {
-    // padding-bottom: 33px;
 
     &-list {
       display: flex;
@@ -122,7 +208,7 @@
       align-items: center;
 
       li {
-        margin-right: 10px;
+        margin-right: rem(10px);
 
         &:last-child {
           margin-right: 0;
@@ -136,23 +222,23 @@
 
     @each $pic in (alena, girl, boy) {
       &-#{$pic} {
-        width: 66.7px;
-        height: 66.7px;
+        width: rem(66.7px);
+        height: rem(66.7px);
         overflow: hidden;
         border-radius: 50%;
-        // background-image: url(../img/comments__authors-#{$pic}.png);
-        // background-repeat: no-repeat;
 
-        // @if $pic==alena {
-          
-        // }
-
-        // @if $pic==girl {
-        // }
-
-        // @if $pic==boy {
-        // }
+        @include phones {
+          width: 14.6vw;
+          height: 14.6vw;
+        }
       }
+    }
+  }
+
+  &__post-pic {
+    @include phones {
+      width: 100%;
+      height: auto;
     }
   }
 }

@@ -1,6 +1,7 @@
 .header {
   &__container {
     display: flex;
+    position: relative;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -8,23 +9,30 @@
 }
 
 .chocco__logo {
-  max-width: 55px;
+  max-width: rem(55px);
   font-family: 'museosans';
-  font-size: 24px;
+  font-size: rem(24px);
   color: $white;
-  line-height: 21px;
+  line-height: rem(21px);
   font-style: normal;
   font-weight: 500;
-  margin-left: 80px;
+  // margin-left: rem(80px);
+  margin-left: 7.3%;
 }
 
 .navigation {
+  width: 57.86%;
   &__list {
     display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    @include tablets {
+      display: none;
+    }
   }
 
   &__item {
-    margin-right: 27px;
+    // margin-right: rem(27px);
 
     &:last-child {
       margin-right: 0;
@@ -33,29 +41,141 @@
 
   &__link {
     font-family: 'alegreya';
-    font-size: 18px;
+    font-size: rem(18px);
     color: $white;
     line-height: 1.67;
     font-style: normal;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      text-decoration: underline;
+    }
   }
 }
 
 .contact-phone {
-  &:before {
-    content: "";
-    display: inline-block;
-    width: 12px;
-    height: 11px;
-    background: url(../img/phone.png);
-    margin-right: 4px;
+  display: flex;
+  align-items: center;
+  margin-right: rem(80px);
+  @include tablets {
+    display: none;
   }
+  
+  &:hover {
+    .contact-icon {
+      fill: $green;
+      transition: fill .4s;
+    }
+  }
+  
+  &:focus {
+    .contact-icon {
+      fill: $green;
+      transition: fill .4s;
+      min-width: rem(12px);
+    }
+  }
+  
+}
 
-  .contact-number {
-    font-family: 'alegreya';
-    font-size: 24px;
-    color: $white;
-    line-height: 1.25;
-    font-style: normal;
-    margin-right: 80px;
+.contact-icon {
+  min-width: rem(12px);
+}
+
+.contact-number {
+  font-family: 'alegreya';
+  font-size: rem(24px);
+  color: $white;
+  line-height: 1.25;
+  font-style: normal;
+  min-width: rem(146px);
+}
+
+.contact-icon {
+  width: rem(12px);
+  height: rem(12px);
+  fill: $white;
+  transition: fill .4s;
+}
+
+.hamburger-menu {
+  display: none;
+  position: absolute;
+  right: rem(25px);
+  top: rem(10px);
+  width: rem(24px);
+  height: rem(22px);
+  border-radius: rem(2px);
+  
+  @include tablets {
+    display: block;
+  }
+  &__link {
+    display: block;
+    position: absolute;
+    // right: rem(25px);
+    top: rem(9px);
+    width: rem(24px);
+    height: rem(4px);
+    background-color: $white;
+    border-radius: rem(2px);
+  
+    &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: rem(24px);
+    height: rem(4px);
+    top: rem(-9px);
+    background-color: $white;
+    border-radius: rem(2px);
+    }
+  
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: rem(24px);
+      height: rem(4px);
+      top: rem(9px);
+      background-color: $white;
+      border-radius: rem(2px);
+      }
   }
 }
+
+// .hamburger-menu__link {
+//   display: none;
+//   position: absolute;
+//   right: rem(25px);
+//   top: rem(10px);
+//   width: rem(24px);
+//   height: rem(4px);
+//   background-color: $white;
+//   border-radius: rem(2px);
+
+//   &:before {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   width: rem(24px);
+//   height: rem(4px);
+//   top: rem(-9px);
+//   background-color: $white;
+//   border-radius: rem(2px);
+//   }
+
+//   &:after {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     width: rem(24px);
+//     height: rem(4px);
+//     top: rem(9px);
+//     background-color: $white;
+//     border-radius: rem(2px);
+//     }
+// }
