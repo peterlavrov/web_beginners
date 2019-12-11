@@ -11,6 +11,32 @@
 
 <body>
   <div class="wrapper">
+    <nav class="fullscreen-menu">
+        <ul class="fullscreen-menu__list">
+            <li class="fullscreen-menu__item">
+              <a href="#" class="fullscreen-menu__link">О нас</a>
+            </li>
+            <li class="fullscreen-menu__item">
+              <a href="#" class="fullscreen-menu__link">Батончики</a>
+            </li>
+            <li class="fullscreen-menu__item">
+              <a href="#" class="fullscreen-menu__link">Команда</a>
+            </li>
+            <li class="fullscreen-menu__item">
+              <a href="#" class="fullscreen-menu__link">Меню</a>
+            </li>
+            <li class="fullscreen-menu__item">
+              <a href="#" class="fullscreen-menu__link">Отзывы</a>
+            </li>
+            <li class="fullscreen-menu__item">
+              <a href="#" class="fullscreen-menu__link">Как мы работаем</a>
+            </li>
+            <li class="fullscreen-menu__item">
+              <a href="#" class="fullscreen-menu__link">Контакты</a>
+            </li>
+          </ul>
+          <a class="fullscreen-menu__close" href="#"></a>
+    </nav>
     <section class="welcome">
       <div class="container welcome__container">
         <div class="welcome__content">
@@ -53,6 +79,21 @@
               <a href="#" class="hamburger-menu">
                 <div class="hamburger-menu__link"></div>
               </a>
+              <script>
+                const hamburger = document.querySelector('.hamburger-menu__link');
+                const fscreen = document.querySelector('.fullscreen-menu');
+                const closebtn = document.querySelector('.fullscreen-menu__close');
+                hamburger.addEventListener('click', function(e){
+                  e.preventDefault();
+                  console.log('клик на гамбургер меню');
+                  fscreen.classList.add('fullscreen-menu--active');
+                });
+                closebtn.addEventListener('click', function(e){
+                  e.preventDefault();
+                  console.log('клик на кнопку закрыть');
+                  fscreen.classList.remove('fullscreen-menu--active');
+                })
+              </script>
             </div>
           </header>
           <div class="welcome__info">
