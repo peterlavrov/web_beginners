@@ -1,0 +1,69 @@
+.fullscreen-menu {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(47, 50, 52, 0.93);
+  z-index: 15;
+  text-align: center;
+
+  &--active {
+    display: flex;
+  }
+
+  &__close {
+    position: absolute;
+    width: rem(25px);
+    height: rem(25px);
+    top: rem(20px);
+    right: rem(20px);
+    &:before {
+      content: "";
+      display: block;
+        position: absolute;
+        width: rem(2.5px);
+        height: rem(25px);
+        border-radius: rem(2.5px);
+        // top: rem(21px);
+        right: rem(12px);
+        background: rgba($color: $white, $alpha: 0.7);
+        transform: rotate(45deg);
+    }
+    
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: rem(2.55px);
+      height: rem(25.5px);
+      border-radius: rem(2.5px);
+      // top: rem(21px);
+      right: rem(11px);
+      background: rgba($color: $white, $alpha: 0.7);
+      transform: rotate(-45deg);
+    }
+  }
+
+
+  &__item {
+    margin-bottom: 2vh;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-family: 'alegreya';
+    font-weight: 400;
+    font-size: rem(36px);
+    color: $white;
+
+    @include phones {
+      font-size: rem(30px);
+    }
+  }
+}
