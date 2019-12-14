@@ -1,8 +1,10 @@
 $white: #fff;
 $lightblue: #61c4d9;
+$blue: #00accf;
 $green: #0f5a47;
 $black: #0d0d0d;
 $gray: #666;
+$graybar: #333;
 $darkblack: #000;
 $cream: #f2f5f4;
 $creamy: #f8faf9;
@@ -13,6 +15,7 @@ $graytxt: #010101;
 $lightgreen: #cfdeda;
 $yellow: #dde3bd;
 $graysoc: #b3b3b3;
+$whiteopac: rgba(255, 255, 255, 0.9);
 
 @function rem($px) {
   @return $px / 16px + 0rem;

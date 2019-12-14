@@ -12,30 +12,30 @@
 <body>
   <div class="wrapper">
     <nav class="fullscreen-menu">
-        <ul class="fullscreen-menu__list">
-            <li class="fullscreen-menu__item">
-              <a href="#" class="fullscreen-menu__link">О нас</a>
-            </li>
-            <li class="fullscreen-menu__item">
-              <a href="#" class="fullscreen-menu__link">Батончики</a>
-            </li>
-            <li class="fullscreen-menu__item">
-              <a href="#" class="fullscreen-menu__link">Команда</a>
-            </li>
-            <li class="fullscreen-menu__item">
-              <a href="#" class="fullscreen-menu__link">Меню</a>
-            </li>
-            <li class="fullscreen-menu__item">
-              <a href="#" class="fullscreen-menu__link">Отзывы</a>
-            </li>
-            <li class="fullscreen-menu__item">
-              <a href="#" class="fullscreen-menu__link">Как мы работаем</a>
-            </li>
-            <li class="fullscreen-menu__item">
-              <a href="#" class="fullscreen-menu__link">Контакты</a>
-            </li>
-          </ul>
-          <a class="fullscreen-menu__close" href="#"></a>
+      <ul class="fullscreen-menu__list">
+        <li class="fullscreen-menu__item">
+          <a href="#" class="fullscreen-menu__link">О нас</a>
+        </li>
+        <li class="fullscreen-menu__item">
+          <a href="#" class="fullscreen-menu__link">Батончики</a>
+        </li>
+        <li class="fullscreen-menu__item">
+          <a href="#" class="fullscreen-menu__link">Команда</a>
+        </li>
+        <li class="fullscreen-menu__item">
+          <a href="#" class="fullscreen-menu__link">Меню</a>
+        </li>
+        <li class="fullscreen-menu__item">
+          <a href="#" class="fullscreen-menu__link">Отзывы</a>
+        </li>
+        <li class="fullscreen-menu__item">
+          <a href="#" class="fullscreen-menu__link">Как мы работаем</a>
+        </li>
+        <li class="fullscreen-menu__item">
+          <a href="#" class="fullscreen-menu__link">Контакты</a>
+        </li>
+      </ul>
+      <a class="fullscreen-menu__close" href="#"></a>
     </nav>
     <section class="welcome">
       <div class="container welcome__container">
@@ -83,25 +83,33 @@
                 const hamburger = document.querySelector('.hamburger-menu__link');
                 const fscreen = document.querySelector('.fullscreen-menu');
                 const closebtn = document.querySelector('.fullscreen-menu__close');
-                hamburger.addEventListener('click', function(e){
+
+                function noScroll() {
+                  window.scrollTo(0, 0);
+                }
+
+
+                hamburger.addEventListener('click', function (e) {
                   e.preventDefault();
                   console.log('клик на гамбургер меню');
                   fscreen.classList.add('fullscreen-menu--active');
+                  window.addEventListener('scroll', noScroll);
                 });
-                closebtn.addEventListener('click', function(e){
+                closebtn.addEventListener('click', function (e) {
                   e.preventDefault();
                   console.log('клик на кнопку закрыть');
                   fscreen.classList.remove('fullscreen-menu--active');
+                  window.removeEventListener('scroll', noScroll);
                 })
               </script>
             </div>
           </header>
           <div class="welcome__info">
-              <div class="booking">
-                <h1 class="booking__title">НАТУРАЛЬНЫЕ ШОКОЛАДНЫЕ БАТОНЧИКИ</h1>
-                <p class="booking__desc">Наши батончики идеально подходят для тех, кто следит за своим здоровьем</p>
-                <a href="#" class="booking__link btn">Заказать</a>
-              </div>
+            <div class="booking">
+              <h1 class="booking__title">НАТУРАЛЬНЫЕ ШОКОЛАДНЫЕ БАТОНЧИКИ</h1>
+              <p class="booking__desc">Наши батончики идеально подходят для тех, кто следит за своим здоровьем</p>
+              <a href="#" class="booking__link btn">Заказать</a>
+            </div>
             <div class="welcome__bars-img">
               <img src="./img/bars.png" alt="Батончики CHOCCO" class="bars-pic">
             </div>
@@ -185,9 +193,9 @@
             <li class="about__qualities-item">
               <div class="about__qualities-item-img">
                 <!-- <img src="./icons/2.svg" alt="" class="about__qualities-item-pic"> -->
-                <svg class="about__qualities-item-pic" width="75" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22.6 20.8"
-                  style="enable-background:new 0 0 20.6 20.8;" xml:space="preserve">
+                <svg class="about__qualities-item-pic" width="75" height="64" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 22.6 20.8" style="enable-background:new 0 0 20.6 20.8;" xml:space="preserve">
                   <use xlink:href="./icons/sprite.svg#nutrition"></use>
                 </svg>
               </div>
@@ -202,76 +210,106 @@
         </div>
       </div>
     </section>
-    <section class="comments">
-      <div class="container comments__container">
-        <div class="comments__content">
-          <h2 class="comments__title">ОТЗЫВЫ</h2>
-          <ul class="comments__list">
-            <li class="comments__post comments__post--active">
-              <div class="comments__post-img">
-                <img src="./img/author_alena.png" alt="Алёна Хмельницкая" class="comments__post-pic">
+    <section class="bar">
+      <div class="container bar__container">
+        <div class="bar__prev-block">
+          <a href="#" class="bar__prev-link"></a>
+        </div>
+        <div class="bar__item">
+          <div class="bar__img">
+            <img src="./img/bar-granola.png" alt="Гранола виноград" class="bar__pic">
+          </div>
+          <div class="bar__desc">
+            <div class="bar__desc-ingridients">
+              <svg class="bar__icon" width="51" height="51" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                viewBox="0 0 442.326 442.326">
+                <use xlink:href="./icons/sprite.svg#chocolate-bar"></use>
+              </svg>
+              <div class="bar__title">
+                СОСТАВ
               </div>
-              <div class="comments__post-item">
-                <h3 class="comments__post-subject">Лучший перекус</h3>
-                <p class="comments__post-msg">Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В
-                  течение дня сижу за компьютером
-                  и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой.
-                  Это
-                  приятно
-                  и удобно.
-                </p>
-                <div class="comments__post-author">Алёна Хмельницкая</div>
-              </div>
-            </li>
-            <li class="comments__post">
-              <div class="comments__post-img">
-                <img src="./img/author_alena.png" alt="Алёна Хмельницкая" class="comments__post-pic">
-              </div>
-              <div class="comments__post-item">
-                <h3 class="comments__post-subject">Лучший перекус</h3>
-                <p class="comments__post-msg">Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В
-                  течение дня сижу за компьютером
-                  и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой.
-                  Это
-                  приятно
-                  и удобно.
-                </p>
-                <div class="comments__post-author">Алёна Хмельницкая</div>
-              </div>
-            </li>
-            <li class="comments__post">
-              <div class="comments__post-img">
-                <img src="./img/author_alena.png" alt="Алёна Хмельницкая" class="comments__post-pic">
-              </div>
-              <div class="comments__post-item">
-                <h3 class="comments__post-subject">Лучший перекус</h3>
-                <p class="comments__post-msg">Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В
-                  течение дня сижу за компьютером
-                  и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой.
-                  Это
-                  приятно
-                  и удобно.
-                </p>
-                <div class="comments__post-author">Алёна Хмельницкая</div>
-              </div>
-            </li>
-          </ul>
-          <div class="comments__authors">
-            <ul class="comments__authors-list">
-              <li class="comments__authors-alena comments__authors--active">
-                <img src="./img/comments__authors-alena.png" alt="Аватар автора комментария"
-                  class="comments__authors-alena-pic">
+              <ul class="bar__ingridients-list">
+                <li class="bar__ingridients-item">
+                  <svg class="bar__ingridients-img" viewBox="-85 0 512 512.00159" width="51" height="51"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./icons/sprite.svg#oat"></use>
+                  </svg>
+                  <div class="bar__ingridients-name">Овёс</div>
+                  <div class="bar__ingridients-weight">25г</div>
+                </li>
+                <li class="bar__ingridients-item">
+                  <svg class="bar__ingridients-img" viewBox="0 0 512 512" width="51" height="51"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./icons/sprite.svg#seaweed"></use>
+                  </svg>
+                  <div class="bar__ingridients-name">Мор. водоросли</div>
+                  <div class="bar__ingridients-weight">15г</div>
+                </li>
+                <li class="bar__ingridients-item">
+                  <svg class="bar__ingridients-img" width="51" height="51" viewBox="0 0 511.999 511.999"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./icons/sprite.svg#almond"></use>
+                  </svg>
+                  <div class="bar__ingridients-name">Миндаль</div>
+                  <div class="bar__ingridients-weight">20г</div>
+                </li>
+                <li class="bar__ingridients-item">
+                  <svg class="bar__ingridients-img" viewBox="0 0 511 511" width="51" height="51"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./icons/sprite.svg#milk"></use>
+                  </svg>
+                  <div class="bar__ingridients-name">Сухое молоко</div>
+                  <div class="bar__ingridients-weight">10г</div>
+                </li>
+                <li class="bar__ingridients-item">
+                  <svg class="bar__ingridients-img" viewBox="-34 0 511 511.9962" width="51" height="51"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./icons/sprite.svg#seeds"></use>
+                  </svg>
+                  <div class="bar__ingridients-name">Тыкв. семечки</div>
+                  <div class="bar__ingridients-weight">20г</div>
+                </li>
+                <li class="bar__ingridients-item">
+                  <svg class="bar__ingridients-img" viewBox="0 0 60 60" width="51" height="51"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./icons/sprite.svg#apitherapy"></use>
+                  </svg>
+                  <div class="bar__ingridients-name">Зам. сахара</div>
+                  <div class="bar__ingridients-weight">4г</div>
+                </li>
+                <li class="bar__ingridients-item">
+                  <svg class="bar__ingridients-img" viewBox="0 0 512.001 512.001" width="51" height="51"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./icons/sprite.svg#beans"></use>
+                  </svg>
+                  <div class="bar__ingridients-name">Какао бобы</div>
+                  <div class="bar__ingridients-weight">4г</div>
+                </li>
+              </ul>
+            </div>
+            <h3 class="bar__desc-title">БАТОНЧИК "МОРСКИЕ ВОДОРОСЛИ"</h3>
+            <p class="bar__desc-text">Гранола из морских водорослей с овсом, миндалем и тыквенными семечками. В состав
+              также входят: сухое молоко, заменитель сахара и какао бобы.</p>
+            <ul class="bar__desc-param">
+              <li class="bar__desc-item">
+                <div class="bar__desc-item-title">Калорийность</div>
+                <div class="bar__desc-item-value">120 ккал</div>
               </li>
-              <li class="comments__authors-girl">
-                <img src="./img/comments__authors-girl.png" alt="Аватар автора комментария"
-                  class="comments__authors-alena-pic">
-              </li>
-              <li class="comments__authors-boy">
-                <img src="./img/comments__authors-boy.png" alt="Аватар автора комментария"
-                  class="comments__authors-alena-pic">
+              <li class="bar__desc-item">
+                <div class="bar__desc-item-title">Вес</div>
+                <div class="bar__desc-item-value">98 грамм</div>
               </li>
             </ul>
+            <div class="bar__desc-order">
+              <div class="bar__desc-price">
+                140₽
+              </div>
+              <a href="#" class="bar__desc-button btn">ЗАКАЗАТЬ</a>
+            </div>
           </div>
+        </div>
+        <div class="bar__next-block">
+          <a href="#" class="bar__next-link"></a>
         </div>
       </div>
     </section>
@@ -404,6 +442,79 @@
         </ul>
       </div>
     </section>
+    <section class="comments">
+      <div class="container comments__container">
+        <div class="comments__content">
+          <h2 class="comments__title">ОТЗЫВЫ</h2>
+          <ul class="comments__list">
+            <li class="comments__post comments__post--active">
+              <div class="comments__post-img">
+                <img src="./img/author_alena.png" alt="Алёна Хмельницкая" class="comments__post-pic">
+              </div>
+              <div class="comments__post-item">
+                <h3 class="comments__post-subject">Лучший перекус</h3>
+                <p class="comments__post-msg">Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В
+                  течение дня сижу за компьютером
+                  и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой.
+                  Это
+                  приятно
+                  и удобно.
+                </p>
+                <div class="comments__post-author">Алёна Хмельницкая</div>
+              </div>
+            </li>
+            <li class="comments__post">
+              <div class="comments__post-img">
+                <img src="./img/author_alena.png" alt="Алёна Хмельницкая" class="comments__post-pic">
+              </div>
+              <div class="comments__post-item">
+                <h3 class="comments__post-subject">Лучший перекус</h3>
+                <p class="comments__post-msg">Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В
+                  течение дня сижу за компьютером
+                  и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой.
+                  Это
+                  приятно
+                  и удобно.
+                </p>
+                <div class="comments__post-author">Алёна Хмельницкая</div>
+              </div>
+            </li>
+            <li class="comments__post">
+              <div class="comments__post-img">
+                <img src="./img/author_alena.png" alt="Алёна Хмельницкая" class="comments__post-pic">
+              </div>
+              <div class="comments__post-item">
+                <h3 class="comments__post-subject">Лучший перекус</h3>
+                <p class="comments__post-msg">Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В
+                  течение дня сижу за компьютером
+                  и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой.
+                  Это
+                  приятно
+                  и удобно.
+                </p>
+                <div class="comments__post-author">Алёна Хмельницкая</div>
+              </div>
+            </li>
+          </ul>
+          <div class="comments__authors">
+            <ul class="comments__authors-list">
+              <li class="comments__authors-alena comments__authors--active">
+                <img src="./img/comments__authors-alena.png" alt="Аватар автора комментария"
+                  class="comments__authors-alena-pic">
+              </li>
+              <li class="comments__authors-girl">
+                <img src="./img/comments__authors-girl.png" alt="Аватар автора комментария"
+                  class="comments__authors-alena-pic">
+              </li>
+              <li class="comments__authors-boy">
+                <img src="./img/comments__authors-boy.png" alt="Аватар автора комментария"
+                  class="comments__authors-alena-pic">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="order">
       <div class="container order__container">
         <div class="order__wrapper">
@@ -495,36 +606,39 @@
                 <li class="contacts__socials-item">
                   <a href="#" class="contacts__socials-link">
                     <!-- <img src="./icons/vk.svg" alt="Вконтакте" class="contacts__socials-img"> -->
-                    <svg class="contacts__socials-img" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.7 36.7"
-                      style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
-                    <use xlink:href="./icons/sprite.svg#vk"></use>
+                    <svg class="contacts__socials-img" width="100%" height="100%" version="1.1"
+                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
+                      <use xlink:href="./icons/sprite.svg#vk"></use>
                     </svg>
                   </a>
                 </li>
                 <li class="contacts__socials-item">
                   <a href="#" class="contacts__socials-link">
                     <!-- <img src="./icons/f.svg" alt="Facebook" class="contacts__socials-img"> -->
-                    <svg class="contacts__socials-img" width="20" height="20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
-                    <use xlink:href="./icons/sprite.svg#f"></use>
+                    <svg class="contacts__socials-img" width="20" height="20" version="1.1"
+                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
+                      <use xlink:href="./icons/sprite.svg#f"></use>
                     </svg>
                   </a>
                 </li>
                 <li class="contacts__socials-item">
                   <a href="#" class="contacts__socials-link">
                     <!-- <img src="./icons/in.svg" alt="Instagram" class="contacts__socials-img"> -->
-                    <svg class="contacts__socials-img" version="1.1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
-                    <use xlink:href="./icons/sprite.svg#in"></use>
+                    <svg class="contacts__socials-img" version="1.1" width="20" height="20"
+                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
+                      <use xlink:href="./icons/sprite.svg#in"></use>
                     </svg>
                   </a>
                 </li>
                 <li class="contacts__socials-item">
                   <a href="#" class="contacts__socials-link">
                     <!-- <img src="./icons/tv.svg" alt="Twitter" class="contacts__socials-img"> -->
-                    <svg class="contacts__socials-img" version="1.1" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
+                    <svg class="contacts__socials-img" version="1.1" width="100%" height="100%"
+                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 36.7 36.7" style="enable-background:new 0 0 36.7 36.7;" xml:space="preserve">
                       <use xlink:href="./icons/sprite.svg#tw"></use>
                     </svg>
                   </a>
