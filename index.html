@@ -389,6 +389,34 @@
           </ul>
         </div>
       </div>
+      <script>
+        const itemMember = document.querySelectorAll('.team__member');
+        const itemAbout = document.querySelectorAll('.team__member-name');
+        const memberLenght = itemMember.length;
+        console.log(memberLenght);
+
+        function activeMemberDel(itemMember) {
+          for (let i = 0; i < memberLenght; i++) {
+            if (itemMember[i].classList.contains('team__member--active')) {
+              itemMember[i].classList.remove('team__member--active');
+            }
+          }
+        }
+        // activeMemberDel(itemMember);
+
+        for (let i = 0; i < memberLenght; i++) {
+          itemAbout[i].addEventListener('click', function (e) {
+            console.log('клик');
+            console.log(itemMember[i].classList);
+            if (itemMember[i].classList.contains('team__member--active')) {
+              itemMember[i].classList.remove('team__member--active');
+            } else {
+              activeMemberDel(itemMember);
+              itemMember[i].classList.add('team__member--active');
+            }
+          })
+        };
+      </script>
     </section>
     <section class="menu">
       <div class="container menu__container">
@@ -441,6 +469,40 @@
           </li>
         </ul>
       </div>
+      <script>
+        const item = document.querySelectorAll('.menu__item');
+        const title = document.querySelectorAll('.menu__item-title');
+        const close = document.querySelectorAll('.menu__item-desc-close');
+        const itemLenght = item.length;
+        console.log(itemLenght);
+
+        function activeElemDel(item) {
+          for (let i = 0; i < itemLenght; i++) {
+            if (item[i].classList.contains('menu__item--active')) {
+              item[i].classList.remove('menu__item--active');
+            }
+          }
+        }
+
+        for (let i = 0; i < itemLenght; i++){
+          close[i].addEventListener('click', function (e){
+            activeElemDel(item);
+          })
+        }
+
+        for (let i = 0; i < itemLenght; i++) {
+          title[i].addEventListener('click', function (e) {
+            console.log('клик');
+            console.log(item[i].classList);
+            if (item[i].classList.contains('menu__item--active')) {
+              item[i].classList.remove('menu__item--active');
+            } else {
+              activeElemDel(item);
+              item[i].classList.add('menu__item--active');
+            }
+          })
+        };
+      </script>
     </section>
     <section class="comments">
       <div class="container comments__container">

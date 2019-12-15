@@ -118,6 +118,10 @@
       color: $darkgray;
       margin-bottom: rem(13px);
 
+      &:hover {
+        cursor: pointer;
+      }
+
       @include phones {
         font-size: 4vw;
       }
@@ -142,6 +146,7 @@
       height: 0;
       overflow: hidden;
       top: rem(31px);
+      background-color: rgba($color: $white, $alpha: .7);
 
       @include tablets {
         // width: 60%;
@@ -151,6 +156,7 @@
     &--active {
       .team__member-about {
         overflow: visible;
+        height: auto;
       }
     }
 

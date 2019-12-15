@@ -2050,6 +2050,8 @@ a {
     font-weight: 400;
     color: #323232;
     margin-bottom: 0.8125rem; }
+    .team__member-name:hover {
+      cursor: pointer; }
     @media screen and (max-width: 480px) {
       .team__member-name {
         font-size: 4vw; } }
@@ -2069,9 +2071,11 @@ a {
     position: absolute;
     height: 0;
     overflow: hidden;
-    top: 1.9375rem; }
+    top: 1.9375rem;
+    background-color: rgba(255, 255, 255, 0.7); }
   .team__member--active .team__member-about {
-    overflow: visible; }
+    overflow: visible;
+    height: auto; }
   .team__member-position {
     font-family: 'alegreya';
     font-size: 1.125rem;
@@ -2213,15 +2217,23 @@ a {
     .menu__item-desc-close {
       display: block;
       position: absolute;
-      width: 0.15625rem;
-      height: 1.5625rem;
-      border-radius: 0.15625rem;
-      top: 1.3125rem;
-      right: 2.3125rem;
-      background: rgba(255, 255, 255, 0.7);
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg); }
+      width: 1.875rem;
+      height: 1.875rem;
+      top: 1.25rem;
+      right: 1.25rem; }
+      .menu__item-desc-close:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0.15625rem;
+        height: 1.5625rem;
+        border-radius: 0.15625rem;
+        top: 0;
+        right: 0.8125rem;
+        background: rgba(255, 255, 255, 0.7);
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
     .menu__item-desc-close:after {
       content: "";
       display: block;
@@ -2230,11 +2242,11 @@ a {
       height: 1.59375rem;
       border-radius: 0.15625rem;
       top: 0;
-      right: 0;
+      right: 0.8125rem;
       background: rgba(255, 255, 255, 0.7);
-      -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      transform: rotate(-90deg); }
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
     .menu__item--active .menu__item-desc {
       overflow: visible;
       width: 33.125rem; }
