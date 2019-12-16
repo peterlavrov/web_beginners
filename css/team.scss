@@ -147,16 +147,14 @@
       overflow: hidden;
       top: rem(31px);
       background-color: rgba($color: $white, $alpha: .7);
-
-      @include tablets {
-        // width: 60%;
-      }
+      // transition: height .4s;
     }
 
     &--active {
       .team__member-about {
         overflow: visible;
         height: auto;
+        // transition: height .4s;
       }
     }
 

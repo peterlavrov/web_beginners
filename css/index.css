@@ -1280,6 +1280,11 @@ a {
     @media screen and (max-width: 768px) {
       .bar__container {
         min-height: 0; } }
+  .bar__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden; }
   .bar__prev-link {
     display: block;
     position: relative;
@@ -1382,10 +1387,10 @@ a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+    min-width: 100%;
     z-index: 5; }
+    .bar__item:first-child {
+      z-index: 10; }
     @media screen and (max-width: 768px) {
       .bar__item {
         -webkit-box-orient: vertical;

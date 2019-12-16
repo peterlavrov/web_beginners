@@ -31,6 +31,11 @@
     }
   }
 
+  &__list {
+    display: flex;
+    overflow: hidden;
+  }
+
   &__prev-link {
     display: block;
     position: relative;
@@ -137,8 +142,12 @@
 
   &__item {
     display: flex;
-    flex-grow: 1;
+    min-width: 100%;
     z-index: 5;
+
+    &:first-child {
+      z-index: 10;
+    }
 
     @include tablets {
       flex-direction: column;
