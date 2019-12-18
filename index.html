@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CHOCCO</title>
   <link rel="stylesheet" href="./css/index.css">
+  
 </head>
 
 <body>
@@ -79,29 +80,6 @@
               <a href="#" class="hamburger-menu">
                 <div class="hamburger-menu__link"></div>
               </a>
-              <script>
-                const hamburger = document.querySelector('.hamburger-menu__link');
-                const fscreen = document.querySelector('.fullscreen-menu');
-                const closebtn = document.querySelector('.fullscreen-menu__close');
-
-                function noScroll() {
-                  window.scrollTo(0, 0);
-                }
-
-
-                hamburger.addEventListener('click', function (e) {
-                  e.preventDefault();
-                  console.log('клик на гамбургер меню');
-                  fscreen.classList.add('fullscreen-menu--active');
-                  window.addEventListener('scroll', noScroll);
-                });
-                closebtn.addEventListener('click', function (e) {
-                  e.preventDefault();
-                  console.log('клик на кнопку закрыть');
-                  fscreen.classList.remove('fullscreen-menu--active');
-                  window.removeEventListener('scroll', noScroll);
-                })
-              </script>
             </div>
           </header>
           <div class="welcome__info">
@@ -400,27 +378,7 @@
         </div>
       </div>
       <script>
-        const leftArrow = document.querySelector('.bar__prev-link');
-        const rightArrow = document.querySelector('.bar__next-link');
-        const barList = document.querySelector('.bar__list');
-
-        leftArrow.addEventListener('click', function(e){
-          e.preventDefault();
-          infiniteTurn(leftArrow);
-        });
-
-        rightArrow.addEventListener('click', function(e){
-          e.preventDefault();
-          infiniteTurn(rightArrow);
-        });
-
-        function infiniteTurn (direction) {
-          if (direction == rightArrow) {
-            barList.appendChild(barList.firstElementChild);
-          } else {
-            barList.insertBefore(barList.lastElementChild, barList.firstElementChild);
-          }
-        };
+        
       </script>
     </section>
     <section class="team">
@@ -579,42 +537,6 @@
           </li>
         </ul>
       </div>
-      <script>
-        const item = document.querySelectorAll('.menu__item');
-        const title = document.querySelectorAll('.menu__item-title');
-        const close = document.querySelectorAll('.menu__item-desc-close');
-        const itemLenght = item.length;
-        console.log(itemLenght);
-
-        function activeElemDel() {
-          for (let i = 0; i < itemLenght; i++) {
-            if (item[i].classList.contains('menu__item--active')) {
-              item[i].classList.remove('menu__item--active');
-            }
-          }
-        }
-
-        for (let i = 0; i < itemLenght; i++) {
-          close[i].addEventListener('click', function (e) {
-            e.preventDefault();
-            activeElemDel();
-          })
-        }
-
-        for (let i = 0; i < itemLenght; i++) {
-          title[i].addEventListener('click', function (e) {
-            e.preventDefault();
-            console.log('клик');
-            console.log(item[i].classList);
-            if (item[i].classList.contains('menu__item--active')) {
-              item[i].classList.remove('menu__item--active');
-            } else {
-              activeElemDel();
-              item[i].classList.add('menu__item--active');
-            }
-          })
-        };
-      </script>
     </section>
     <section class="comments">
       <div class="container comments__container">
@@ -639,50 +561,51 @@
             </li>
             <li class="comments__post">
               <div class="comments__post-img">
-                <img src="./img/author_alena.png" alt="Алёна Хмельницкая" class="comments__post-pic">
+                <img src="./img/author_maria.png" alt="Мария Орлова" class="comments__post-pic">
               </div>
               <div class="comments__post-item">
-                <h3 class="comments__post-subject">Лучший перекус</h3>
-                <p class="comments__post-msg">Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В
-                  течение дня сижу за компьютером
-                  и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой.
-                  Это
-                  приятно
-                  и удобно.
+                <h3 class="comments__post-subject">Лучшие батончики премиум уровня</h3>
+                <p class="comments__post-msg">Батончики понравились. На мой взгляд слегка завышена цена по сравнению с
+                  конкурентами, однако, как говорится – оно того стоит. Нравится носить с собой, нравится держать в
+                  руке. Ну и конечно же, кушать. Идеально утоляют голод, хоть и не надолго. Через час уже ем ещё один.
+                  Но это скорее плюс, чем минус.
                 </p>
-                <div class="comments__post-author">Алёна Хмельницкая</div>
+                <div class="comments__post-author">Мария Орлова</div>
               </div>
             </li>
             <li class="comments__post">
               <div class="comments__post-img">
-                <img src="./img/author_alena.png" alt="Алёна Хмельницкая" class="comments__post-pic">
+                <img src="./img/author_vadim.png" alt="Вадим Грачев" class="comments__post-pic">
               </div>
               <div class="comments__post-item">
-                <h3 class="comments__post-subject">Лучший перекус</h3>
-                <p class="comments__post-msg">Я ем малыми порциями, но часто. Это повышает мою продуктивность в разы. В
-                  течение дня сижу за компьютером
-                  и часто отходить в кафе или на кухню просто не могу себе позволить. А батончик – он всегда под рукой.
-                  Это
-                  приятно
-                  и удобно.
+                <h3 class="comments__post-subject">Идеально подходят для спортсменов</h3>
+                <p class="comments__post-msg">После тренировок всегда хочется быстро закинуться чем-то белковым, потому
+                  что до дома ещё нужно доехать. А кушать хочется. Протеиновые батончики всегда выручают в этом плане.
+                  Спасибо производителю за этот качественный и экологичный продукт.
                 </p>
-                <div class="comments__post-author">Алёна Хмельницкая</div>
+                <div class="comments__post-author">Вадим Грачев</div>
               </div>
             </li>
           </ul>
           <div class="comments__authors">
             <ul class="comments__authors-list">
-              <li class="comments__authors-alena comments__authors--active">
-                <img src="./img/comments__authors-alena.png" alt="Аватар автора комментария"
-                  class="comments__authors-alena-pic">
+              <li class="comments__authors-author">
+                <a href="#" class="comments__authors-author-link  comments__authors--active">
+                  <img src="./img/author_alena.png" alt="Аватар автора комментария"
+                    class="comments__authors-author-pic">
+                </a>
               </li>
-              <li class="comments__authors-girl">
-                <img src="./img/comments__authors-girl.png" alt="Аватар автора комментария"
-                  class="comments__authors-alena-pic">
+              <li class="comments__authors-author">
+                <a href="#" class="comments__authors-author-link">
+                  <img src="./img/author_maria.png" alt="Аватар автора комментария"
+                    class="comments__authors-author-pic">
+                </a>
               </li>
-              <li class="comments__authors-boy">
-                <img src="./img/comments__authors-boy.png" alt="Аватар автора комментария"
-                  class="comments__authors-alena-pic">
+              <li class="comments__authors-author">
+                <a href="#" class="comments__authors-author-link">
+                  <img src="./img/author_vadim.png" alt="Аватар автора комментария"
+                    class="comments__authors-author-pic">
+                </a>
               </li>
             </ul>
           </div>
@@ -698,11 +621,11 @@
               <div class="order__form-row">
                 <label for="name" class="order__form-item">
                   <div class="order__form-title">Имя</div>
-                  <input type="text" class="order__form-input" id="name" name="name">
+                  <input type="text" class="order__form-input" id="name" name="name" required>
                 </label>
                 <label for="phone" class="order__form-item">
                   <div class="order__form-title">Телефон</div>
-                  <input type="text" class="order__form-input" id="phone" name="phone" placeholder="89022348912">
+                  <input type="text" class="order__form-input" id="phone" name="phone" placeholder="89022348912" required>
                 </label>
               </div>
               <div class="order__form-row">
@@ -734,7 +657,7 @@
               <div class="order__form-row">
                 <label for="comment" class="order__form-item">
                   <div class="order__form-title">Коментарий</div>
-                  <textarea type="text" class="order__form-input" id="comment" name="comment"></textarea>
+                  <textarea type="text" class="order__form-input" id="comment" name="comment" required></textarea>
                 </label>
               </div>
               <div class="order__form-row">
@@ -751,8 +674,6 @@
                   <div class="order__form-title">Не перезванивать</div>
                 </label>
               </div>
-              <!-- <div class="order__form-row">
-              </div> -->
               <div class="order__form-row">
                 <label for="" class="order__form-flag">
                   <button type="submit" class="order__form-submit btn" id="submit">ЗАКАЗАТЬ</button>
@@ -763,7 +684,6 @@
           </form>
         </div>
       </div>
-
     </section>
     <section class="contacts">
       <div class="container contacts__container">
@@ -826,8 +746,15 @@
         </div>
       </div>
     </section>
+    <div class="modal">
+      <div class="modal__window">
+        <div class="modal__result">Сообщение отправлено</div>
+        <a href="#" class="modal__close btn">ЗАКРЫТЬ</a>
+      </div>
+    </div>
   </div>
   </div>
 </body>
-
+<script src="./css/main.js">
+</script>
 </html>
