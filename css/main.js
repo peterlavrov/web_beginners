@@ -46,6 +46,35 @@ function infiniteTurn(direction) {
   }
 }
 
+//team
+
+const itemMember = document.querySelectorAll('.team__member');
+        const itemAbout = document.querySelectorAll('.team__member-name');
+        const memberLenght = itemMember.length;
+        console.log(memberLenght);
+
+        function activeMemberDel() {
+          for (let i = 0; i < memberLenght; i++) {
+            if (itemMember[i].classList.contains('team__member--active')) {
+              itemMember[i].classList.remove('team__member--active');
+            }
+          }
+        }
+
+        for (let i = 0; i < memberLenght; i++) {
+          itemAbout[i].addEventListener('click', function (e) {
+            e.preventDefault();
+            console.log('клик');
+            console.log(itemMember[i].classList);
+            if (itemMember[i].classList.contains('team__member--active')) {
+              itemMember[i].classList.remove('team__member--active');
+            } else {
+              activeMemberDel();
+              itemMember[i].classList.add('team__member--active');
+            }
+          })
+        };
+
 //menu
 
 const item = document.querySelectorAll('.menu__item');
@@ -118,6 +147,11 @@ for (let i = 0; i < numComments; i++) {
 
 const form = document.querySelector('.order__form');
 const modal = document.querySelector('.modal');
+const phone = document.querySelector('#phone');
+const house = document.querySelector('#house');
+const building = document.querySelector('#building');
+const floor = document.querySelector('#floor');
+const apart = document.querySelector('#apart');
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -134,6 +168,7 @@ form.addEventListener('submit', function (e) {
       const response = JSON.parse(xhr.responseText);
       console.log(response);
       modal.style.display = 'flex';
+      window.addEventListener('scroll', noScroll);
     }
 
     document.addEventListener('keyup', e => {
@@ -149,10 +184,112 @@ form.addEventListener('submit', function (e) {
       let elem = e.target;
       console.log(elem);
 
-      if (elem.tagName === 'A'){
+      if (elem.tagName === 'A') {
         modal.style.display = 'none';
       }
-    })
+    });
 
-  })
+
+  });
+});
+
+phone.addEventListener('keydown', function (e) {
+  let isDigit = false;
+  let isDash = false;
+  let isControl = false;
+
+  if (e.key >= 0 || e.key <= 9) {
+    isDigit = true;
+    console.log('цифра');
+  }
+
+  if (e.key == '-') {
+    isDash = true;
+    console.log('тире');
+  }
+
+  if (e.key == 'ArrowRight' || e.key == 'ArrowLeft' || e.key == 'Backspace' || e.key == 'Tab') {
+    isControl = true;
+    console.log('контрольная клавиша');
+  }
+
+  if (!isDigit && !isDash && !isControl) {
+    e.preventDefault();
+  }
+});
+
+house.addEventListener('keydown', function (e) {
+  let isDigit = false;
+  let isControl = false;
+
+  if (e.key >= 0 || e.key <= 9) {
+    isDigit = true;
+    console.log('цифра');
+  }
+
+  if (e.key == 'ArrowRight' || e.key == 'ArrowLeft' || e.key == 'Backspace' || e.key == 'Tab') {
+    isControl = true;
+    console.log('контрольная клавиша');
+  }
+
+  if (!isDigit && !isControl) {
+    e.preventDefault();
+  }
+});
+
+building.addEventListener('keydown', function (e) {
+  let isDigit = false;
+  let isControl = false;
+
+  if (e.key >= 0 || e.key <= 9) {
+    isDigit = true;
+    console.log('цифра');
+  }
+
+  if (e.key == 'ArrowRight' || e.key == 'ArrowLeft' || e.key == 'Backspace' || e.key == 'Tab') {
+    isControl = true;
+    console.log('контрольная клавиша');
+  }
+
+  if (!isDigit && !isControl) {
+    e.preventDefault();
+  }
+});
+
+apart.addEventListener('keydown', function (e) {
+  let isDigit = false;
+  let isControl = false;
+
+  if (e.key >= 0 || e.key <= 9) {
+    isDigit = true;
+    console.log('цифра');
+  }
+
+  if (e.key == 'ArrowRight' || e.key == 'ArrowLeft' || e.key == 'Backspace' || e.key == 'Tab') {
+    isControl = true;
+    console.log('контрольная клавиша');
+  }
+
+  if (!isDigit && !isControl) {
+    e.preventDefault();
+  }
+});
+
+floor.addEventListener('keydown', function (e) {
+  let isDigit = false;
+  let isControl = false;
+
+  if (e.key >= 0 || e.key <= 9) {
+    isDigit = true;
+    console.log('цифра');
+  }
+
+  if (e.key == 'ArrowRight' || e.key == 'ArrowLeft' || e.key == 'Backspace' || e.key == 'Tab') {
+    isControl = true;
+    console.log('контрольная клавиша');
+  }
+
+  if (!isDigit && !isControl) {
+    e.preventDefault();
+  }
 });

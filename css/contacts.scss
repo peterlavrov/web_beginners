@@ -1,8 +1,6 @@
 .contacts {
   &__container {
     position: relative;
-    // background: url(../img/map.png) no-repeat;
-    // background-size: cover;
     min-height: rem(650px);
     height: 100vh;
     min-width: 100%;
@@ -27,6 +25,11 @@
 
     &-pic {
       width: 100%;
+
+      @include tablets {
+        width: auto;
+        height: 100%;
+      }
     }
   }
 

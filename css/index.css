@@ -2286,6 +2286,10 @@ a {
   width: 100%; }
   .contacts__map-pic {
     width: 100%; }
+    @media screen and (max-width: 768px) {
+      .contacts__map-pic {
+        width: auto;
+        height: 100%; } }
 
 .contacts__wrapper {
   display: -webkit-box;
