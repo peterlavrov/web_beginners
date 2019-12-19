@@ -166,7 +166,6 @@ form.addEventListener('submit', function (e) {
       const response = JSON.parse(xhr.responseText);
       console.log(response);
       modal.style.display = 'flex';
-      window.addEventListener('scroll', noScroll);
     }
 
     document.addEventListener('keyup', e => {
