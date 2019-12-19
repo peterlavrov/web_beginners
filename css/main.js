@@ -148,8 +148,6 @@ for (let i = 0; i < numComments; i++) {
 const form = document.querySelector('.order__form');
 const modal = document.querySelector('.modal');
 const phone = document.querySelector('#phone');
-const house = document.querySelector('#house');
-const building = document.querySelector('#building');
 const floor = document.querySelector('#floor');
 const apart = document.querySelector('#apart');
 
@@ -218,43 +216,7 @@ phone.addEventListener('keydown', function (e) {
   }
 });
 
-house.addEventListener('keydown', function (e) {
-  let isDigit = false;
-  let isControl = false;
 
-  if (e.key >= 0 || e.key <= 9) {
-    isDigit = true;
-    console.log('цифра');
-  }
-
-  if (e.key == 'ArrowRight' || e.key == 'ArrowLeft' || e.key == 'Backspace' || e.key == 'Tab') {
-    isControl = true;
-    console.log('контрольная клавиша');
-  }
-
-  if (!isDigit && !isControl) {
-    e.preventDefault();
-  }
-});
-
-building.addEventListener('keydown', function (e) {
-  let isDigit = false;
-  let isControl = false;
-
-  if (e.key >= 0 || e.key <= 9) {
-    isDigit = true;
-    console.log('цифра');
-  }
-
-  if (e.key == 'ArrowRight' || e.key == 'ArrowLeft' || e.key == 'Backspace' || e.key == 'Tab') {
-    isControl = true;
-    console.log('контрольная клавиша');
-  }
-
-  if (!isDigit && !isControl) {
-    e.preventDefault();
-  }
-});
 
 apart.addEventListener('keydown', function (e) {
   let isDigit = false;
