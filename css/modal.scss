@@ -1,0 +1,50 @@
+.modal {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba($color: $gray, $alpha: .9);
+  z-index: 20;
+
+  &__result {
+    font-family: 'alegreya';
+    font-size: rem(18px);
+    font-weight: 300;
+    color: $darkblack;
+    margin-bottom: rem(25px);
+
+    @include phones {
+      margin-bottom: rem(18px);
+      font-size: rem(14px);
+    }
+  }
+
+  &__window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: rem(300px);
+    height: rem(170px);
+    background: $white;
+
+    @include phones {
+      width: rem(225px);
+      height: rem(142.5px);
+    }
+  }
+
+  &__close {
+    background: $green;
+    font-family: 'alegreya';
+    font-size: rem(19px);
+    color: $white;
+    @include phones {
+      font-size: rem(15px);
+      padding: 2.4vh 3.4vh 2.2vh 3.5vh;
+    }
+  }
+}

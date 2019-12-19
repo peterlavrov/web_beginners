@@ -2,6 +2,7 @@
   background-image: url(../img/menu_bg.png);
   background-size: cover;
   background-repeat: no-repeat;
+
   &__container {
     position: relative;
     height: 100vh;
@@ -110,13 +111,23 @@
     &-desc-close {
       display: block;
       position: absolute;
-      width: rem(2.5px);
-      height: rem(25px);
-      border-radius: rem(2.5px);
-      top: rem(21px);
-      right: rem(37px);
-      background: rgba($color: $white, $alpha: 0.7);
-      transform: rotate(45deg);
+      width: rem(30px);
+      height: rem(30px);
+      top: rem(20px);
+      right: rem(20px);
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: rem(2.5px);
+        height: rem(25px);
+        border-radius: rem(2.5px);
+        top: 0;
+        right: rem(13px);
+        background: rgba($color: $white, $alpha: 0.7);
+        transform: rotate(45deg);
+      }
     }
 
     &-desc-close:after {
@@ -127,9 +138,9 @@
       height: rem(25.5px);
       border-radius: rem(2.5px);
       top: 0;
-      right: 0;
+      right: rem(13px);
       background: rgba($color: $white, $alpha: 0.7);
-      transform: rotate(-90deg);
+      transform: rotate(-45deg);
     }
 
     &--active {
