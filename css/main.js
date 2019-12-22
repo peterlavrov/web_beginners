@@ -1,3 +1,69 @@
+$(document).ready(function () {
+console.log('DOM построен');
+
+//bar
+
+const sliderWrap = $('.bar__wrap');
+const sliderList = $('.bar__list')
+const prevArr = $('.bar__prev-link');
+const nextArr = $('.bar__next-link');
+const slidesNum = $('.bar__item').length;
+let currentSlide = 1;
+let currentPos = 0;
+console.log(sliderWrap);
+console.log(prevArr);
+console.log(nextArr);
+console.log(slidesNum);
+
+
+prevArr.on('click', e => {
+  e.preventDefault();
+  console.log('предыдущий');
+
+  if (currentSlide > 1) {
+    currentPos += 100;
+    currentSlide--;
+    console.log(currentSlide);
+    console.log(currentPos);
+    sliderList.stop(true, false).animate({
+      left: currentPos + '%'
+    }, 500)
+  } else {
+    currentPos = (-slidesNum + 1) * 100;
+    currentSlide = slidesNum;
+    sliderList.stop(true, false).animate({
+      left: currentPos + '%'
+    }, 500)
+  }
+
+});
+
+nextArr.on('click', e => {
+  e.preventDefault();
+  console.log('следующий');
+
+  if (currentSlide < slidesNum) {
+    currentPos -= 100;
+    currentSlide++;
+    console.log(currentSlide);
+    console.log(currentPos);
+    sliderList.stop(true, false).animate({
+      left: currentPos + '%'
+    }, 500)
+  } else {
+    currentPos = 0;
+    currentSlide = 1;
+    sliderList.stop(true, false).animate({
+      left: currentPos + '%'
+    }, 500)
+  }
+
+});
+
+
+
+});
+
 //fullscreen menu
 
 const hamburger = document.querySelector('.hamburger-menu__link');
@@ -24,27 +90,27 @@ closebtn.addEventListener('click', function (e) {
 
 // bar
 
-const leftArrow = document.querySelector('.bar__prev-link');
-const rightArrow = document.querySelector('.bar__next-link');
-const barList = document.querySelector('.bar__list');
+// const leftArrow = document.querySelector('.bar__prev-link');
+// const rightArrow = document.querySelector('.bar__next-link');
+// const barList = document.querySelector('.bar__list');
 
-leftArrow.addEventListener('click', function (e) {
-  e.preventDefault();
-  infiniteTurn(leftArrow);
-});
+// leftArrow.addEventListener('click', function (e) {
+//   e.preventDefault();
+//   infiniteTurn(leftArrow);
+// });
 
-rightArrow.addEventListener('click', function (e) {
-  e.preventDefault();
-  infiniteTurn(rightArrow);
-});
+// rightArrow.addEventListener('click', function (e) {
+//   e.preventDefault();
+//   infiniteTurn(rightArrow);
+// });
 
-function infiniteTurn(direction) {
-  if (direction == rightArrow) {
-    barList.appendChild(barList.firstElementChild);
-  } else {
-    barList.insertBefore(barList.lastElementChild, barList.firstElementChild);
-  }
-}
+// function infiniteTurn(direction) {
+//   if (direction == rightArrow) {
+//     barList.appendChild(barList.firstElementChild);
+//   } else {
+//     barList.insertBefore(barList.lastElementChild, barList.firstElementChild);
+//   }
+// }
 
 //team
 

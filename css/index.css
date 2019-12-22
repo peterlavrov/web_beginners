@@ -1280,11 +1280,27 @@ a {
     @media screen and (max-width: 768px) {
       .bar__container {
         min-height: 0; } }
+  .bar__wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden; }
   .bar__list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    overflow: hidden; }
+    position: relative;
+    min-height: 100%; }
+    @media screen and (max-width: 480px) {
+      .bar__list {
+        min-width: 100%; } }
   .bar__prev-link {
     display: block;
     position: relative;
@@ -1333,7 +1349,8 @@ a {
     z-index: 15; }
     @media screen and (max-width: 768px) {
       .bar__prev-block {
-        height: 50%; } }
+        height: 50%;
+        width: 0; } }
   .bar__next-link {
     display: block;
     position: relative;
@@ -1382,7 +1399,8 @@ a {
     z-index: 10; }
     @media screen and (max-width: 768px) {
       .bar__next-block {
-        height: 50%; } }
+        height: 50%;
+        width: 0; } }
   .bar__item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1454,8 +1472,7 @@ a {
     @media screen and (max-width: 768px) {
       .bar__desc {
         height: 50%;
-        width: 85%;
-        position: static; } }
+        width: 85%; } }
     .bar__desc-title {
       font-family: 'alegreya';
       font-weight: 600;
@@ -1576,14 +1593,13 @@ a {
       @media screen and (max-width: 768px) {
         .bar__desc-ingridients {
           position: absolute;
-          top: 1.5625rem;
+          top: -97%;
           right: 1.5625rem; } }
       @media screen and (max-width: 480px) {
         .bar__desc-ingridients {
           width: 3.75rem;
           height: 3.75rem;
-          top: 0.625rem;
-          right: 0.625rem;
+          right: -1.25rem;
           margin-bottom: 0; } }
       .bar__desc-ingridients:hover {
         background-color: #00accf;
@@ -1602,6 +1618,9 @@ a {
   .bar__pic {
     width: 70%; }
     @media screen and (max-width: 768px) {
+      .bar__pic {
+        width: 65%; } }
+    @media screen and (max-width: 480px) {
       .bar__pic {
         width: 80%; } }
   .bar__ingridients-list {

@@ -31,9 +31,21 @@
     }
   }
 
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
   &__list {
     display: flex;
-    overflow: hidden;
+    position: relative;
+    min-height: 100%;
+    @include phones {
+      min-width: 100%;
+    }
   }
 
   &__prev-link {
@@ -86,6 +98,7 @@
 
     @include tablets {
       height: 50%;
+      width: 0;
     }    
   }
 
@@ -136,6 +149,7 @@
 
     @include tablets {
       height: 50%;
+      width: 0;
     }
 
   }
@@ -153,6 +167,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    @include phones {
     }
   }
 
@@ -204,7 +221,6 @@
     @include tablets {
       height: 50%;
       width: 85%;
-      position: static;
     }
 
     &-title {
@@ -337,15 +353,14 @@
 
       @include tablets {
         position: absolute;
-        top: rem(25px);
+        top: -97%;
         right: rem(25px);
       }
 
       @include phones {
         width: rem(60px);
         height: rem(60px);
-        top: rem(10px);
-        right: rem(10px);
+        right: rem(-20px);
         margin-bottom: 0;
       }
 
@@ -372,6 +387,10 @@
     width: 70%;
 
     @include tablets {
+      width: 65%;
+    }
+
+    @include phones {
       width: 80%;
     }
   }
