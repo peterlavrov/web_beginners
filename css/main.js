@@ -1,5 +1,4 @@
 $(document).ready(function () {
-console.log('DOM построен');
 
 //bar
 
@@ -10,57 +9,148 @@ const nextArr = $('.bar__next-link');
 const slidesNum = $('.bar__item').length;
 let currentSlide = 1;
 let currentPos = 0;
-console.log(sliderWrap);
-console.log(prevArr);
-console.log(nextArr);
-console.log(slidesNum);
 
+function animateSlide() {
+  sliderList.stop(true, false).animate({
+    left: currentPos + '%'
+  }, 1000)
+}
 
 prevArr.on('click', e => {
   e.preventDefault();
-  console.log('предыдущий');
 
   if (currentSlide > 1) {
     currentPos += 100;
     currentSlide--;
-    console.log(currentSlide);
-    console.log(currentPos);
-    sliderList.stop(true, false).animate({
-      left: currentPos + '%'
-    }, 500)
+    animateSlide();
   } else {
     currentPos = (-slidesNum + 1) * 100;
     currentSlide = slidesNum;
-    sliderList.stop(true, false).animate({
-      left: currentPos + '%'
-    }, 500)
+    animateSlide();
   }
 
 });
 
 nextArr.on('click', e => {
   e.preventDefault();
-  console.log('следующий');
 
   if (currentSlide < slidesNum) {
     currentPos -= 100;
     currentSlide++;
-    console.log(currentSlide);
-    console.log(currentPos);
-    sliderList.stop(true, false).animate({
-      left: currentPos + '%'
-    }, 500)
+    animateSlide();
   } else {
     currentPos = 0;
     currentSlide = 1;
-    sliderList.stop(true, false).animate({
-      left: currentPos + '%'
-    }, 500)
+    animateSlide();
   }
-
 });
 
+//onepage scroll
 
+const display = $('.maincontent');
+const sections = $('section');
+const dots = $('.dot-menu__item');
+dots.first().addClass('dot-menu__item--active');
+sections.first().addClass('active__section');
+let inScroll = false;
+
+
+const performTransition = sectionEq => {
+  if (inScroll == false) {
+    inScroll = true;
+    const position = sectionEq * -100;
+  
+    sections.eq(sectionEq)
+    .addClass('active__section')
+    .siblings()
+    .removeClass('active__section');
+  
+    display.css({
+      transform : `translateY(${position}%)`
+    })
+
+    display.on('transitionend', () =>{
+      inScroll = false;
+
+      $('.dot-menu__item').eq(sectionEq)
+      .addClass('dot-menu__item--active')
+      .siblings()
+      .removeClass('dot-menu__item--active');
+    })
+  }
+}
+
+const scrollToSection = direction => {
+  const activeSection = sections.filter('.active__section');
+  const nextSection = activeSection.next();
+  const prevSection = activeSection.prev();
+
+  if (direction == 'next' && nextSection.length) {
+    performTransition(nextSection.index());
+  }
+  
+  if (direction == 'prev' && prevSection.length) {
+    performTransition(prevSection.index());
+  }
+}
+
+$(window).on('wheel', e => {
+  const deltaY = e.originalEvent.deltaY;
+  console.log(deltaY);
+
+  if (deltaY > 0) {
+    console.log('next');
+    scrollToSection('next');
+  }
+
+  if (deltaY < 0) {
+    console.log('prev');
+    scrollToSection('prev');
+  }
+});
+
+$(window).on('keydown', e => {
+  console.log(e.key);
+
+  const tagName = e.target.tagName.toLowerCase();
+  console.log(tagName);
+
+  if (tagName != 'input' && tagName != 'textarea'){
+    if (e.key == 'ArrowUp' ) {
+      scrollToSection('prev');  
+    }
+    
+    if (e.key == 'ArrowDown') {
+      scrollToSection('next');
+    }
+  }
+
+})
+
+$('[data-scroll-to]').on('click', e => {
+  e.preventDefault();
+  const $this = $(e.currentTarget);
+  const target = $this.attr('data-scroll-to');
+  performTransition(target);
+  console.log($this.hasClass('fullscreen-menu__link'));
+
+  if ($this.hasClass('fullscreen-menu__link')) {
+    $('.fullscreen-menu').css('display', 'none');
+  }
+})
+
+$(function() {
+  $("body").swipe( {
+    //Generic swipe handler for all directions
+    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+      const ScrollDirections = direction == 'up' ? 'next' : 'prev';
+      scrollToSection(ScrollDirections);
+    }
+  });
+
+  //Set some options later
+  $("body").swipe( {fingers:1} );
+});
 
 });
 
@@ -112,12 +202,12 @@ closebtn.addEventListener('click', function (e) {
 //   }
 // }
 
+
 //team
 
 const itemMember = document.querySelectorAll('.team__member');
         const itemAbout = document.querySelectorAll('.team__member-name');
         const memberLenght = itemMember.length;
-        console.log(memberLenght);
 
         function activeMemberDel() {
           for (let i = 0; i < memberLenght; i++) {
@@ -147,7 +237,6 @@ const item = document.querySelectorAll('.menu__item');
 const title = document.querySelectorAll('.menu__item-title');
 const close = document.querySelectorAll('.menu__item-desc-close');
 const itemLenght = item.length;
-console.log(itemLenght);
 
 function activeElemDel() {
   for (let i = 0; i < itemLenght; i++) {

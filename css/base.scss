@@ -36,6 +36,12 @@ body {
 
 .wrapper {
   overflow: hidden;
+  height: 100%;
+}
+
+.maincontent {
+  height: 100%;
+  transition: transform 1s;
 }
 
 .container {
