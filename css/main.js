@@ -1,156 +1,160 @@
 $(document).ready(function () {
 
-//bar
+  //bar
 
-const sliderWrap = $('.bar__wrap');
-const sliderList = $('.bar__list')
-const prevArr = $('.bar__prev-link');
-const nextArr = $('.bar__next-link');
-const slidesNum = $('.bar__item').length;
-let currentSlide = 1;
-let currentPos = 0;
+  const sliderWrap = $('.bar__wrap');
+  const sliderList = $('.bar__list')
+  const prevArr = $('.bar__prev-link');
+  const nextArr = $('.bar__next-link');
+  const slidesNum = $('.bar__item').length;
+  let currentSlide = 1;
+  let currentPos = 0;
 
-function animateSlide() {
-  sliderList.stop(true, false).animate({
-    left: currentPos + '%'
-  }, 1000)
-}
-
-prevArr.on('click', e => {
-  e.preventDefault();
-
-  if (currentSlide > 1) {
-    currentPos += 100;
-    currentSlide--;
-    animateSlide();
-  } else {
-    currentPos = (-slidesNum + 1) * 100;
-    currentSlide = slidesNum;
-    animateSlide();
+  function animateSlide() {
+    sliderList.stop(true, false).animate({
+      left: currentPos + '%'
+    }, 1000)
   }
 
-});
+  prevArr.on('click', e => {
+    e.preventDefault();
 
-nextArr.on('click', e => {
-  e.preventDefault();
-
-  if (currentSlide < slidesNum) {
-    currentPos -= 100;
-    currentSlide++;
-    animateSlide();
-  } else {
-    currentPos = 0;
-    currentSlide = 1;
-    animateSlide();
-  }
-});
-
-//onepage scroll
-
-const display = $('.maincontent');
-const sections = $('section');
-const dots = $('.dot-menu__item');
-dots.first().addClass('dot-menu__item--active');
-sections.first().addClass('active__section');
-let inScroll = false;
-
-
-const performTransition = sectionEq => {
-  if (inScroll == false) {
-    inScroll = true;
-    const position = sectionEq * -100;
-  
-    sections.eq(sectionEq)
-    .addClass('active__section')
-    .siblings()
-    .removeClass('active__section');
-  
-    display.css({
-      transform : `translateY(${position}%)`
-    })
-
-    display.on('transitionend', () =>{
-      inScroll = false;
-
-      $('.dot-menu__item').eq(sectionEq)
-      .addClass('dot-menu__item--active')
-      .siblings()
-      .removeClass('dot-menu__item--active');
-    })
-  }
-}
-
-const scrollToSection = direction => {
-  const activeSection = sections.filter('.active__section');
-  const nextSection = activeSection.next();
-  const prevSection = activeSection.prev();
-
-  if (direction == 'next' && nextSection.length) {
-    performTransition(nextSection.index());
-  }
-  
-  if (direction == 'prev' && prevSection.length) {
-    performTransition(prevSection.index());
-  }
-}
-
-$(window).on('wheel', e => {
-  const deltaY = e.originalEvent.deltaY;
-  console.log(deltaY);
-
-  if (deltaY > 0) {
-    console.log('next');
-    scrollToSection('next');
-  }
-
-  if (deltaY < 0) {
-    console.log('prev');
-    scrollToSection('prev');
-  }
-});
-
-$(window).on('keydown', e => {
-  console.log(e.key);
-
-  const tagName = e.target.tagName.toLowerCase();
-  console.log(tagName);
-
-  if (tagName != 'input' && tagName != 'textarea'){
-    if (e.key == 'ArrowUp' ) {
-      scrollToSection('prev');  
+    if (currentSlide > 1) {
+      currentPos += 100;
+      currentSlide--;
+      animateSlide();
+    } else {
+      currentPos = (-slidesNum + 1) * 100;
+      currentSlide = slidesNum;
+      animateSlide();
     }
-    
-    if (e.key == 'ArrowDown') {
-      scrollToSection('next');
-    }
-  }
 
-})
+  });
 
-$('[data-scroll-to]').on('click', e => {
-  e.preventDefault();
-  const $this = $(e.currentTarget);
-  const target = $this.attr('data-scroll-to');
-  performTransition(target);
-  console.log($this.hasClass('fullscreen-menu__link'));
+  nextArr.on('click', e => {
+    e.preventDefault();
 
-  if ($this.hasClass('fullscreen-menu__link')) {
-    $('.fullscreen-menu').css('display', 'none');
-  }
-})
-
-$(function() {
-  $("body").swipe( {
-    //Generic swipe handler for all directions
-    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-      const ScrollDirections = direction == 'up' ? 'next' : 'prev';
-      scrollToSection(ScrollDirections);
+    if (currentSlide < slidesNum) {
+      currentPos -= 100;
+      currentSlide++;
+      animateSlide();
+    } else {
+      currentPos = 0;
+      currentSlide = 1;
+      animateSlide();
     }
   });
 
-  //Set some options later
-  $("body").swipe( {fingers:1} );
-});
+  //onepage scroll
+
+  const display = $('.maincontent');
+  const sections = $('section');
+  const dots = $('.dot-menu__item');
+  dots.first().addClass('dot-menu__item--active');
+  sections.first().addClass('active__section');
+  let inScroll = false;
+
+  const md = new MobileDetect(window.navigator.userAgent);
+
+
+  const performTransition = sectionEq => {
+    if (inScroll == false) {
+      inScroll = true;
+      const position = sectionEq * -100;
+
+      sections.eq(sectionEq)
+        .addClass('active__section')
+        .siblings()
+        .removeClass('active__section');
+
+      display.css({
+        transform: `translateY(${position}%)`
+      })
+
+      display.on('transitionend', () => {
+        inScroll = false;
+
+        $('.dot-menu__item').eq(sectionEq)
+          .addClass('dot-menu__item--active')
+          .siblings()
+          .removeClass('dot-menu__item--active');
+      })
+    }
+  }
+
+  const scrollToSection = direction => {
+    const activeSection = sections.filter('.active__section');
+    const nextSection = activeSection.next();
+    const prevSection = activeSection.prev();
+
+    if (direction == 'next' && nextSection.length) {
+      performTransition(nextSection.index());
+    }
+
+    if (direction == 'prev' && prevSection.length) {
+      performTransition(prevSection.index());
+    }
+  }
+
+  $(window).on('wheel', e => {
+    const deltaY = e.originalEvent.deltaY;
+    console.log(deltaY);
+
+    if (deltaY > 0) {
+      console.log('next');
+      scrollToSection('next');
+    }
+
+    if (deltaY < 0) {
+      console.log('prev');
+      scrollToSection('prev');
+    }
+  });
+
+  $(window).on('keydown', e => {
+    console.log(e.key);
+
+    const tagName = e.target.tagName.toLowerCase();
+    console.log(tagName);
+
+    if (tagName != 'input' && tagName != 'textarea') {
+      if (e.key == 'ArrowUp') {
+        scrollToSection('prev');
+      }
+
+      if (e.key == 'ArrowDown') {
+        scrollToSection('next');
+      }
+    }
+
+  })
+
+  $('[data-scroll-to]').on('click', e => {
+    e.preventDefault();
+    const $this = $(e.currentTarget);
+    const target = $this.attr('data-scroll-to');
+    performTransition(target);
+    console.log($this.hasClass('fullscreen-menu__link'));
+
+    if ($this.hasClass('fullscreen-menu__link')) {
+      $('.fullscreen-menu').css('display', 'none');
+    }
+  })
+  if (md.mobile()) {
+    $(function () {
+      $("body").swipe({
+        //Generic swipe handler for all directions
+        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+          const ScrollDirections = direction == 'up' ? 'next' : 'prev';
+          scrollToSection(ScrollDirections);
+        }
+      });
+
+      //Set some options later
+      $("body").swipe({ fingers: 1 });
+    });
+
+  }
 
 });
 
@@ -206,30 +210,30 @@ closebtn.addEventListener('click', function (e) {
 //team
 
 const itemMember = document.querySelectorAll('.team__member');
-        const itemAbout = document.querySelectorAll('.team__member-name');
-        const memberLenght = itemMember.length;
+const itemAbout = document.querySelectorAll('.team__member-name');
+const memberLenght = itemMember.length;
 
-        function activeMemberDel() {
-          for (let i = 0; i < memberLenght; i++) {
-            if (itemMember[i].classList.contains('team__member--active')) {
-              itemMember[i].classList.remove('team__member--active');
-            }
-          }
-        }
+function activeMemberDel() {
+  for (let i = 0; i < memberLenght; i++) {
+    if (itemMember[i].classList.contains('team__member--active')) {
+      itemMember[i].classList.remove('team__member--active');
+    }
+  }
+}
 
-        for (let i = 0; i < memberLenght; i++) {
-          itemAbout[i].addEventListener('click', function (e) {
-            e.preventDefault();
-            console.log('клик');
-            console.log(itemMember[i].classList);
-            if (itemMember[i].classList.contains('team__member--active')) {
-              itemMember[i].classList.remove('team__member--active');
-            } else {
-              activeMemberDel();
-              itemMember[i].classList.add('team__member--active');
-            }
-          })
-        };
+for (let i = 0; i < memberLenght; i++) {
+  itemAbout[i].addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log('клик');
+    console.log(itemMember[i].classList);
+    if (itemMember[i].classList.contains('team__member--active')) {
+      itemMember[i].classList.remove('team__member--active');
+    } else {
+      activeMemberDel();
+      itemMember[i].classList.add('team__member--active');
+    }
+  })
+};
 
 //menu
 

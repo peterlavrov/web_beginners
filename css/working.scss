@@ -1,0 +1,51 @@
+.working {
+  height: 100%;
+
+  &__container {
+    position: relative;
+    min-height: rem(650px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: rem(103px);
+      height: rem(148px);
+      right: 0;
+      bottom: rem(-70px);
+      background: url(../img/working__berries.png) no-repeat;
+
+    }
+
+    @include tablets {
+      min-height: 0;
+    }
+  }
+
+  &__title {
+    @include title;
+    margin-bottom: rem(50px);
+
+    @include phones {
+      margin-bottom: rem(20px);
+      font-size: 5vh;
+    }
+  }
+
+  &__img {
+    @include tablets {
+      width: 80%;
+    }
+  }
+
+  &__pic {
+    width: 100%;
+  }
+
+
+}
