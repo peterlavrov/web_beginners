@@ -50,36 +50,47 @@ $(document).ready(function () {
   const display = $('.maincontent');
   const sections = $('section');
   const dots = $('.dot-menu__item');
+  const footer = $('.contacts__footer');
   dots.first().addClass('dot-menu__item--active');
   sections.first().addClass('active__section');
   let inScroll = false;
+  let overMap = false;
 
   const md = new MobileDetect(window.navigator.userAgent);
 
+  footer.on('click', function (e) {
+    overMap = false;
+  });
 
   const performTransition = sectionEq => {
-    if (inScroll == false) {
-      inScroll = true;
-      const position = sectionEq * -100;
 
-      sections.eq(sectionEq)
-        .addClass('active__section')
-        .siblings()
-        .removeClass('active__section');
+    if (overMap) {
+      console.log('курсор над картой, блок скролла')
+    } else {
+      if (inScroll == false) {
+        inScroll = true;
+        const position = sectionEq * -100;
 
-      display.css({
-        transform: `translateY(${position}%)`
-      })
-
-      display.on('transitionend', () => {
-        inScroll = false;
-
-        $('.dot-menu__item').eq(sectionEq)
-          .addClass('dot-menu__item--active')
+        sections.eq(sectionEq)
+          .addClass('active__section')
           .siblings()
-          .removeClass('dot-menu__item--active');
-      })
+          .removeClass('active__section');
+
+        display.css({
+          transform: `translateY(${position}%)`
+        })
+
+        display.on('transitionend', () => {
+          inScroll = false;
+
+          $('.dot-menu__item').eq(sectionEq)
+            .addClass('dot-menu__item--active')
+            .siblings()
+            .removeClass('dot-menu__item--active');
+        })
+      }
     }
+
   }
 
   const scrollToSection = direction => {
@@ -96,6 +107,21 @@ $(document).ready(function () {
     }
   }
 
+  $('#map').hover(() => {
+    overMap = true;
+    console.log(overMap);
+  },
+    () => {
+      overMap = false;
+      console.log(overMap);
+    });
+
+  $('#map').on('click', () => {
+    overMap = true;
+    console.log(overMap);
+  });
+
+
   $(window).on('wheel', e => {
     const deltaY = e.originalEvent.deltaY;
     console.log(deltaY);
@@ -110,6 +136,7 @@ $(document).ready(function () {
       scrollToSection('prev');
     }
   });
+
 
   $(window).on('keydown', e => {
     console.log(e.key);
@@ -169,6 +196,10 @@ const soundBtn = document.querySelector('.player__sound-button');
 const playBtnPlay = document.querySelector('.player__start-button:before');
 const soundPoint = document.querySelector('.player__sound-point');
 const playBackPoint = document.querySelector('.player__playback-point');
+const currentTime = document.querySelector('.player__duration-completed');
+const totalTime = document.querySelector('.player__duration-estimate');
+
+
 let isPlay = false;
 let interval;
 
@@ -190,9 +221,11 @@ playBtn.addEventListener('click', e => {
     if (video.muted) {
       video.muted = false;
       soundTrigger.classList.toggle('muted');
+      soundPoint.style.left = video.volume * 100 + '%';
     } else {
       video.muted = true;
       soundTrigger.classList.toggle('muted');
+      soundPoint.style.left = 0 + '%';
     }
   });
 });
@@ -207,6 +240,10 @@ soundBtn.addEventListener('click', function (e) {
 
   if (calcVol >= 0 && calcVol <= 1) {
     volumeSet(calcVol);
+    if (video.muted) {
+      soundTrigger.classList.toggle('muted');
+    }
+    video.muted = false;
     console.log(calcVol);
     console.log(soundPoint.style.left);
     soundPoint.style.left = calcVol * 100 + '%';
@@ -221,18 +258,27 @@ playBack.addEventListener('click', function (e) {
   e.preventDefault();
   let clickPosition = e.layerX;
   let barWidth = playBack.offsetWidth;
-
-  console.log(clickPosition);
-  console.log(barWidth);
-
   let calcPlay = toPercent(clickPosition, barWidth);
-  console.log(calcPlay);
   videoSet(toSecs(calcPlay));
+  currentTime.textContent = formatTime(video.currentTime);
   playBackPoint.style.left = calcPlay * 100 + '%';
 })
 
+function formatTime (timeSec) {
+  const roundTime = Math.round(timeSec);
+
+  const minutes = Math.floor(roundTime / 60);
+  const seconds = roundTime - minutes * 60;
+
+  const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+  return `${minutes}:${formattedSeconds}`;
+}
+
 function onPlay() {
   let durationSec = video.duration;
+  totalTime.textContent = formatTime(durationSec);
+  console.log(durationSec);
   interval = setInterval(() => {
     const completedSec = video.currentTime;
     console.log(completedSec);
@@ -240,9 +286,10 @@ function onPlay() {
     console.log(completedPercent);
     playBackPoint.style.left = completedPercent;
     console.log(video.ended);
-    if (video.ended){
+    currentTime.textContent = formatTime(completedSec);
+    if (video.ended) {
       clearInterval(interval);
-
+      currentTime.textContent = formatTime(0);
     }
   }, 1000);
 }
@@ -530,9 +577,11 @@ floor.addEventListener('keydown', function (e) {
 function initMap() {
   // The location of Uluru
   var uluru = { lat: 55.7521915, lng: 37.6084313 };
+  var uluru1 = { lat: 55.7746826, lng: 37.60453542 };
   // The map, centered at Uluru
   var map = new google.maps.Map(
     document.getElementById('map'), { zoom: 15.25, center: uluru });
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({ position: uluru, map: map });
+  var marker1 = new google.maps.Marker({ position: uluru1, map: map });
 }

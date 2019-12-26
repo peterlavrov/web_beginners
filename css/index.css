@@ -2637,10 +2637,21 @@ a {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    position: relative; }
     @media screen and (max-width: 768px) {
       .working__player {
         width: 80%; } }
+
+.player__duration {
+  display: block;
+  position: absolute;
+  top: 0.625rem;
+  left: 0.625rem;
+  background-color: rgba(102, 102, 102, 0.4);
+  padding: 0.1875rem;
+  border-radius: 0.125rem;
+  font-family: 'alegreya'; }
 
 .player__controls {
   display: -webkit-box;

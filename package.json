@@ -1,0 +1,24 @@
+{
+  "name": "project_web",
+  "version": "1.0.0",
+  "description": "**Проект курса в Loftscool по WEB разработке для начинающих**",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"},
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterlavrov/web_beginners.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterlavrov/web_beginners/issues"
+  },
+  "homepage": "https://github.com/peterlavrov/web_beginners#readme"
+}

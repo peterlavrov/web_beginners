@@ -40,6 +40,7 @@
   &__player {
     display: flex;
     flex-direction: column;
+    position: relative;
 
     @include tablets {
       width: 80%;
@@ -49,6 +50,18 @@
 }
 
 .player {
+
+  &__duration {
+    display: block;
+    position: absolute;
+    top: rem(10px);
+    left: rem(10px);
+    background-color: rgba($color: $gray, $alpha: 0.4);
+    padding: rem(3px);
+    border-radius: rem(2px);
+    font-family: 'alegreya';
+  }
+
   &__controls {
     display: flex;
     min-height: rem(35px);
