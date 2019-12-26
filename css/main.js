@@ -242,7 +242,7 @@ function onPlay() {
     console.log(video.ended);
     if (video.ended){
       clearInterval(interval);
-      
+
     }
   }, 1000);
 }
@@ -529,10 +529,10 @@ floor.addEventListener('keydown', function (e) {
 
 function initMap() {
   // The location of Uluru
-  var uluru = { lat: -25.344, lng: 131.036 };
+  var uluru = { lat: 55.7521915, lng: 37.6084313 };
   // The map, centered at Uluru
   var map = new google.maps.Map(
-    document.getElementById('map'), { zoom: 4, center: uluru });
+    document.getElementById('map'), { zoom: 15.25, center: uluru });
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({ position: uluru, map: map });
 }
