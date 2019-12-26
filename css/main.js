@@ -155,8 +155,119 @@ $(document).ready(function () {
     });
 
   }
-
 });
+
+
+// player
+
+
+const video = document.getElementById('video');
+const playBtn = document.querySelector('.player__start-button');
+const playBack = document.querySelector('.player__playback-button');
+const soundTrigger = document.querySelector('.player__sound-trigger');
+const soundBtn = document.querySelector('.player__sound-button');
+const playBtnPlay = document.querySelector('.player__start-button:before');
+const soundPoint = document.querySelector('.player__sound-point');
+const playBackPoint = document.querySelector('.player__playback-point');
+let isPlay = false;
+let interval;
+
+playBtn.addEventListener('click', e => {
+  e.preventDefault();
+  if (isPlay == false) {
+    video.play();
+    onPlay();
+    isPlay = true;
+    playBtn.classList.toggle('playing');
+  } else {
+    video.pause();
+    isPlay = false;
+    offPlay(interval);
+    playBtn.classList.toggle('playing');
+  }
+  soundTrigger.addEventListener('click', e => {
+    e.preventDefault();
+    if (video.muted) {
+      video.muted = false;
+      soundTrigger.classList.toggle('muted');
+    } else {
+      video.muted = true;
+      soundTrigger.classList.toggle('muted');
+    }
+  });
+});
+
+
+
+soundBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  let clickPosition = e.layerX;
+  let barWidth = soundBtn.offsetWidth;
+  let calcVol = toPercent(clickPosition, barWidth);
+
+  if (calcVol >= 0 && calcVol <= 1) {
+    volumeSet(calcVol);
+    console.log(calcVol);
+    console.log(soundPoint.style.left);
+    soundPoint.style.left = calcVol * 100 + '%';
+    console.log(clickPosition);
+    console.log(soundBtn.offsetWidth);
+  } else {
+    console.log('не попали по кнопке');
+  }
+});
+
+playBack.addEventListener('click', function (e) {
+  e.preventDefault();
+  let clickPosition = e.layerX;
+  let barWidth = playBack.offsetWidth;
+
+  console.log(clickPosition);
+  console.log(barWidth);
+
+  let calcPlay = toPercent(clickPosition, barWidth);
+  console.log(calcPlay);
+  videoSet(toSecs(calcPlay));
+  playBackPoint.style.left = calcPlay * 100 + '%';
+})
+
+function onPlay() {
+  let durationSec = video.duration;
+  interval = setInterval(() => {
+    const completedSec = video.currentTime;
+    console.log(completedSec);
+    const completedPercent = toPercent(completedSec, durationSec) * 100 + '%';
+    console.log(completedPercent);
+    playBackPoint.style.left = completedPercent;
+    console.log(video.ended);
+    if (video.ended){
+      clearInterval(interval);
+      
+    }
+  }, 1000);
+}
+function offPlay(interval) {
+  clearInterval(interval);
+}
+
+function volumeSet(volume) {
+  video.volume = volume;
+};
+
+function videoSet(currSecs) {
+  video.currentTime = currSecs;
+}
+
+function toSecs(percent) {
+  let currSecs = video.duration * percent;
+  return currSecs;
+}
+
+function toPercent(curr, all) {
+  return curr / all;
+};
+
+
 
 //fullscreen menu
 
@@ -413,3 +524,15 @@ floor.addEventListener('keydown', function (e) {
     e.preventDefault();
   }
 });
+
+//map
+
+function initMap() {
+  // The location of Uluru
+  var uluru = { lat: -25.344, lng: 131.036 };
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+    document.getElementById('map'), { zoom: 4, center: uluru });
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({ position: uluru, map: map });
+}

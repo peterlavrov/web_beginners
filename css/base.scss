@@ -16,6 +16,9 @@ $lightgreen: #cfdeda;
 $yellow: #dde3bd;
 $graysoc: #b3b3b3;
 $whiteopac: rgba(255, 255, 255, 0.9);
+$grayplayer: #3e3e3e;
+$grayplayerbtn: #626262;
+$muted: #966;
 
 @function rem($px) {
   @return $px / 16px + 0rem;

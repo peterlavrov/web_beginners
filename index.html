@@ -598,7 +598,32 @@
       <section class="working">
         <div class="container working__container">
           <h2 class="working__title">КАК МЫ РАБОТАЕМ</h2>
-          <div class="working__img"><img src="./img/video.png" alt="" class="working__pic"></div>
+          <div class="working__player">
+            <!-- <img src="./img/video.png" alt="" class="working__pic"> -->
+            <video class="working__video" id="video" width="100%">
+              <source src="./video/videoplayback.mp4" type="video/mp4">
+            </video>
+            <div class="player__controls">
+              <a href="#" class="player__start-button"></a>
+              <div class="player__playback">
+                <a href="#" class="player__playback-button">
+                  <div class="player__playback-point"></div>
+                </a>
+              </div>
+              <!-- <div class="player__duration">
+                <span class="player__duration-completed">0:00</span> :
+                <span class="player__duration-estimate">0:00</span>
+              </div> -->
+              <div class="player__sound-controls">
+                <a href="#" class="player__sound-trigger"></a>
+                <div class="player__sound-level">
+                  <a href="#" class="player__sound-button">
+                    <div class="player__sound-point"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="order">
@@ -731,8 +756,8 @@
               </div>
             </div>
           </footer>
-          <div class="contacts__map">
-            <img src="./img/map.png" alt="Карта" class="contacts__map-pic">
+          <div class="contacts__map" id="map">
+            <!-- <img src="./img/map.png" alt="Карта" class="contacts__map-pic"> -->
           </div>
         </div>
       </section>
@@ -762,6 +787,9 @@
 <script src="./css/jquery-3.4.1.min.js"></script>
 <script src="./css/jquery.touchSwipe.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGD6E5waNJdNQUkGi4qTt_uJtqP1EOX1g&callback=initMap">
+  </script>
 <script src="./css/main.js"></script>
 
 </html>
