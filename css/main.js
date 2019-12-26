@@ -576,12 +576,27 @@ floor.addEventListener('keydown', function (e) {
 
 function initMap() {
   // The location of Uluru
-  var uluru = { lat: 55.7521915, lng: 37.6084313 };
-  var uluru1 = { lat: 55.7746826, lng: 37.60453542 };
+  
+  var center = { lat: 55.755126, lng: 37.5968415 };
+  var chocco1 = { lat: 55.750953, lng: 37.6046722 };
+  var chocco2 = { lat: 55.761027, lng: 37.5772682 };
+  var chocco3 = { lat: 55.759743, lng: 37.6249754 };
+  var chocco4 = { lat: 55.748784, lng: 37.5804504 };
   // The map, centered at Uluru
   var map = new google.maps.Map(
-    document.getElementById('map'), { zoom: 15.25, center: uluru });
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({ position: uluru, map: map });
-  var marker1 = new google.maps.Marker({ position: uluru1, map: map });
+    document.getElementById('map'), { zoom: 14.25, center: center });
+    // The marker, positioned at Uluru
+    var chocco1 = new google.maps.Marker({ position: chocco1, map: map });
+    var chocco2 = new google.maps.Marker({ position: chocco2, map: map });
+    var chocco3 = new google.maps.Marker({ position: chocco3, map: map });
+    var chocco4 = new google.maps.Marker({ position: chocco4, map: map });
+    chocco1.setLabel('CHOCCO');
+    chocco1.setTitle('CHOCCO');
+    chocco2.setLabel('CHOCCO');
+    chocco2.setTitle('CHOCCO');
+    chocco3.setLabel('CHOCCO');
+    chocco3.setTitle('CHOCCO');
+    chocco4.setLabel('CHOCCO');
+    chocco4.setTitle('CHOCCO');
+  
 }
