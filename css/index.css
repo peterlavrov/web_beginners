@@ -2644,14 +2644,26 @@ a {
         width: 80%; } }
 
 .player__duration {
-  display: block;
-  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   top: 0.625rem;
   left: 0.625rem;
-  background-color: rgba(102, 102, 102, 0.4);
   padding: 0.1875rem;
   border-radius: 0.125rem;
-  font-family: 'alegreya'; }
+  font-family: 'alegreya';
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 0.3125rem; }
+  @media screen and (max-width: 480px) {
+    .player__duration {
+      font-size: 0.75rem; } }
+  .player__duration-completed {
+    margin-right: 0.1875rem; }
 
 .player__controls {
   display: -webkit-box;

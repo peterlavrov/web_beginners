@@ -52,14 +52,25 @@
 .player {
 
   &__duration {
-    display: block;
-    position: absolute;
+    display: flex;
+    // position: absolute;
     top: rem(10px);
     left: rem(10px);
-    background-color: rgba($color: $gray, $alpha: 0.4);
+    // background-color: rgba($color: $gray, $alpha: 0.4);
     padding: rem(3px);
     border-radius: rem(2px);
     font-family: 'alegreya';
+    justify-content: center;
+    align-items: center;
+    margin-right: rem(5px);
+    
+    @include phones {
+      font-size: rem(12px);
+    }
+    
+    &-completed {
+      margin-right: rem(3px);
+    }
   }
 
   &__controls {
